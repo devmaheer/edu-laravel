@@ -47,11 +47,11 @@
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
-                                <h1 class="text-dark mb-3">Sign In to KOSMO</h1>
+                                <h1 class="text-dark mb-3">Sign In to IPP</h1>
                                 <!--end::Title-->
                                 <!--begin::Link-->
-                                <div class="text-gray-300 fw-bold fs-4">New Here?
-                                <a href="javascript:void(0)" class="link-primary fw-bolder">Create an Account</a></div>
+                                {{-- <div class="text-gray-300 fw-bold fs-4">New Here?
+                                <a href="javascript:void(0)" class="link-primary fw-bolder">Create an Account</a></div> --}}
                                 <!--end::Link-->
                             </div>
                             <!--begin::Heading-->

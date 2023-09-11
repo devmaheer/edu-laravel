@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -24,25 +24,23 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function frontend()
+    {
+
+        return view('frontend.index');
+       
+    }
     public function index()
     {
+      
         if (Auth::user()->hasRole('Admin')) {
             $partners = User::whereHas('roles', function($query) {
                 $query->where('name', 'Partner');
             })->get();
 
-            return view('admin.partners.index', compact('partners'));
+            return view('admin.index', compact('partners'));
         }
-        else if (Auth::user()->hasRole('Partner')) {
-            $businessUnits = User::whereHas('roles', function($query) {
-                $query->where('name', 'Business Unit');
-            })
-            ->where('partner_id', Auth::user()->id)->get();
-
-            return view('businessunits.index', compact('businessUnits'));
-        } else if (Auth::user()->hasRole('Business Unit')) {
-            return view('dashboard.businessunit');
-        }
+       
     }
 
     /**

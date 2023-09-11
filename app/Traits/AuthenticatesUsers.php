@@ -16,11 +16,12 @@ trait AuthenticatesUsers {
 
     public function login(Request $request) {
         $this->validateLogin($request);
-        
+       
         if ($this->attemptLogin($request)) {
+         
             return $this->sendLoginResponse($request);
         }
-        
+     
         return $this->sendFailedLoginResponse($request);
     }
 
@@ -43,7 +44,7 @@ trait AuthenticatesUsers {
 
     protected function sendLoginResponse(Request $request) {
         $request->session()->regenerate();
-
+    
         return $request->wantsJson()
                 ? new JsonResponse([], 204)
                 : redirect()->intended($this->redirectedPath());
@@ -66,7 +67,7 @@ trait AuthenticatesUsers {
 
         return $request->wantsJson()
                 ? new JsonResponse([], 204)
-                : redirect('/');
+                : redirect('/admin/login');
     }
 
     protected function guard() {

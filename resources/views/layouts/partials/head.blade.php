@@ -1,4 +1,4 @@
-        <title>KOSMO</title>
+        <title>IPP</title>
 		<meta charset="utf-8" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />

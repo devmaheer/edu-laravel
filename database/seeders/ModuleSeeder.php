@@ -29,60 +29,10 @@ class ModuleSeeder extends Seeder
                 'created_at'=> Carbon::now(),
                 'updated_at'=> Carbon::now()
             ],
-            [
-                'name' => 'Business Unit',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Patient',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Appointment',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Branch',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Chair',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Clinical Specialization',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Treatment Service',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Treatment Procedure',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
-            [
-                'name' => 'Employment',
-                'description' => '',
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ],
+        
+      
+        
+          
             // Add more data as needed
         ];
 
