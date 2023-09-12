@@ -6,9 +6,9 @@ echo "Deploying application ..."
 # Enter maintenance mode
 #(php artisan down --message 'The app is being (quickly!) updated. Please try again in a minute.') || true
     # Update codebase
-    git checkout development
-    git reset --hard origin/development
-    git pull origin development
+    git checkout dev
+    git reset --hard origin/dev
+    git pull origin dev
 
     # cd /var/www/html
     # cp -R /var/repos/aspca/* /var/www/html
@@ -26,7 +26,7 @@ echo "Deploying application ..."
 
     # Note: If you're using queue workers, this is the place to restart them.
     # ...
-    php artisan queue:restart
+    # php artisan queue:restart
     # nohup php artisan queue:work --daemon > storage/logs/laravel.log &
     
     composer dumpautoload
