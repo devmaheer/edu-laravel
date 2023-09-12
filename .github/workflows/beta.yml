@@ -1,23 +1,23 @@
 name: Build and Deploy to BETA
 on:
-    push:
-        branches:
-            -   beta
+  push:
+    branches:
+      - beta
 
 jobs:
-    build:
-        name: Build and Deploy
-        runs-on: ubuntu-latest
-        steps:
-            - name: Setup Enviroment
-              uses: shivammathur/setup-php@v2
-              with:
-                php-version: '8.0'
-            - name: Deploy to production
-              uses: appleboy/ssh-action@master
-              with:
-                host: ${{ secrets.HOST }}
-                username: ${{ secrets.USERNAME }}
-                password: ${{ secrets.PASSWORD }}
-                port: ${{ secrets.PORT }}
-                script: "cd ${{ secrets.PATH }} && ./deploy-beta.sh"
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Enviroment
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.0"
+      - name: Deploy to production
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: "cd ${{ secrets.PATH }} && ./deploy-beta.sh"
