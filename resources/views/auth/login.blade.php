@@ -26,7 +26,7 @@
                     <div class="d-flex flex-row-fluid flex-column justify-content-center text-center p-10 pt-lg-20">
                         <!--begin::Logo-->
                         <a href="javascript:void(0)" class="py-9 mb-5">
-                            <img alt="Logo" src="{{asset('/media/logos/logo-2.svg')}}" class="h-60px" />
+                            <img alt="Logo" src="{{asset('/frontend/logo/logo.png')}}" width="50%" />
                         </a>
                         <!--end::Logo-->
                     </div>
