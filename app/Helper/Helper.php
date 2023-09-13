@@ -32,4 +32,13 @@ class Helper {
 
         return rand($min, $max);
     }
+    public static function getTestType($type){
+        if($type == '1'){
+        return 'Mock';
+        }else if($type == '2'){
+            return 'Paid';
+        }
+
+        return 'Unknown';
+    }
 }

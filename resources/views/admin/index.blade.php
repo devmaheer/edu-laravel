@@ -20,7 +20,7 @@
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
-                <li class="breadcrumb-item text-gray-500">Patients</li>
+                <li class="breadcrumb-item text-gray-500">Dashboard</li>
                 <!--end::Item-->
             </ul>
             <!--end::Breadcrumb-->
@@ -29,14 +29,14 @@
         <!--begin::Actions-->
         <div class="d-flex align-items-center py-2 py-md-1">
             <!--begin::Button-->
-            <a href="" class="btn btn-sm btn-dark btn-icon-white fw-bolder me-1">
-                Add New Patient
+            <a href="{{route('admin.test.create')}}" class="btn btn-sm btn-dark btn-icon-white fw-bolder me-1">
+                Add New Test
             </a>
             <!--end::Button-->
 
             <!--begin::Button-->
-            <a href="" class="btn btn-sm btn-dark btn-icon-white fw-bolder">
-                Book Appointment
+            <a href="{route('admin.test.index')}}" class="btn btn-sm btn-dark btn-icon-white fw-bolder">
+               All Test
             </a>
             <!--end::Button-->
         </div>
@@ -53,7 +53,18 @@
                     <div class="card shadow-lg">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-around">
-                                <span>Today's<br/>Patients</span>
+                                <span>Total Test</span>
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-sm-12 col-md-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-around">
+                                <span>Total Questions</span>
                                 <span>45</span>
                             </div>
                         </div>
@@ -64,58 +75,15 @@
                     <div class="card shadow-lg">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-around">
-                                <span>Today's<br/>Appointemnts</span>
-                                <span>45</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-sm-12 col-md-4">
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-around">
-                                <span>Ongoing<br/>Appointments</span>
+                                <span>Total Users</span>
                                 <span>45</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-around">
-                                <span>Today's<br/>Patients</span>
-                                <span>45</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+           
         
-                <div class="col-sm-12 col-md-4">
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-around">
-                                <span>Today's<br/>Appointemnts</span>
-                                <span>45</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-sm-12 col-md-4">
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-around">
-                                <span>Ongoing<br/>Appointments</span>
-                                <span>45</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="col-sm-12 col-md-5">
 

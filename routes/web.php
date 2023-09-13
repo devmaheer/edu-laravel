@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,15 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/permissions/fetch', ['as' => 'permissions.fetch', 'uses' => 'PermissionController@fetch']);
         Route::post('/permissions/store', ['as' => 'permissions.store', 'uses' => 'PermissionController@store']);
         Route::get('/permissions/delete/{id}', ['as' => 'permissions.delete', 'uses' => 'PermissionController@delete']);
+
+        Route::controller(TestController::class)->group(function () {
+            Route::get('/test/index', 'index')->name('test.index');
+            Route::get('/test/create', 'create')->name('test.create');
+            Route::post('/test/store', 'store')->name('test.store');
+            Route::get('/test/edit/{id}', 'edit')->name('test.edit');
+            Route::post('/test/update/', 'update')->name('test.update');
+            Route::get('/test/delete/{id}', 'delete')->name('test.delete');
+        });
     });
     
 
