@@ -68,13 +68,7 @@
                                        General Training
                                         @endif
                                     </td>
-                                    <td>
-                                        @if($test->status == '1')
-                                        <span class="badge badge-primary">Active</span>
-                                        @else
-                                        <span class="badge badge-warning">Inactive</span>
-                                        @endif
-                                    </td>
+
                                  
                                     <td>
                                         @if($test->type == '1')
@@ -83,7 +77,13 @@
                                         <span class="badge badge-primary">{{  App\Helper\Helper::getTestType($test->type)  }}</span>
                                         @endif
                                     </td>
-                                   
+                                    <td>
+                                        @if($test->status == '1')
+                                        <span class="badge badge-primary">Active</span>
+                                        @else
+                                        <span class="badge badge-warning">Inactive</span>
+                                        @endif
+                                    </td>
                                     <td>
                                      
                                         <a href="{{ route('admin.test.edit', [$test->id]) }}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
