@@ -71,8 +71,8 @@
                         <!--end::Label-->
                         <select class="form-control form-control-solid required" name="category">
                             <option value="">Select Category</option>
-                            <option value="1" {{ $test->category == '0' ? 'selected' : '' }}>Acadamic</option>
-                            <option value="2" {{ $test->category == '0' ? 'selected' : '' }}>General Traning</option>
+                            <option value="1" {{ $test->category == '1' ? 'selected' : '' }}>Acadamic</option>
+                            <option value="2" {{ $test->category == '2' ? 'selected' : '' }}>General Traning</option>
                             <!-- Add more options as needed -->
                         </select>
                     </div>

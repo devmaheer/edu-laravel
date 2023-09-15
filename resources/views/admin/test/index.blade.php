@@ -43,9 +43,10 @@
                         <tr class="fw-bolder text-muted">
                            
                             <th>Name</th>
-                            <th>Status</th>
+                            <th>Category</th>
                             <th>Type</th>
-                            
+                         
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -61,17 +62,25 @@
                                         {{ $test->name }}
                                     </td>
                                     <td>
+                                        @if($test->category == '1')
+                                        Acadamic
+                                        @else
+                                       General Training
+                                        @endif
+                                    </td>
+                                    <td>
                                         @if($test->status == '1')
                                         <span class="badge badge-primary">Active</span>
                                         @else
                                         <span class="badge badge-warning">Inactive</span>
                                         @endif
                                     </td>
+                                 
                                     <td>
                                         @if($test->type == '1')
-                                        <span class="badge badge-warning">{{  App\Helper\helper::getTestType($test->type)  }}</span>
+                                        <span class="badge badge-warning">{{  App\Helper\Helper::getTestType($test->type)  }}</span>
                                         @else
-                                        <span class="badge badge-primary">{{  App\Helper\helper::getTestType($test->type)  }}</span>
+                                        <span class="badge badge-primary">{{  App\Helper\Helper::getTestType($test->type)  }}</span>
                                         @endif
                                     </td>
                                    

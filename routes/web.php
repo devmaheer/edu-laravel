@@ -63,6 +63,14 @@ Route::group(['middleware' => 'auth'], function() {
             Route::post('/test/update/', 'update')->name('test.update');
             Route::get('/test/delete/{id}', 'delete')->name('test.delete');
         });
+        Route::controller(TestController::class)->group(function () {
+            Route::get('/test/index', 'index')->name('test.index');
+            Route::get('/test/create', 'create')->name('test.create');
+            Route::post('/test/store', 'store')->name('test.store');
+            Route::get('/test/edit/{id}', 'edit')->name('test.edit');
+            Route::post('/test/update/', 'update')->name('test.update');
+            Route::get('/test/delete/{id}', 'delete')->name('test.delete');
+        });
     });
     
 

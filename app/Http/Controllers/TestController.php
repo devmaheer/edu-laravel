@@ -29,7 +29,7 @@ class TestController extends Controller
             'type'=>$request->type,
             'category'=>$request->category,
          ]);
-        return view('admin.test.create');
+         return redirect()->route('admin.test.index');
        }
 
        public function edit(Request $request,$id){
