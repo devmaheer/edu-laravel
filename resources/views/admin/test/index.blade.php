@@ -68,10 +68,10 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if($test->test_type == '1')
-                                        <span class="badge badge-warning">{{  App\Helper\helper::getTestType($test->test_type)  }}</span>
+                                        @if($test->type == '1')
+                                        <span class="badge badge-warning">{{  App\Helper\helper::getTestType($test->type)  }}</span>
                                         @else
-                                        <span class="badge badge-primary">{{  App\Helper\helper::getTestType($test->test_type)  }}</span>
+                                        <span class="badge badge-primary">{{  App\Helper\helper::getTestType($test->type)  }}</span>
                                         @endif
                                     </td>
                                    

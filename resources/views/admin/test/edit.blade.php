@@ -48,10 +48,10 @@
                             <span class="required">Test Type</span>
                         </label>
                         <!--end::Label-->
-                        <select class="form-control form-control-solid required" name="test_type">
+                        <select class="form-control form-control-solid required" name="type">
                             <option value="">Select type</option>
-                            <option value="1" {{ $test->test_type == '1' ? 'selected' : '' }}>Paid</option>
-                            <option value="2" {{ $test->test_type == '2' ? 'selected' : '' }}>Mock</option>
+                            <option value="1" {{ $test->type == '1' ? 'selected' : '' }}>Paid</option>
+                            <option value="2" {{ $test->type == '2' ? 'selected' : '' }}>Mock</option>
                             <!-- Add more options as needed -->
                         </select>
                     </div>
@@ -63,6 +63,19 @@
 
 
                 <div class="row g-9 mb-8">
+                    <div class="col-md-6">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Test Category</span>
+                        </label>
+                        <!--end::Label-->
+                        <select class="form-control form-control-solid required" name="category">
+                            <option value="">Select Category</option>
+                            <option value="1" {{ $test->category == '0' ? 'selected' : '' }}>Acadamic</option>
+                            <option value="2" {{ $test->category == '0' ? 'selected' : '' }}>General Traning</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
                     <input type="hidden" name="id" value="{{ $test->id }}">
                     <div class="col-md-6">
                         <!--begin::Label-->

@@ -47,7 +47,7 @@
                             <span class="required">Test Type</span>
                         </label>
                         <!--end::Label-->
-                        <select class="form-control form-control-solid required" name="test_type">
+                        <select class="form-control form-control-solid required" name="type">
                             <option value="">Select type</option>
                             <option value="1">Paid</option>
                             <option value="2">Mock</option>
@@ -62,6 +62,20 @@
             
 
                 <div class="row g-9 mb-8">
+                    <div class="col-md-6">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Test Category</span>
+                        </label>
+                        <!--end::Label-->
+                        <select class="form-control form-control-solid required" name="category">
+                            <option value="">Select Category</option>
+                            <option value="1">Acadamic</option>
+                            <option value="2">General Traning</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                 
 
                     <div class="col-md-6">
                         <!--begin::Label-->

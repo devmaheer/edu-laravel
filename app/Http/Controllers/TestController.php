@@ -26,7 +26,8 @@ class TestController extends Controller
          Test::create([
             'name'=>$request->name,
             'status'=>$request->status,
-            'test_type'=>$request->test_type,
+            'type'=>$request->type,
+            'category'=>$request->category,
          ]);
         return view('admin.test.create');
        }
@@ -42,7 +43,8 @@ class TestController extends Controller
       $test =   Test::where('id',$request->id)->update([
            'name'=>$request->name,
            'status'=>$request->status,
-           'test_type'=>$request->test_type,
+           'type'=>$request->type,
+           'category'=>$request->category,
         ]);
        return redirect()->route('admin.test.index');
       }
