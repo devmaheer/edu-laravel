@@ -53,7 +53,26 @@
                                 name="mcqs_name" id="mcqs" autocomplete="off" />
                             <!--end::Input-->
                         </div>
-
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                <span class="required">Select Paragraph</span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <select  name="paragraph" class="form-control form-control-solid required" >
+                                <option value="">Select </option>
+                                <option value="1" {{ $question->paragraph == 1 ? 'selected' : '' }}>One</option>
+                                <option value="2" {{ $question->paragraph == 2 ? 'selected' : '' }}>Two</option>
+                                <option value="3" {{ $question->paragraph == 3 ? 'selected' : '' }}>Three</option>
+                                @if($question->test->category == '2')
+                                <option value="4" {{ $question->paragraph == 4 ? 'selected' : '' }}>Four</option>
+                                <option value="5" {{ $question->paragraph == 5 ? 'selected' : '' }}>Five</option>
+                                 @endif
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!--end::Input-->
+                        </div>
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">

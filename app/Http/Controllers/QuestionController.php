@@ -75,6 +75,7 @@ class QuestionController extends Controller
            Question::where('id',$request->questionId)->update([
               'name'=>$request->mcqs_name,
               'test_id'=>$request->testId,
+              'paragraph'=>$request->paragraph,
               'type'=> 1,
             ]);
            
