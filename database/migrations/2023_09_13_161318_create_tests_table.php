@@ -19,7 +19,11 @@ return new class extends Migration
             $table->integer('type'); 
             $table->integer('category'); 
             $table->integer('status'); 
-            $table->longText('paragraph')->nullable(); 
+            $table->longText('paragraph1')->nullable(); 
+            $table->longText('paragraph2')->nullable(); 
+            $table->longText('paragraph3')->nullable(); 
+            $table->longText('paragraph4')->nullable(); 
+            $table->longText('paragraph5')->nullable(); 
             $table->timestamps();
         });
     }

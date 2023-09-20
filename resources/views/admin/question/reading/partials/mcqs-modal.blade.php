@@ -29,7 +29,7 @@
                 <form action="{{ route('admin.question.store') }}" method="post">
                     <!--begin::Scroll-->
                     <input type="hidden" name="testId" value="{{$test->id}}">
-                    <input type="hidden" name="question_type" value="writing">
+                    <input type="hidden" name="question_type" value="reading">
                     <div class="d-flex flex-column me-n7 pe-7">
                         <!--begin::Form Row-->
                         <div class="fv-row mb-10">
@@ -42,7 +42,26 @@
                             <input class="form-control" placeholder="Enter a MCqs" name="mcqs_name" id="mcqs" autocomplete="off" />
                             <!--end::Input-->
                         </div>
-
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                <span class="required">Select Paragraph</span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <select  name="paragraph" class="form-control form-control-solid required" >
+                                <option value="">Select </option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                @if($test->category == '2')
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                                 @endif
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!--end::Input-->
+                        </div>
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">

@@ -16,6 +16,6 @@ class Question extends Model
     }
     public function test()
     {
-        return $this->belongsTo(Test::class,'id','test_id');
+        return $this->belongsTo(Test::class,'test_id','id');
     }
 }

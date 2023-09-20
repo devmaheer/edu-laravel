@@ -37,7 +37,7 @@
             <!--begin::Table container-->
             <div class="table-responsive">
                 <!--begin::Table-->
-                <table class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
+                <table id="test_table" class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
                     <!--begin::Table head-->
                     <thead>
                         <tr class="fw-bolder text-muted">

@@ -13,7 +13,7 @@
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
-                <li class="breadcrumb-item text-gray-500">Add New Writing Paragraph</li>
+                <li class="breadcrumb-item text-gray-500">Add New Reading Paragraph</li>
                 <!--end::Item-->
             </ul>
             <!--end::Breadcrumb-->
@@ -24,25 +24,62 @@
 
     <div class="card mb-6 mb-xl-9">
         <div class="card-body pt-9 pb-9">
-            <h1 class="text-dark fw-bolder mt-1 mb-10 fs-3">Writing Paragraph Details </h1>
+            <h1 class="text-dark fw-bolder mt-1 mb-10 fs-3">Reading Paragraph Details </h1>
             <div class="row">
                 <h3> Test Name : {{ $test->name }} <br /><br />
                     Test Category : @if ($test->category == '1') Acadamic @else General Training @endif <br /></h3>
             </div><br />
             <form action="{{ route('admin.test.paragraph.store') }}" method="post">
                 @csrf
-                <input type="hidden" name="type" value="writing">
+                <input type="hidden" name="type" value="reading">
                 <input type="hidden" name="testId" value="{{$test->id}}">
                 <div class="row g-9 mb-8">
 
                     <div class="col-md-12">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Paragraph </span>
+                            <span class="required">Paragraph One </span>
                         </label>
                         <!--end::Label-->
-                        <textarea name="paragraph">{{$test->paragraph}}</textarea>
+                        <textarea name="paragraph1">{{$test->paragraph1}}</textarea>
                     </div>
+
+                    <div class="col-md-12">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Paragraph  Two </span>
+                        </label>
+                        <!--end::Label-->
+                        <textarea name="paragraph2">{{$test->paragraph2}}</textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Paragraph Three </span>
+                        </label>
+                        <!--end::Label-->
+                        <textarea name="paragraph3">{{$test->paragraph3}}</textarea>
+                    </div>
+                    @if($test->category == '2')
+
+                    <div class="col-md-12">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Paragraph Four </span>
+                        </label>
+                        <!--end::Label-->
+                        <textarea name="paragraph4">{{$test->paragraph4}}</textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Paragraph Five </span>
+                        </label>
+                        <!--end::Label-->
+                        <textarea name="paragraph5">{{$test->paragraph3}}</textarea>
+                    </div>
+                    @endif
+
 
 
 

@@ -58,18 +58,22 @@ class TestController extends Controller
        public function  createParagraph(Request $request ,$id,$type){
     
         $test = Test::findOrFail($id);
-        if($type == 'writing'){
+        if($type == 'reading'){
          
-            return view('admin.question.writing.create-paragraph',compact('test'));
+            return view('admin.question.reading.create-paragraph',compact('test'));
         }
      }
 
      public function  paragraphStore(Request $request){
     
-      if($request->type == "writing"){
-          
+      if($request->type == "reading"){
+         
         $test = Test::findOrFail($request->testId);
-        $test->paragraph = $request->paragraph;
+        $test->paragraph1 = $request->paragraph1;
+        $test->paragraph2 = $request->paragraph2;
+        $test->paragraph3 = $request->paragraph3;
+        $test->paragraph4 = $request->paragraph4;
+        $test->paragraph5 = $request->paragraph5;
         $test->save();
 
         return  redirect()->route('admin.question.index',['id' => $test->id]);
