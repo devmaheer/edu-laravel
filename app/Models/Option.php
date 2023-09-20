@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class Option extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function questions()
+    public function question()
     {
-        return $this->hasMany(Question::class,'test_id','id');
+        return $this->belongsTo(Question::class,'id','question_id');
     }
-
 }

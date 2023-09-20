@@ -54,4 +54,25 @@ class TestController extends Controller
         $test->delete();
         return redirect()->route('admin.test.index');
        }
+
+       public function  createParagraph(Request $request ,$id,$type){
+    
+        $test = Test::findOrFail($id);
+        if($type == 'writing'){
+         
+            return view('admin.question.writing.create-paragraph',compact('test'));
+        }
+     }
+
+     public function  paragraphStore(Request $request){
+    
+      if($request->type == "writing"){
+          
+        $test = Test::findOrFail($request->testId);
+        $test->paragraph = $request->paragraph;
+        $test->save();
+
+        return  redirect()->route('admin.question.index',['id' => $test->id]);
+    }
+   }
 }

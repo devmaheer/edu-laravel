@@ -1,4 +1,4 @@
-<div class="modal fade" id="treatment-category-modal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="mcqs-modal" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-750px">
         <!--begin::Modal content-->

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,14 +63,16 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('/test/edit/{id}', 'edit')->name('test.edit');
             Route::post('/test/update/', 'update')->name('test.update');
             Route::get('/test/delete/{id}', 'delete')->name('test.delete');
+            Route::get('test/{id}/paragraph/create/{type}', 'createParagraph')->name('test.paragraph.create');
+            Route::post('test/paragraph/store', 'paragraphStore')->name('test.paragraph.store');
+
         });
-        Route::controller(TestController::class)->group(function () {
-            Route::get('/test/index', 'index')->name('test.index');
-            Route::get('/test/create', 'create')->name('test.create');
-            Route::post('/test/store', 'store')->name('test.store');
-            Route::get('/test/edit/{id}', 'edit')->name('test.edit');
-            Route::post('/test/update/', 'update')->name('test.update');
-            Route::get('/test/delete/{id}', 'delete')->name('test.delete');
+        Route::controller(QuestionController::class)->group(function () {
+            Route::get('test/question/index/{id}', 'index')->name('question.index');
+            Route::post('test/question/store', 'store')->name('question.store');
+            // Route::get('test/question/edit/{id}', 'edit')->name('question.edit');
+            // Route::post('test/question/update/', 'update')->name('question.update');
+            Route::get('test/question/delete/{id}', 'delete')->name('question.delete');
         });
     });
     

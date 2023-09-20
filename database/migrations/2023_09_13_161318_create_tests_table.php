@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('type'); 
             $table->integer('category'); 
             $table->integer('status'); 
+            $table->longText('paragraph')->nullable(); 
             $table->timestamps();
         });
     }
