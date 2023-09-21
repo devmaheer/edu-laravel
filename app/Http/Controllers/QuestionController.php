@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FillInBlank;
 use App\Models\Option;
 use App\Models\Question;
 use App\Models\Test;
@@ -26,8 +27,27 @@ class QuestionController extends Controller
      public function  store(Request $request){
     
         if($request->question_type == "reading"){
-         
-            $test = Test::findOrFail($request->testId);
+          if($request->filling_blanks == '1'){
+          
+           $question = Question::create([
+            'name'=>$request->fill_1,
+            'test_id'=>$request->testId,
+             'paragraph'=>$request->paragraph,
+            'type'=> 1,
+          ]);
+          FillInBlank::create([
+            'question_id'=>$question->id,
+            "fill_1" => $request->fill_1,
+            "ans_1" => $request->ans_1,
+            "fill_2" => $request->fill_2,
+            "ans_2" => $request->ans_2,
+            "fill_3" => $request->fill_3,
+            "ans_3" => $request->ans_3,
+            "fill_4" =>$request->fill_4,
+          ]);
+          return  redirect()->back();
+          }else{
+          
            $question = Question::create([
               'name'=>$request->mcqs_name,
               'test_id'=>$request->testId,
@@ -46,17 +66,9 @@ class QuestionController extends Controller
             }
 
             return  redirect()->back();
+         }
         }
-        if($request->type == "listening"){
-          
-            $test = Test::findOrFail($request->testId);
-            $test->paragraph = $request->paragraph;
-            $test->save();
-
-            return  redirect()->back();
-        }
-   
-       
+  
      }
 
      public function edit(Request $request,$id){

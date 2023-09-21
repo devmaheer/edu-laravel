@@ -9,10 +9,14 @@ class Question extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-
+     
     public function options()
     {
         return $this->hasMany(Option::class,'question_id','id');
+    }
+    public function fillInBlank()
+    {
+        return $this->hasMany(FillInBlank::class,'question_id','id');
     }
     public function test()
     {

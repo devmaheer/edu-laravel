@@ -24,14 +24,14 @@
         <!--end::Page title-->
         <!--begin::Actions-->
         <div class="d-flex align-items-center py-2 py-md-1">
-            <h3 class="mr-5"> Test Name: <span>{{ $test->name }}</span></h3>
-            <h3 class="mr-5 ms-5"> Question Count: <span>{{ count($test->questions) }}</span></h3>
+           
+
             <!--begin::Button-->
             <button type="button" id="add_mcqs" data-bs-toggle="modal" data-bs-target="#mcqs-modal"
                 class="btn ms-5  btn-dark">
                 <span class="indicator-label">Add MCQS</span>
             </button>
-            <button type="button" id="add_fillingBlanks" onclick="addFillingBlanks(this)" class="btn ms-5 btn-dark">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#filling-modal" class="btn ms-5 btn-dark">
                 <span class="indicator-label">Add Filling Blanks</span>
 
             </button>
@@ -44,14 +44,47 @@
         </div>
         <!--end::Actions-->
     </div>
-    <!--end::Toolbar-->
+    <div class="card mb-7">
+        <!--begin::Card body-->
+        <div class="card-body">
+            <!--begin::Compact form-->
+            <div class="row d-flex align-items-center">
+                <div class="col-md-2">
+                    <h3 class="mr-5"> Test Name </h3> <span>{{ $test->name }}</span>
 
+                </div>
+                <div class="col-md-4">
+                    {{-- <h3 class="mr-5">Paragraph Questions</h3> <span>{{ $test->name }}</span>                 --}}
+
+                </div>
+                
+            </div>
+            
+            <!--end::Compact form-->
+            <!--begin::Advance form-->
+            {{-- class="collapse" --}}
+
+            <!--end::Row-->
+
+        </div>
+        <!--end::Advance form-->
+    </div>
+    <!--end::Card body-->
+
+    <!--end::Toolbar-->
+    <div class="d-flex flex-wrap flex-stack pb-7">
+        <!--begin::Title-->
+        <div class="d-flex flex-wrap align-items-center my-1">
+            <h3 class="fw-bolder me-5 my-1" id="carCount">{{ count($test->questions) }} Question(s) Found
+        </div>
+        <!--end::Title-->
+    </div>
     <div class="card mb-6 mb-xl-9">
         <div class="card-body p-9">
             <!--begin::Table container-->
             <div class="table-responsive">
                 <!--begin::Table-->
-                <table class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
+                <table id="question_table" class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
                     <!--begin::Table head-->
                     <thead>
                         <tr class="fw-bolder text-muted">
@@ -73,32 +106,17 @@
                                 @if ($question->paragraph == '1')
                                     One
                                 @elseif($question->paragraph == '2')
-                                Two
+                                    Two
                                 @elseif($question->paragraph == '3')
-                                Three
+                                    Three
                                 @elseif($question->paragraph == '4')
-                                Four
+                                    Four
                                 @elseif($question->paragraph == '5')
-                                Five
+                                    Five
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('admin.question.index', [$test->id]) }}"
-                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
-                                    <span class="svg-icon svg-icon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path
-                                                d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z"
-                                                fill="black" />
-                                            <path opacity="0.3"
-                                                d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z"
-                                                fill="black" />
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </a>
+                              
                                 <a href="{{ route('admin.question.edit', [$question->id]) }}"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                     <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
@@ -149,6 +167,8 @@
 
     <!--end::Modal - New Target-->
     @include('admin.question.reading.partials.mcqs-modal')
+    @include('admin.question.reading.partials.filling-blank-modal')
+
 @endsection
 @section('script')
     <script>
@@ -184,5 +204,31 @@
             console.log(input);
 
         }
+        $('#question_table').DataTable({
+
+            // "responsivePriority": 1,
+            // "dom": "<'table-responsive'tr>",
+            searching: true,
+            "order": [
+                [2, "asc"]
+            ],
+            info: !1,
+            columns: [{
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": false,
+
+                }
+
+            ]
+        });
     </script>
 @endsection
