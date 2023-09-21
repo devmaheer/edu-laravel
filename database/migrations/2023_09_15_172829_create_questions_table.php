@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('name'); 
             $table->foreignId('test_id');
+            $table->integer('category');
             $table->integer('paragraph');
             $table->integer('type'); 
             $table->timestamps();

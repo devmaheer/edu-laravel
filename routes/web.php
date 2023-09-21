@@ -71,6 +71,7 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('test/question/index/{id}', 'index')->name('question.index');
             Route::post('test/question/store', 'store')->name('question.store');
             Route::get('test/question/edit/{id}', 'edit')->name('question.edit');
+            Route::get('test/question/fill-in-blanks/edit/{id}', 'editFillInBlanks')->name('question.fillinblanks.edit');
             Route::post('test/question/update/', 'update')->name('question.update');
             Route::get('test/question/delete/{id}', 'delete')->name('question.delete');
         });

@@ -16,7 +16,7 @@ class Question extends Model
     }
     public function fillInBlank()
     {
-        return $this->hasMany(FillInBlank::class,'question_id','id');
+        return $this->hasOne(FillInBlank::class,'question_id','id');
     }
     public function test()
     {
