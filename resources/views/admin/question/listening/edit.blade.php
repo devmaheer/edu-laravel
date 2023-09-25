@@ -35,7 +35,7 @@
             </div><br />
             <form action="{{ route('admin.question.update') }}" method="post">
                 @csrf
-                <input type="hidden" name="question_type" value="reading">
+                <input type="hidden" name="question_type" value="listening">
                 <input type="hidden" name="testId" value="{{ $question->test->id }}">
                 <input type="hidden" name="questionId" value="{{ $question->id }}">
                 <div class="row g-9 mb-8">
@@ -53,42 +53,7 @@
                                 name="mcqs_name" id="mcqs" autocomplete="off" />
                             <!--end::Input-->
                         </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Paragraph</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select  name="paragraph" class="form-control form-control-solid required" >
-                                <option value="">Select </option>
-                                <option value="1" {{ $question->paragraph == 1 ? 'selected' : '' }}>One</option>
-                                <option value="2" {{ $question->paragraph == 2 ? 'selected' : '' }}>Two</option>
-                                <option value="3" {{ $question->paragraph == 3 ? 'selected' : '' }}>Three</option>
-                                @if($question->test->category == '2')
-                                <option value="4" {{ $question->paragraph == 4 ? 'selected' : '' }}>Four</option>
-                                <option value="5" {{ $question->paragraph == 5 ? 'selected' : '' }}>Five</option>
-                                 @endif
-                                <!-- Add more options as needed -->
-                            </select>
-                            <!--end::Input-->
-                        </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Question Group</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select  name="question_group" class="form-control form-control-solid required" >
-                                <option value="">Select </option>
-                                 @foreach( App\Helper\Helper::questionGroup() as $key => $group )
-                                 <option value="{{$key}}" {{ $key == $question->question_group ? 'selected':''}}>{{$group}}</option>
-                                 @endforeach
-                                <!-- Add more options as needed -->
-                            </select>
-                            <!--end::Input-->
-                        </div>
+             
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">

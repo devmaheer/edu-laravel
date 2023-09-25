@@ -65,6 +65,8 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('/test/delete/{id}', 'delete')->name('test.delete');
             Route::get('test/{id}/paragraph/create/{type}', 'createParagraph')->name('test.paragraph.create');
             Route::post('test/paragraph/store', 'paragraphStore')->name('test.paragraph.store');
+            Route::get('test/{id}/audio/create/{type}', 'createAudio')->name('test.audio.create');
+            Route::post('test/audio/store', 'audioStore')->name('test.audio.store');
 
         });
         Route::controller(QuestionController::class)->group(function () {

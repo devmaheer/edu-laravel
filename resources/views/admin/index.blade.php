@@ -54,7 +54,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-around">
                                 <span>Total Test</span>
-                                <span>1</span>
+                                <span>{{$testCount}}</span>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-around">
                                 <span>Total Questions</span>
-                                <span>45</span>
+                                <span>{{$questCount}}</span>
                             </div>
                         </div>
                     </div>

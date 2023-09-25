@@ -6,13 +6,13 @@
         <!--begin::Page title-->
         <div class="page-title d-flex flex-column me-3">
             <!--begin::Title-->
-            <h1 class="d-flex text-dark fw-bolder my-1 fs-3">Reading Question List</h1>
+            <h1 class="d-flex text-dark fw-bolder my-1 fs-3">Listening Question List</h1>
             <!--end::Title-->
             <!--begin::Breadcrumb-->
             <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
                 <!--begin::Item-->
                 <li class="breadcrumb-item text-gray-600">
-                    <a href="javascript:void(0)" class="text-gray-600 text-hover-primary">Reading Question</a>
+                    <a href="javascript:void(0)" class="text-gray-600 text-hover-primary">Listening Question</a>
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
@@ -37,8 +37,8 @@
             </button>
 
 
-            <a href="{{ route('admin.test.paragraph.create', ['type' => 'reading', 'id' => $test->id]) }}"
-                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Paragraph</a>
+            <a href="{{ route('admin.test.audio.create', ['type' => 'listening', 'id' => $test->id]) }}"
+                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Audio</a>
 
             <!--end::Button-->
         </div>
@@ -53,32 +53,8 @@
                     <h5 class="mr-5"> Test Name </h5> <span>{{ $test->name }}</span>              
 
                 </div>
-                
-                <div class="col-md-2">
+          
                         
-                    <h5 class="mr-5">Paragraph One Q</h5> <span>{{ $paraCount1 }}</span>
-
-                </div>
-           
-                <div class="col-md-2">
-                    <h5 class="mr-5">Paragraph Two Q</h5> <span>{{ $paraCount2 }}</span>              
-
-                </div>
-                <div class="col-md-2">
-                   
-                    <h5 class="mr-5">Paragraph Three Q</h5> <span>{{ $paraCount3 }}</span>              
-
-                </div>
-                @if($test->category == '2')
-                <div class="col-md-2">
-                    <h5 class="mr-5">Paragraph Four Q</h5> <span>{{ $paraCount4 }}</span>              
-
-                </div>
-                <div class="col-md-2">
-                    <h5 class="mr-5">Paragraph Five Q</h5> <span>{{ $paraCount5 }}</span>              
-
-                </div>
-              @endif               
                 
             </div>
             
@@ -114,7 +90,7 @@
                             <th>Name</th>
                             <th>Type</th>
                             <th>Category</th>
-                            <th>Paragraph</th>
+                            <th></th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -128,21 +104,11 @@
                             <td>{{ $question->type == 1 ? 'Reading' : 'Listening' }}</td>
                             <td>{{ $question->category == 1 ? 'MCQS' : 'Filling Blanks' }}</td>
                             <td>
-                                @if ($question->paragraph == '1')
-                                    One
-                                @elseif($question->paragraph == '2')
-                                    Two
-                                @elseif($question->paragraph == '3')
-                                    Three
-                                @elseif($question->paragraph == '4')
-                                    Four
-                                @elseif($question->paragraph == '5')
-                                    Five
-                                @endif
+                              
                             </td>
                             <td>
                                 @if($question->category == '2')
-                                <a href="{{ route('admin.question.fillinblanks.edit', [$question->id]) }}"
+                                <a href="{{ route('admin.question.fillinblanks.edit', [$question->id,'listening'=>'true']) }}"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                     <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                     <span class="svg-icon svg-icon-3">
@@ -159,7 +125,7 @@
                                     <!--end::Svg Icon-->
                                 </a>
                                 @else
-                                <a href="{{ route('admin.question.edit', [$question->id]) }}"
+                                <a href="{{ route('admin.question.edit', [$question->id,'listening'=>'true']) }}"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                     <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                     <span class="svg-icon svg-icon-3">
@@ -176,7 +142,7 @@
                                     <!--end::Svg Icon-->
                                 </a>
                                 @endif
-                                <a href="{{ route('admin.question.delete', [$question->id,'type'=>'reading']) }}"
+                                <a href="{{ route('admin.question.delete', [$question->id]) }}"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                     <span class="svg-icon svg-icon-3">
@@ -210,8 +176,8 @@
     <!--begin::Modal - New Target-->
 
     <!--end::Modal - New Target-->
-    @include('admin.question.reading.partials.mcqs-modal')
-    @include('admin.question.reading.partials.filling-blank-modal')
+    @include('admin.question.listening.partials.mcqs-modal')
+    @include('admin.question.listening.partials.filling-blank-modal')
 
 @endsection
 @section('script')
@@ -279,12 +245,5 @@
 
             ]
         });
-        
-        imgInp.onchange = evt => {
-        const [file] = imgInp.files
-        if (file) {
-            blah.src = URL.createObjectURL(file)
-        }
-        }
     </script>
 @endsection

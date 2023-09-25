@@ -35,107 +35,107 @@
             </div><br />
             <form action="{{ route('admin.question.update') }}" method="post">
                 @csrf
-                <input type="hidden" name="question_type" value="reading">
+                <input type="hidden" name="question_type" value="listening">
+                <input type="hidden" name="filling_blanks" value="1">
                 <input type="hidden" name="testId" value="{{ $question->test->id }}">
                 <input type="hidden" name="questionId" value="{{ $question->id }}">
                 <div class="row g-9 mb-8">
 
                     <div class="d-flex flex-column me-n7 pe-7">
                         <!--begin::Form Row-->
+         
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">MCQS</span>
+                                First Sentence
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input class="form-control" value="{{ $question->name }}" placeholder="Enter a MCqs"
-                                name="mcqs_name" id="mcqs" autocomplete="off" />
-                            <!--end::Input-->
-                        </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Paragraph</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select  name="paragraph" class="form-control form-control-solid required" >
-                                <option value="">Select </option>
-                                <option value="1" {{ $question->paragraph == 1 ? 'selected' : '' }}>One</option>
-                                <option value="2" {{ $question->paragraph == 2 ? 'selected' : '' }}>Two</option>
-                                <option value="3" {{ $question->paragraph == 3 ? 'selected' : '' }}>Three</option>
-                                @if($question->test->category == '2')
-                                <option value="4" {{ $question->paragraph == 4 ? 'selected' : '' }}>Four</option>
-                                <option value="5" {{ $question->paragraph == 5 ? 'selected' : '' }}>Five</option>
-                                 @endif
-                                <!-- Add more options as needed -->
-                            </select>
-                            <!--end::Input-->
-                        </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Question Group</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select  name="question_group" class="form-control form-control-solid required" >
-                                <option value="">Select </option>
-                                 @foreach( App\Helper\Helper::questionGroup() as $key => $group )
-                                 <option value="{{$key}}" {{ $key == $question->question_group ? 'selected':''}}>{{$group}}</option>
-                                 @endforeach
-                                <!-- Add more options as needed -->
-                            </select>
-                            <!--end::Input-->
-                        </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Number Options</span>
-                            </label>
-                            <select onchange="addOptions(this)" class="form-control form-control-solid required">
-                                <option value="">Select Number Options</option>
-                                <option value="1" {{ count($question->options) == 1 ? 'selected' : '' }}>One</option>
-                                <option value="2" {{ count($question->options) == 2 ? 'selected' : '' }}>Two</option>
-                                <option value="3" {{ count($question->options) == 3 ? 'selected' : '' }}>Three</option>
-                                <option value="4" {{ count($question->options) == 4 ? 'selected' : '' }}>Four</option>
-                                <option value="5" {{ count($question->options) == 5 ? 'selected' : '' }}>Five</option>
-
-                                <!-- Add more options as needed -->
-                            </select>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-
-                            <!--end::Input-->
-                        </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Options</span>
-                            </label>
-                            <div class="attach-options">
-                                @foreach ($question->options as $option)
-                                    <div class="row option-row">
-                                        <div class="col-md-10">
-                                            <input class="form-control mt-3 option" value="{{$option->name}}" placeholder="Enter a Option"
-                                                name="options[name][]" id="options-" autocomplete="off" />
-                                            <input type="hidden" id="trueValue" class="true-value"
-                                                name='options[trueValue][]' value="{{$option->is_correct ? $option->name : ''}}" />
-                                        </div>
-                                        <div class="col-md-2 mt-5">
-                                            <input type="radio" class="form-check-input" {{$option->is_correct ? 'checked' : ''}} onclick="addTruthValue(this)"
-                                                name="true-value" value="1">
-                                        </div>
-                                    </div>
-                                @endforeach
+                            <div class="">
+                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_1}}"  name="fill_1" id="mcqs"
+                                    autocomplete="off" />
                             </div>
-
-                            <!--end::Label-->
-                            <!--begin::Input-->
-
                             <!--end::Input-->
                         </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                Answer
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div class="">
+                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->ans_1}}" name="ans_1" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                Second Sentence
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div class="">
+                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_2}}" name="fill_2" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                Answer
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div class="">
+                                <input class="form-control" placeholder="Enter "  value="{{$question->fillInBlank->ans_2}}" name="ans_2" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                Third Sentence
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div class="">
+                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_3}}" name="fill_3" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                Answer
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div class="">
+                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->ans_3}}" name="ans_3" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                Fourth Sentence
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div class="">
+                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_4}}" name="fill_4" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Input-->
+                        </div>
+
                         <!--end::Form Row-->
 
                         <!--begin::Repeater-->

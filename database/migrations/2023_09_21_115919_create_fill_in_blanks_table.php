@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('fill_in_blanks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('question_id');
-            $table->longText('fill_1'); 
-            $table->longText('ans_1'); 
-            $table->longText('fill_2'); 
-            $table->longText('ans_2'); 
-            $table->longText('fill_3'); 
-            $table->longText('ans_3'); 
-            $table->longText('fill_4'); 
+            $table->longText('fill_1')->nullable();
+            $table->longText('ans_1')->nullable();
+            $table->longText('fill_2')->nullable();
+            $table->longText('ans_2')->nullable();
+            $table->longText('fill_3')->nullable();
+            $table->longText('ans_3')->nullable();
+            $table->longText('fill_4')->nullable();
             $table->timestamps();
         });
     }

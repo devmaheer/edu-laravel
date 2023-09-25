@@ -101,6 +101,13 @@
                                             <i class="fa-brands fa-readme"></i>
                                             <!--end::Svg Icon-->
                                         </a>
+                                        <a href="{{ route('admin.question.index', [$test->id,'listening'=>'true']) }}"
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                           
+                                            <i class="fa-solid fa-music"></i>
+                                            <!--end::Svg Icon-->
+                                        </a>
                                         <a href="{{ route('admin.test.edit', [$test->id]) }}"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->

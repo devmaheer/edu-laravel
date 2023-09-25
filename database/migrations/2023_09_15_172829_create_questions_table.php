@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->longText('name'); 
+            $table->integer('question_group');
             $table->foreignId('test_id');
             $table->integer('category');
-            $table->integer('paragraph');
+            $table->integer('paragraph')->nullable();
             $table->integer('type'); 
+            $table->string('image_url')->nullable();
             $table->timestamps();
         });
     }

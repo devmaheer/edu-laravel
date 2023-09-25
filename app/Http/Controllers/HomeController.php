@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Branch;
+use App\Models\Question;
+use App\Models\Test;
 
 class HomeController extends Controller
-{   
+{
     /**
      * Create a new controller instance.
      *
@@ -28,19 +30,18 @@ class HomeController extends Controller
     {
 
         return view('frontend.index');
-       
     }
     public function index()
     {
-      
+        $questCount = Question::count();
+        $testCount = Test::count();
         if (Auth::user()->hasRole('Admin')) {
-            $partners = User::whereHas('roles', function($query) {
+            $partners = User::whereHas('roles', function ($query) {
                 $query->where('name', 'Partner');
             })->get();
 
-            return view('admin.index', compact('partners'));
+            return view('admin.index', compact('partners', 'questCount', 'testCount'));
         }
-       
     }
 
     /**
@@ -61,7 +62,6 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        
     }
 
     /**

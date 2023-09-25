@@ -33,7 +33,7 @@
                         General Training
                     @endif <br /></h3>
             </div><br />
-            <form action="{{ route('admin.question.update') }}" method="post">
+            <form action="{{ route('admin.question.update') }}" method="post" enctype="multipart/form-data" >
                 @csrf
                 <input type="hidden" name="question_type" value="reading">
                 <input type="hidden" name="filling_blanks" value="1">
@@ -66,7 +66,34 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Filling Blanks</span>
+                                <span >Select Image</span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input accept="image/*" type='file' name="image" id="imgInp" />
+                            <img id="blah" src="{{$question->image_url}}" height="100" width="150" alt="your image" />
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                <span class="required">Select Question Group</span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <select  name="question_group" class="form-control form-control-solid required" >
+                                <option value="">Select </option>
+                                 @foreach( App\Helper\Helper::questionGroup() as $key => $group )
+                                 <option value="{{$key}}" {{$key ==$question->question_group ? 'selected' : ''}} >{{$group}}</option>
+                                 @endforeach
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!--end::Input-->
+                        </div>
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bolder form-label mb-2">
+                                First Sentence
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -79,7 +106,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Answer</span>
+                                Answer
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -92,7 +119,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Filling Blanks</span>
+                                Second Sentence
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -105,7 +132,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Answer</span>
+                                Answer
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -118,7 +145,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Filling Blanks</span>
+                                Third Sentence
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -131,7 +158,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Answer</span>
+                                Answer
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -144,7 +171,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Filling Blanks</span>
+                                Fourth Sentence
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -224,6 +251,12 @@
             let input = $(e).closest('.option-row').find('#trueValue').val(input1);
             console.log(input);
 
+        }
+        imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
         }
     </script>
 @endsection

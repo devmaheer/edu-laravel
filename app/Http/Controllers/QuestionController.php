@@ -14,14 +14,23 @@ class QuestionController extends Controller
 
    public function index(Request $request, $id)
    {
-
       $test = Test::where('id', $id)->with('questions')->first();
-      $paraCount1 = Question::where('test_id', $id)->where('paragraph',1)->count();
-      $paraCount2 = Question::where('test_id', $id)->where('paragraph',2)->count();
-      $paraCount3 = Question::where('test_id', $id)->where('paragraph',3)->count();
-      $paraCount4 = Question::where('test_id', $id)->where('paragraph',4)->count();
-      $paraCount5 = Question::where('test_id', $id)->where('paragraph',5)->count();
-      return view('admin.question.reading.index', compact('test','paraCount1','paraCount2','paraCount3','paraCount4','paraCount5'));
+      if ($request->listening == 'true') {
+         $questions = Question::where('test_id', $id)->where('type', 2)->get();
+         $paraCount1 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 1)->count();
+         $paraCount2 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 2)->count();
+         $paraCount3 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 3)->count();
+         $paraCount4 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 4)->count();
+         $paraCount5 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 5)->count();
+         return view('admin.question.listening.index', compact('test', 'questions', 'paraCount1', 'paraCount2', 'paraCount3', 'paraCount4', 'paraCount5'));
+      }
+      $questions = Question::where('test_id', $id)->where('type', 1)->get();
+      $paraCount1 = Question::where('test_id', $id)->where('type', 1)->where('paragraph', 1)->count();
+      $paraCount2 = Question::where('test_id', $id)->where('type', 1)->where('paragraph', 2)->count();
+      $paraCount3 = Question::where('test_id', $id)->where('type', 1)->where('paragraph', 3)->count();
+      $paraCount4 = Question::where('test_id', $id)->where('type', 1)->where('paragraph', 4)->count();
+      $paraCount5 = Question::where('test_id', $id)->where('type', 1)->where('paragraph', 5)->count();
+      return view('admin.question.reading.index', compact('test', 'questions', 'paraCount1', 'paraCount2', 'paraCount3', 'paraCount4', 'paraCount5'));
    }
 
    public function  create(Request $request, $id, $type)
@@ -33,21 +42,30 @@ class QuestionController extends Controller
       if ($request->question_type == "reading") {
          if ($request->filling_blanks == '1') {
 
-            $this->storeFillingBlanks($request);
+            $this->storeFillingBlanks($request, 1);
          } else {
-            $this->storeMcqs($request);
+            $this->storeMcqs($request, 1);
+         }
+         return  redirect()->back();
+      } else {
+         if ($request->filling_blanks == '1') {
+
+            $this->storeFillingBlanks($request, 2);
+         } else {
+            $this->storeMcqs($request, 2);
          }
          return  redirect()->back();
       }
    }
-   public function storeMcqs($request)
+   public function storeMcqs($request, $type)
    {
       $question = Question::create([
          'name' => $request->mcqs_name,
          'test_id' => $request->testId,
+         'question_group' => $request->question_group,
          'paragraph' => $request->paragraph,
          'category' => 1,
-         'type' => 1,
+         'type' => $type,
       ]);
       // dd($request->all());
 
@@ -60,14 +78,26 @@ class QuestionController extends Controller
          ]);
       }
    }
-   public function storeFillingBlanks($request)
+   public function storeFillingBlanks($request, $type)
    {
+      if ($request->has('image')) {
+         $image = $request->file('image');
+         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+         $image->move(public_path().'/storage', $filename);
+         $imageUrl = asset('storage/'.$filename);
+         // You can also generate a public URL for the stored image
+       
+     
+      }
+    
       $question = Question::create([
          'name' => $request->fill_1,
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
+         'question_group' => $request->question_group,
          'category' => 2,
-         'type' => 1,
+         'image_url'=>$imageUrl,
+         'type' => $type,
       ]);
       FillInBlank::create([
          'question_id' => $question->id,
@@ -85,32 +115,45 @@ class QuestionController extends Controller
    {
 
       $question = Question::where('id', $id)->with('options', 'test')->first();
-
+      if ($request->listening == 'true') {
+         return view('admin.question.listening.edit', compact('question'));
+      }
       return view('admin.question.reading.edit', compact('question'));
    }
    public function editFillInBlanks(Request $request, $id)
    {
 
       $question = Question::where('id', $id)->with('fillInBlank', 'test')->first();
-
+      if ($request->listening == 'true') {
+         return view('admin.question.listening.edit-fillinblanks', compact('question'));
+      }
       return view('admin.question.reading.edit-fillinblanks', compact('question'));
    }
    public function  update(Request $request)
    {
+     
 
       if ($request->question_type == "reading") {
 
          if ($request->filling_blanks == '1') {
-            $question=  $this->updateFillInBlank($request);
+            $question =  $this->updateFillInBlank($request, 1);
             return  redirect()->route('admin.question.index', ['id' => $question->test->id]);
          } else {
-           $question = $this->updateMcqs($request);
+            $question = $this->updateMcqs($request, 1);
             return  redirect()->route('admin.question.index', ['id' => $question->test->id]);
+         }
+      } else {
+         if ($request->filling_blanks == '1') {
+            $question =  $this->updateFillInBlank($request, 2);
+            return  redirect()->route('admin.question.index', ['id' => $question->test->id, 'listening' => 'true']);
+         } else {
+            $question = $this->updateMcqs($request, 2);
+            return  redirect()->route('admin.question.index', ['id' => $question->test->id, 'listening' => 'true']);
          }
       }
    }
 
-   public function updateMcqs($request)
+   public function updateMcqs($request, $type)
    {
       $test = Test::findOrFail($request->testId);
 
@@ -118,8 +161,9 @@ class QuestionController extends Controller
          'name' => $request->mcqs_name,
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
+         'question_group' => $request->question_group,
          'category' => 1,
-         'type' => 1,
+         'type' => $type,
       ]);
 
       $question = Question::findOrFail($request->questionId);
@@ -135,14 +179,28 @@ class QuestionController extends Controller
       return $question;
    }
 
-   public function updateFillInBlank($request)
-   {
+   public function updateFillInBlank($request, $type)
+   { 
+      $imageUrl= "null";
+      if ($request->has('image')) {
+      
+         $image = $request->file('image');
+         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+         $image->move(public_path().'/storage', $filename);
+         $imageUrl = asset('storage/'.$filename);
+         // You can also generate a public URL for the stored image
+       
+     
+      }
+     
       Question::where('id', $request->questionId)->update([
          'name' => $request->fill_1,
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
          'category' => 2,
-         'type' => 1,
+         'image_url' => $imageUrl,
+         'question_group' => $request->question_group,
+         'type' => $type,
       ]);
       $question = Question::findOrFail($request->questionId);
       FillInBlank::where('id', $question->fillInBlank->id)->update([
@@ -155,14 +213,20 @@ class QuestionController extends Controller
          "ans_3" => $request->ans_3,
          "fill_4" => $request->fill_4,
       ]);
-     return $question;
+      return $question;
    }
 
-   public function delete($id)
+   public function delete(Request $request,$id)
    {
+      
       $question = Question::findOrFail($id);
       Option::where('question_id', $id)->delete();
       $question->delete();
-      return  redirect()->route('admin.question.index', ['id' => $question->test->id]);
+      if ($request->type == "reading") {
+         return  redirect()->route('admin.question.index', ['id' => $question->test->id]);   
+      }else{
+         return  redirect()->route('admin.question.index', ['id' => $question->test->id, 'listening' => 'true']);
+        
+      }
    }
 }
