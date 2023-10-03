@@ -82,7 +82,7 @@
                             <!--begin::Input-->
                             <select  name="question_group" class="form-control form-control-solid required" >
                                 <option value="">Select </option>
-                                 @foreach( App\Helper\Helper::questionGroup() as $key => $group )
+                                 @foreach( App\Helper\Helper::questionGroup(null,1) as $key => $group )
                                  <option value="{{$key}}" {{ $key == $question->question_group ? 'selected':''}}>{{$group}}</option>
                                  @endforeach
                                 <!-- Add more options as needed -->

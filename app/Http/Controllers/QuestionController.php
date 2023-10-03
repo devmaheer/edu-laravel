@@ -17,12 +17,8 @@ class QuestionController extends Controller
       $test = Test::where('id', $id)->with('questions')->first();
       if ($request->listening == 'true') {
          $questions = Question::where('test_id', $id)->where('type', 2)->get();
-         $paraCount1 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 1)->count();
-         $paraCount2 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 2)->count();
-         $paraCount3 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 3)->count();
-         $paraCount4 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 4)->count();
-         $paraCount5 = Question::where('test_id', $id)->where('type', 2)->where('paragraph', 5)->count();
-         return view('admin.question.listening.index', compact('test', 'questions', 'paraCount1', 'paraCount2', 'paraCount3', 'paraCount4', 'paraCount5'));
+        
+         return view('admin.question.listening.index', compact('test', 'questions'));
       }
       $questions = Question::where('test_id', $id)->where('type', 1)->get();
       $paraCount1 = Question::where('test_id', $id)->where('type', 1)->where('paragraph', 1)->count();
@@ -80,6 +76,7 @@ class QuestionController extends Controller
    }
    public function storeFillingBlanks($request, $type)
    {
+      $imageUrl= null;
       if ($request->has('image')) {
          $image = $request->file('image');
          $filename = uniqid() . '.' . $image->getClientOriginalExtension();
@@ -181,7 +178,7 @@ class QuestionController extends Controller
 
    public function updateFillInBlank($request, $type)
    { 
-      $imageUrl= "null";
+      $imageUrl= null;
       if ($request->has('image')) {
       
          $image = $request->file('image');
