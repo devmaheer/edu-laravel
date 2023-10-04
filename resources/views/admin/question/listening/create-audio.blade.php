@@ -29,7 +29,7 @@
                 <h3> Test Name : {{ $test->name }} <br /><br />
                     Test Category : @if ($test->category == '1') Acadamic @else General Training @endif <br /></h3>
             </div><br />
-            <form action="{{ route('admin.test.audio.store') }}" method="post">
+            <form action="{{ route('admin.test.audio.store') }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <input type="hidden" name="type" value="listening">
                 <input type="hidden" name="testId" value="{{$test->id}}">
@@ -40,10 +40,11 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Audio </span>
                         </label>
-                     
-                        <input type="file" id="upload" name="file" />
+                       
+                        <input type="file" id="upload"  name="audio" />
                         <audio id="audio" controls>
-                          <source src="" id="src" />
+                            {{-- <source src="audio651db3e5b3706.mp3" id="src" /> --}}
+                          <source  id="src" src="{{$test->audio}}" />
                         </audio>
                    
                     </div>
@@ -74,6 +75,7 @@
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
+
  function handleFiles(event) {
     var files = event.target.files;
     $("#src").attr("src", URL.createObjectURL(files[0]));
@@ -81,6 +83,6 @@
 }
 
 document.getElementById("upload").addEventListener("change", handleFiles, false);
-  </script>
+   </script>
   
 @endsection

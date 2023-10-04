@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
             $table->text('name'); 
+       
             $table->integer('type'); 
             $table->integer('category'); 
             $table->integer('status'); 
+            $table->string('audio')->nullable(); 
             $table->longText('paragraph1')->nullable(); 
             $table->longText('paragraph2')->nullable(); 
             $table->longText('paragraph3')->nullable(); 

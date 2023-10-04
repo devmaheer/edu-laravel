@@ -98,6 +98,16 @@ class TestController extends Controller
   public function audioStore(Request $request)
   {
     $test = Test::findOrFail($request->testId);
-    dd($request);
+    $audioUrl= null;
+    if ($request->has('audio')) {
+       $audio = $request->file('audio');
+       $filename = uniqid() . '.' . $audio->getClientOriginalExtension();
+       $audio->move(public_path().'/storage/audio', $filename);
+       $audioUrl = asset('storage/audio/'.$filename);  
+   
+    }
+   $test->audio =  $audioUrl;
+   $test->save();
+   return redirect()->back();
   }
 }
