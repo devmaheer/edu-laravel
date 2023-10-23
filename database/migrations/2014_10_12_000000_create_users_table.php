@@ -19,9 +19,14 @@ return new class extends Migration
             $table->unsignedBigInteger('businessunit_id')->nullable();
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('country')->nullable();
+            $table->string('password')->nullable();
+            $table->string('duration')->nullable();
+            $table->string('status')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+           
             $table->rememberToken();
             $table->timestamps();
         });

@@ -87,11 +87,11 @@ Route::group(['middleware' => 'auth'], function() {
 
         });
         Route::controller(UserController::class)->group(function () {
-            Route::get('user/index/', 'index')->name('user.index');
-            Route::get('user/create/', 'create')->name('user.create');
+            Route::get('user/index', 'index')->name('user.index');
+            Route::get('user/create', 'create')->name('user.create');
             Route::post('user/store', 'store')->name('user.store');
             Route::get('user/edit/{id}', 'edit')->name('user.edit');
-            Route::post('user/update/', 'update')->name('user.update');
+            Route::post('user/update', 'update')->name('user.update');
             Route::get('user/delete/{id}', 'delete')->name('user.delete');
         });
     });
