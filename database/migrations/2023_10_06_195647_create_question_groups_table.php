@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('question_groups', function (Blueprint $table) {
             $table->id();
-            $table->longText('name'); 
-            $table->integer('question_group_id')->nullable();
-            $table->foreignId('test_id');
-            $table->integer('category');
+            $table->integer('test_id')->nullable();
+            $table->integer('type')->nullable();
+            $table->longText('description')->nullable();
+            $table->longText('heading')->nullable();
             $table->integer('position')->nullable();
-            $table->integer('paragraph')->nullable();
-            $table->integer('type'); 
-            $table->string('image_url')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('question_groups');
     }
 };
+

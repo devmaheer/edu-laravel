@@ -3,6 +3,7 @@
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuestionGroupController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -77,6 +78,13 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('test/question/fill-in-blanks/edit/{id}', 'editFillInBlanks')->name('question.fillinblanks.edit');
             Route::post('test/question/update/', 'update')->name('question.update');
             Route::get('test/question/delete/{id}', 'delete')->name('question.delete');
+        });
+        Route::controller(QuestionGroupController::class)->group(function () {
+            Route::get('test/question-group/index/{id}', 'index')->name('question.group.index');
+            Route::get('test/question-group/create/{id}', 'create')->name('question.group.create');
+            Route::post('test/question-group/store', 'store')->name('question.group.store');
+            Route::get('test/question-group/delete/{id}', 'delete')->name('question.group.delete');
+
         });
         Route::controller(UserController::class)->group(function () {
             Route::get('user/index/', 'index')->name('user.index');

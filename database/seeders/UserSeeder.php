@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $password = Hash::make(env('SYSTEM_ADMIN_PASSWORD'));
+        $password = Hash::make(123456);
         $data = [
             ['name' => 'Hamza Admin', 'email' => 'admin@gmail.com', 'password' => $password],
         ];

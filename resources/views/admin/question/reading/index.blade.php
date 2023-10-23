@@ -25,7 +25,7 @@
         <!--begin::Actions-->
         <div class="d-flex align-items-center py-2 py-md-1">
            
-
+         
             <!--begin::Button-->
             <button type="button" id="add_mcqs" data-bs-toggle="modal" data-bs-target="#mcqs-modal"
                 class="btn ms-5  btn-dark">
@@ -36,7 +36,8 @@
 
             </button>
 
-
+            <a href="{{route('admin.question.group.index',['id' => $test->id,'type'=>'reading'])}}"
+                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Question Group</a>
             <a href="{{ route('admin.test.paragraph.create', ['type' => 'reading', 'id' => $test->id]) }}"
                 class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Paragraph</a>
 

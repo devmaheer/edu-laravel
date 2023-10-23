@@ -111,7 +111,15 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->ans_1}}" name="ans_1" id="mcqs"
+                                <input class="form-control" placeholder="Enter option one "  name="ans_first_1" value="{{$question->fillInBlank->ans_first_1}}"  id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Two" name="ans_first_2"  value="{{$question->fillInBlank->ans_first_2}}" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Three" name="ans_first_2" value="{{$question->fillInBlank->ans_first_2}}"  id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -137,7 +145,15 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter "  value="{{$question->fillInBlank->ans_2}}" name="ans_2" id="mcqs"
+                                <input class="form-control" placeholder="Enter option one " name="ans_sec_1"  value="{{$question->fillInBlank->ans_sec_1}}" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Two " name="ans_sec_2"  value="{{$question->fillInBlank->ans_sec_2}}" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Three " name="ans_sec_3"  value="{{$question->fillInBlank->ans_sec_3}}" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -163,8 +179,18 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->ans_3}}" name="ans_3" id="mcqs"
-                                    autocomplete="off" />
+                                <div class="">
+                                    <input class="form-control" placeholder="Enter option One" name="ans_third_1"  value="{{$question->fillInBlank->ans_third_1}}"  id="mcqs"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="">
+                                    <input class="form-control" placeholder="Enter option Two" name="ans_third_2"  value="{{$question->fillInBlank->ans_third_2}}"  id="mcqs"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="">
+                                    <input class="form-control" placeholder="Enter option Three" name="ans_third_3"  value="{{$question->fillInBlank->ans_third_3}}"  id="mcqs"
+                                        autocomplete="off" />
+                                </div>
                             </div>
                             <!--end::Input-->
                         </div>

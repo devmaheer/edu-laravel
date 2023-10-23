@@ -17,7 +17,7 @@ class QuestionController extends Controller
       $test = Test::where('id', $id)->with('questions')->first();
       if ($request->listening == 'true') {
          $questions = Question::where('test_id', $id)->where('type', 2)->get();
-        
+
          return view('admin.question.listening.index', compact('test', 'questions'));
       }
       $questions = Question::where('test_id', $id)->where('type', 1)->get();
@@ -76,35 +76,41 @@ class QuestionController extends Controller
    }
    public function storeFillingBlanks($request, $type)
    {
-      $imageUrl= null;
+      $imageUrl = null;
       if ($request->has('image')) {
          $image = $request->file('image');
          $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-         $image->move(public_path().'/storage', $filename);
-         $imageUrl = asset('storage/'.$filename);
+         $image->move(public_path() . '/storage', $filename);
+         $imageUrl = asset('storage/' . $filename);
          // You can also generate a public URL for the stored image
-       
-     
+
+
       }
-    
+
       $question = Question::create([
          'name' => $request->fill_1,
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
          'question_group' => $request->question_group,
          'category' => 2,
-         'image_url'=>$imageUrl,
+         'image_url' => $imageUrl,
          'type' => $type,
       ]);
       FillInBlank::create([
          'question_id' => $question->id,
-         "fill_1" => $request->fill_1,
-         "ans_1" => $request->ans_1,
-         "fill_2" => $request->fill_2,
-         "ans_2" => $request->ans_2,
-         "fill_3" => $request->fill_3,
-         "ans_3" => $request->ans_3,
-         "fill_4" => $request->fill_4,
+         "fill_1" => strtolower($request->fill_1),
+         "ans_first_1" => strtolower($request->ans_first_1),
+         "ans_first_2" => strtolower($request->ans_first_2),
+         "ans_first_3" => strtolower($request->ans_first_3),
+         "fill_2" => strtolower($request->fill_2),
+         "ans_sec_1" => strtolower($request->ans_sec_1),
+         "ans_sec_2" => strtolower($request->ans_sec_2),
+         "ans_sec_3" => strtolower($request->ans_sec_3),
+         "fill_3" => strtolower($request->fill_3),
+         "ans_third_1" => strtolower($request->ans_third_1),
+         "ans_third_2" => strtolower($request->ans_third_2),
+         "ans_third_3" => strtolower($request->ans_third_3),
+         "fill_4" => strtolower($request->fill_4),
       ]);
    }
 
@@ -128,7 +134,7 @@ class QuestionController extends Controller
    }
    public function  update(Request $request)
    {
-     
+
 
       if ($request->question_type == "reading") {
 
@@ -177,19 +183,19 @@ class QuestionController extends Controller
    }
 
    public function updateFillInBlank($request, $type)
-   { 
-      $imageUrl= null;
+   {
+      $imageUrl = null;
       if ($request->has('image')) {
-      
+
          $image = $request->file('image');
          $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-         $image->move(public_path().'/storage', $filename);
-         $imageUrl = asset('storage/'.$filename);
+         $image->move(public_path() . '/storage', $filename);
+         $imageUrl = asset('storage/' . $filename);
          // You can also generate a public URL for the stored image
-       
-     
+
+
       }
-     
+
       Question::where('id', $request->questionId)->update([
          'name' => $request->fill_1,
          'test_id' => $request->testId,
@@ -202,28 +208,33 @@ class QuestionController extends Controller
       $question = Question::findOrFail($request->questionId);
       FillInBlank::where('id', $question->fillInBlank->id)->update([
          'question_id' => $question->id,
-         "fill_1" => $request->fill_1,
-         "ans_1" => $request->ans_1,
-         "fill_2" => $request->fill_2,
-         "ans_2" => $request->ans_2,
-         "fill_3" => $request->fill_3,
-         "ans_3" => $request->ans_3,
-         "fill_4" => $request->fill_4,
+         "fill_1" => strtolower($request->fill_1),
+         "ans_first_1" => strtolower($request->ans_first_1),
+         "ans_first_2" => strtolower($request->ans_first_2),
+         "ans_first_3" => strtolower($request->ans_first_3),
+         "fill_2" => strtolower($request->fill_2),
+         "ans_sec_1" => strtolower($request->ans_sec_1),
+         "ans_sec_2" => strtolower($request->ans_sec_2),
+         "ans_sec_3" => strtolower($request->ans_sec_3),
+         "fill_3" => strtolower($request->fill_3),
+         "ans_third_1" => strtolower($request->ans_third_1),
+         "ans_third_2" => strtolower($request->ans_third_2),
+         "ans_third_3" => strtolower($request->ans_third_3),
+         "fill_4" => strtolower($request->fill_4),
       ]);
       return $question;
    }
 
-   public function delete(Request $request,$id)
+   public function delete(Request $request, $id)
    {
-      
+
       $question = Question::findOrFail($id);
       Option::where('question_id', $id)->delete();
       $question->delete();
       if ($request->type == "reading") {
-         return  redirect()->route('admin.question.index', ['id' => $question->test->id]);   
-      }else{
+         return  redirect()->route('admin.question.index', ['id' => $question->test->id]);
+      } else {
          return  redirect()->route('admin.question.index', ['id' => $question->test->id, 'listening' => 'true']);
-        
       }
    }
 }
