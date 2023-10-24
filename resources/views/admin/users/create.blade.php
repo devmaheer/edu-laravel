@@ -78,7 +78,7 @@
                         <!--end::Label-->
                        
                         <select class="form-control form-control-solid required" name="country">
-                            <option value="0">Select Country</option>
+                            <option value="">Select Country</option>
                             @foreach ($countries as $country)
                         
                               <option value="{{$country}}">{{$country}}</option>
