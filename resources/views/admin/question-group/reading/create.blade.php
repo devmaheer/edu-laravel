@@ -18,6 +18,7 @@
             </ul>
             <!--end::Breadcrumb-->
         </div>
+        
         <!--end::Page title-->
     </div>
     <!--end::Toolbar-->
@@ -49,8 +50,8 @@
                             <span class="required">Description </span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid required" placeholder="Enter Description"
-                            name="description" />
+                        <textarea class="form-control form-control-solid required" placeholder="Enter Description"
+                            name="description" ></textarea>
                     </div>
                     <div class="col-md-12">
                         <table id="question_table" class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
@@ -60,6 +61,7 @@
 
                                     <th>Name</th>
                                     <th>Type</th>
+                                    <th>Paragraph</th>
                                     <th>Category</th>
                                     <th>Actions</th>
                                 </tr>
@@ -72,6 +74,7 @@
                                         <td>{{ $question->name }}</td>
 
                                         <td>{{ $question->type == 1 ? 'Reading' : 'Listening' }}</td>
+                                        <td>{{ $question->paragraph }}</td>
                                         <td>{{ $question->category == 1 ? 'MCQS' : 'Filling Blanks' }}</td>
 
 

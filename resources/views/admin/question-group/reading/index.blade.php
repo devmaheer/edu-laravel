@@ -38,8 +38,12 @@
         <div class="card-body">
             <!--begin::Compact form-->
             <div class="row d-flex align-items-center">
-            
-                        
+                <div class="col-md-2">
+                    <h5 class="mr-5"> Test Name </h5> <span>{{ $test->name }}</span>              
+
+                </div>
+                
+                      
                 
             </div>
             
