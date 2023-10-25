@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Branch;
 use App\Models\Question;
+use App\Models\QuestionGroup;
 use App\Models\Test;
 
 class HomeController extends Controller
@@ -34,13 +35,15 @@ class HomeController extends Controller
     public function index()
     {
         $questCount = Question::count();
-        $testCount = Test::count();
+        $test = Test::get();
+        $userCount = User::count();
+        $questionGroupCount = QuestionGroup::count();
         if (Auth::user()->hasRole('Admin')) {
             $partners = User::whereHas('roles', function ($query) {
                 $query->where('name', 'Partner');
             })->get();
 
-            return view('admin.index', compact('partners', 'questCount', 'testCount'));
+            return view('admin.index', compact('partners','userCount','questionGroupCount', 'questCount', 'test'));
         }
     }
 
