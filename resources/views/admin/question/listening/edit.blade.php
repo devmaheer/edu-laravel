@@ -56,15 +56,18 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Question Group</span>
+                                <span class="required">Select Question Part</span>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <select  name="question_group" class="form-control form-control-solid required" >
+                            <select  name="part" class="form-control form-control-solid required" >
                                 <option value="">Select </option>
-                                 @foreach( App\Helper\Helper::questionGroup(null,1) as $key => $group )
-                                 <option value="{{$key}}" {{ $key == $question->question_group ? 'selected':''}}>{{$group}}</option>
-                                 @endforeach
+                                 
+                                 <option value="1" {{$question->part =='1' ? 'selected' : ''}}>One</option>
+                                 <option value="2" {{$question->part =='2' ? 'selected' : ''}}>Two</option>
+                                 <option value="3" {{$question->part =='3' ? 'selected' : ''}}>Three</option>
+                                 <option value="4" {{$question->part =='4' ? 'selected' : ''}}>Four</option>
+                              
                                 <!-- Add more options as needed -->
                             </select>
                             <!--end::Input-->

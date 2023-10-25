@@ -6,17 +6,17 @@
         <!--begin::Page title-->
         <div class="page-title d-flex flex-column me-3">
             <!--begin::Title-->
-            <h1 class="d-flex text-dark fw-bolder my-1 fs-3">Listening Question List</h1>
+            <h1 class="d-flex text-dark fw-bolder my-1 fs-3">Listening Question Group List</h1>
             <!--end::Title-->
             <!--begin::Breadcrumb-->
             <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
                 <!--begin::Item-->
                 <li class="breadcrumb-item text-gray-600">
-                    <a href="javascript:void(0)" class="text-gray-600 text-hover-primary">Listening Question</a>
+                    <a href="javascript:void(0)" class="text-gray-600 text-hover-primary"> Question Group</a>
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
-                <li class="breadcrumb-item text-gray-500">Question List</li>
+                <li class="breadcrumb-item text-gray-500">Listening Question Group List</li>
                 <!--end::Item-->
             </ul>
             <!--end::Breadcrumb-->
@@ -25,21 +25,9 @@
         <!--begin::Actions-->
         <div class="d-flex align-items-center py-2 py-md-1">
            
-
-            <!--begin::Button-->
-            <button type="button" id="add_mcqs" data-bs-toggle="modal" data-bs-target="#mcqs-modal"
-                class="btn ms-5  btn-dark">
-                <span class="indicator-label">Add MCQS</span>
-            </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#filling-modal" class="btn ms-5 btn-dark">
-                <span class="indicator-label">Add Filling Blanks</span>
-
-            </button>
-
-            <a href="{{route('admin.question.group.index',['id' => $test->id,'type'=>'listening'])}}"
-                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Question Group</a>
-            <a href="{{ route('admin.test.audio.create', ['type' => 'listening', 'id' => $test->id]) }}"
-                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Audio</a>
+         
+            <a href="{{ route('admin.question.group.create', ['id' => $test->id,'type'=>'listening']) }}"
+                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Question Group</a>
 
             <!--end::Button-->
         </div>
@@ -54,8 +42,8 @@
                     <h5 class="mr-5"> Test Name </h5> <span>{{ $test->name }}</span>              
 
                 </div>
-          
-                        
+                
+                      
                 
             </div>
             
@@ -74,7 +62,7 @@
     <div class="d-flex flex-wrap flex-stack pb-7">
         <!--begin::Title-->
         <div class="d-flex flex-wrap align-items-center my-1">
-            <h3 class="fw-bolder me-5 my-1" id="carCount">{{ count($questions) }} Question(s) Found
+            <h3 class="fw-bolder me-5 my-1" id="carCount">{{ count($questionGroup) }} Question Group(s) Found
         </div>
         <!--end::Title-->
     </div>
@@ -88,62 +76,27 @@
                     <thead>
                         <tr class="fw-bolder text-muted">
 
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Category</th>
-                            <th>Part</th>
+                            <th>Heading</th>
+                            <th>Description</th>
+                            <th>Position</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <!--end::Table head-->
                     <!--begin::Table body-->
                     <tbody>
-                        @foreach ($questions as $question)
+                        @foreach ($questionGroup as $group)
                         <tr>
-                            <td>{{ $question->name }}</td>
+                            <td>{{ $group->heading }}</td>
 
-                            <td>{{ $question->type == 1 ? 'Reading' : 'Listening' }}</td>
-                            <td>{{ $question->category == 1 ? 'MCQS' : 'Filling Blanks' }}</td>
+                            <td>{{ $group->description }}</td>
+                           
+                            <td>{{ $group->position }}</td>
                             <td>
-                               {{ $question->part }}
-                            </td>
-                            <td>
-                                @if($question->category == '2')
-                                <a href="{{ route('admin.question.fillinblanks.edit', [$question->id,'listening'=>'true']) }}"
-                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                    <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
-                                    <span class="svg-icon svg-icon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path opacity="0.3"
-                                                d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
-                                                fill="black" />
-                                            <path
-                                                d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
-                                                fill="black" />
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </a>
-                                @else
-                                <a href="{{ route('admin.question.edit', [$question->id,'listening'=>'true']) }}"
-                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                    <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
-                                    <span class="svg-icon svg-icon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path opacity="0.3"
-                                                d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
-                                                fill="black" />
-                                            <path
-                                                d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
-                                                fill="black" />
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </a>
-                                @endif
-                                <a href="{{ route('admin.question.delete', [$question->id]) }}"
+                               
+                            
+                       
+                                <a href="{{ route('admin.question.group.delete', ['id'=>$group->id,'type'=>'reading']) }}"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                     <span class="svg-icon svg-icon-3">
@@ -174,11 +127,10 @@
         </div>
     </div>
 
-    <!--begin::Modal - New Target-->
+    <!--begin::Modal - New Target-->    
 
     <!--end::Modal - New Target-->
-    @include('admin.question.listening.partials.mcqs-modal')
-    @include('admin.question.listening.partials.filling-blank-modal')
+   
 
 @endsection
 @section('script')
@@ -246,6 +198,7 @@
 
             ]
         });
+        
         imgInp.onchange = evt => {
         const [file] = imgInp.files
         if (file) {

@@ -58,7 +58,7 @@ class QuestionController extends Controller
       $question = Question::create([
          'name' => $request->mcqs_name,
          'test_id' => $request->testId,
-         'question_group' => $request->question_group,
+         'part' => $request->part ? : null,
          'paragraph' => $request->paragraph,
          'category' => 1,
          'type' => $type,
@@ -91,9 +91,9 @@ class QuestionController extends Controller
          'name' => $request->fill_1,
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
-         'question_group' => $request->question_group,
          'category' => 2,
          'image_url' => $imageUrl,
+         'part' => $request->part ? : null,
          'type' => $type,
       ]);
       FillInBlank::create([
@@ -164,7 +164,7 @@ class QuestionController extends Controller
          'name' => $request->mcqs_name,
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
-         'question_group' => $request->question_group,
+         'part' => $request->part ? : null,
          'category' => 1,
          'type' => $type,
       ]);
@@ -202,7 +202,7 @@ class QuestionController extends Controller
          'paragraph' => $request->paragraph,
          'category' => 2,
          'image_url' => $imageUrl,
-         'question_group' => $request->question_group,
+         'part' => $request->part ? : null,
          'type' => $type,
       ]);
       $question = Question::findOrFail($request->questionId);

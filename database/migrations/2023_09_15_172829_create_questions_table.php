@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('name'); 
             $table->integer('question_group_id')->nullable();
             $table->foreignId('test_id');
+            $table->integer('part')->nullable();
             $table->integer('category');
             $table->integer('position')->nullable();
             $table->integer('paragraph')->nullable();

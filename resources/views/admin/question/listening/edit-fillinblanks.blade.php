@@ -54,22 +54,27 @@
                             <img id="blah" src="{{$question->image_url}}" height="100" width="150" alt="your image" />
                             <!--end::Input-->
                         </div>
+               
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Question Group</span>
+                                <span class="required">Select Question Part</span>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <select  name="question_group" class="form-control form-control-solid required" >
+                            <select  name="part" class="form-control form-control-solid required" >
                                 <option value="">Select </option>
-                                 @foreach( App\Helper\Helper::questionGroup(null,2) as $key => $group )
-                                 <option value="{{$key}}" {{$key ==$question->question_group ? 'selected' : ''}} >{{$group}}</option>
-                                 @endforeach
+                                 
+                                 <option value="1" {{$question->part =='1' ? 'selected' : ''}}>One</option>
+                                 <option value="2" {{$question->part =='2' ? 'selected' : ''}}>Two</option>
+                                 <option value="3" {{$question->part =='3' ? 'selected' : ''}}>Three</option>
+                                 <option value="4" {{$question->part =='4' ? 'selected' : ''}}>Four</option>
+                               
                                 <!-- Add more options as needed -->
                             </select>
                             <!--end::Input-->
                         </div>
+                 
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
@@ -91,7 +96,15 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->ans_1}}" name="ans_1" id="mcqs"
+                                <input class="form-control" placeholder="Enter option one "  name="ans_first_1" value="{{$question->fillInBlank->ans_first_1}}"  id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Two" name="ans_first_2"  value="{{$question->fillInBlank->ans_first_2}}" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Three" name="ans_first_2" value="{{$question->fillInBlank->ans_first_2}}"  id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -117,7 +130,15 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter "  value="{{$question->fillInBlank->ans_2}}" name="ans_2" id="mcqs"
+                                <input class="form-control" placeholder="Enter option one " name="ans_sec_1"  value="{{$question->fillInBlank->ans_sec_1}}" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Two " name="ans_sec_2"  value="{{$question->fillInBlank->ans_sec_2}}" id="mcqs"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="">
+                                <input class="form-control" placeholder="Enter option Three " name="ans_sec_3"  value="{{$question->fillInBlank->ans_sec_3}}" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -143,8 +164,18 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->ans_3}}" name="ans_3" id="mcqs"
-                                    autocomplete="off" />
+                                <div class="">
+                                    <input class="form-control" placeholder="Enter option One" name="ans_third_1"  value="{{$question->fillInBlank->ans_third_1}}"  id="mcqs"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="">
+                                    <input class="form-control" placeholder="Enter option Two" name="ans_third_2"  value="{{$question->fillInBlank->ans_third_2}}"  id="mcqs"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="">
+                                    <input class="form-control" placeholder="Enter option Three" name="ans_third_3"  value="{{$question->fillInBlank->ans_third_3}}"  id="mcqs"
+                                        autocomplete="off" />
+                                </div>
                             </div>
                             <!--end::Input-->
                         </div>
@@ -161,7 +192,6 @@
                             </div>
                             <!--end::Input-->
                         </div>
-
                         <!--end::Form Row-->
 
                         <!--begin::Repeater-->

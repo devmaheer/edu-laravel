@@ -19,6 +19,8 @@ class QuestionGroupController extends Controller
             $test = Test::findOrFail($id);
             return view('admin.question-group.reading.index', compact('test', 'questionGroup'));
         } else {
+            $test = Test::findOrFail($id);
+            return view('admin.question-group.listening.index', compact('test', 'questionGroup'));
         }
     }
 
@@ -34,7 +36,7 @@ class QuestionGroupController extends Controller
             }])->first(); 
         }
 
-            return view('admin.question-group.reading.create', compact('test'));
+            return view('admin.question-group.listening.create', compact('test'));
        
     }
 
@@ -55,6 +57,22 @@ class QuestionGroupController extends Controller
 
 
            return redirect()->route('admin.question.group.index',['id' => $request->testId,'type' => 'reading']);
+        }else{
+            $position = QuestionGroup::where('type',2)->where('test_id',$request->testId)->max('position');
+              
+            $group = QuestionGroup::create([
+                'heading' => $request->name,
+                'test_id' => $request->testId,
+                'type' =>1,
+                'description' => $request->description,
+                'position'=> $position == null ? 1 : $position+1,
+            ]);
+
+            $question = Question::whereIn('id', $request->questionChecked)->update(['question_group_id' => $group->id]);
+
+
+           return redirect()->route('admin.question.group.index',['id' => $request->testId,'type' => 'listening']);
+
         }
   
     
