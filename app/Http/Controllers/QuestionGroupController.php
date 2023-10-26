@@ -30,13 +30,15 @@ class QuestionGroupController extends Controller
             $test = Test::where('id', $id)->with(['questions' => function ($query) {
                 $query->where('question_group_id',null)->where('type', 1);
             }])->first();
+            return view('admin.question-group.reading.create', compact('test'));
         }else{
             $test = Test::where('id', $id)->with(['questions' => function ($query) {
                 $query->where('question_group_id',null)->where('type', 2);
             }])->first(); 
+            return view('admin.question-group.listening.create', compact('test'));
         }
 
-            return view('admin.question-group.listening.create', compact('test'));
+          
        
     }
 
@@ -44,13 +46,13 @@ class QuestionGroupController extends Controller
     {
         if($request->type == 'reading'){
               $position = QuestionGroup::where('type',1)->where('test_id',$request->testId)->max('position');
-              
+           
             $group = QuestionGroup::create([
                 'heading' => $request->name,
                 'test_id' => $request->testId,
                 'type' =>1,
                 'description' => $request->description,
-                'position'=> $position == null ? 1 : $position+1,
+                'position'=> $position == null ? 1 : $position + 1,
             ]);
 
             $question = Question::whereIn('id', $request->questionChecked)->update(['question_group_id' => $group->id]);
@@ -65,7 +67,7 @@ class QuestionGroupController extends Controller
                 'test_id' => $request->testId,
                 'type' =>1,
                 'description' => $request->description,
-                'position'=> $position == null ? 1 : $position+1,
+                'position'=> $position == null ? 1 : $position + 1,
             ]);
 
             $question = Question::whereIn('id', $request->questionChecked)->update(['question_group_id' => $group->id]);

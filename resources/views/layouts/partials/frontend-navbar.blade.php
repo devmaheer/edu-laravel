@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="{{route('frontend.index')}}" class="nav-item nav-link active">Home</a>
             <a href="{{route('frontend.ielts.prepration-courses')}}" class="nav-item nav-link"> IELTS Prepration Courses</a>
             <a href="courses.html" class="nav-item nav-link"> IELTS Practice Material</a>
             <div class="nav-item dropdown">
