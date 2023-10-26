@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
+Route::get('/ielts/prepration-courses', [FrontendController::class, 'preprationCourses'])->name('frontend.ielts.prepration-courses');
+Route::get('/ielts/practice-marterial', [FrontendController::class, 'practiceMarterial'])->name('frontend.ielts.practice-marterial');
+Route::get('/ielts/practice-ielts-online', [FrontendController::class, 'onlineTest'])->name('frontend.ielts.practice-ielts-online');
 
 Route::get('admin/dashboard', [
     'as' => 'home',
