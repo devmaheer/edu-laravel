@@ -15,6 +15,7 @@ class QuestionController extends Controller
    public function index(Request $request, $id)
    {
       $test = Test::where('id', $id)->with('questions')->first();
+    
       if ($request->listening == 'true') {
          $questions = Question::where('test_id', $id)->where('type', 2)->get();
 
@@ -34,7 +35,7 @@ class QuestionController extends Controller
    }
    public function  store(Request $request)
    {
-
+     
       if ($request->question_type == "reading") {
          if ($request->filling_blanks == '1') {
 
@@ -55,15 +56,15 @@ class QuestionController extends Controller
    }
    public function storeMcqs($request, $type)
    {
+
       $question = Question::create([
          'name' => $request->mcqs_name,
          'test_id' => $request->testId,
          'part' => $request->part ? : null,
          'paragraph' => $request->paragraph,
-         'category' => 1,
+         'category' => $request->option_number == '5' ? 3 :  1,
          'type' => $type,
       ]);
-      // dd($request->all());
 
       foreach ($request->options['name'] as $key => $name) {
 
@@ -123,6 +124,14 @@ class QuestionController extends Controller
       }
       return view('admin.question.reading.edit', compact('question'));
    }
+   public function editFiveOptions(Request $request, $id){
+      if($request->listening == 'true'){
+         $question = Question::where('id', $id)->with('options', 'test')->first();
+         return view('admin.question.listening.partials.five-options-edit', compact('question')); 
+      }
+      $question = Question::where('id', $id)->with('options', 'test')->first();
+      return view('admin.question.reading.partials.five-options-edit', compact('question')); 
+   }
    public function editFillInBlanks(Request $request, $id)
    {
 
@@ -134,8 +143,7 @@ class QuestionController extends Controller
    }
    public function  update(Request $request)
    {
-
-
+    
       if ($request->question_type == "reading") {
 
          if ($request->filling_blanks == '1') {
@@ -158,6 +166,7 @@ class QuestionController extends Controller
 
    public function updateMcqs($request, $type)
    {
+    
       $test = Test::findOrFail($request->testId);
 
       Question::where('id', $request->questionId)->update([
@@ -165,7 +174,7 @@ class QuestionController extends Controller
          'test_id' => $request->testId,
          'paragraph' => $request->paragraph,
          'part' => $request->part ? : null,
-         'category' => 1,
+         'category' => $request->option_number == '5' ? 3 :  1,
          'type' => $type,
       ]);
 

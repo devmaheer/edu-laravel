@@ -81,6 +81,7 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('test/question/fill-in-blanks/edit/{id}', 'editFillInBlanks')->name('question.fillinblanks.edit');
             Route::post('test/question/update/', 'update')->name('question.update');
             Route::get('test/question/delete/{id}', 'delete')->name('question.delete');
+            Route::get('test/five/options-edit/{id}', 'editFiveOptions')->name('five-options.edit');
         });
         Route::controller(QuestionGroupController::class)->group(function () {
             Route::get('test/question-group/index/{id}', 'index')->name('question.group.index');

@@ -14,11 +14,13 @@ class QuestionGroupController extends Controller
     public function index(Request $request, $id)
     {
 
-        $questionGroup = QuestionGroup::where('test_id', $id)->get();
+       
         if ($request->type == 'reading') {
+            $questionGroup = QuestionGroup::where('type',1)->where('test_id', $id)->get();
             $test = Test::findOrFail($id);
             return view('admin.question-group.reading.index', compact('test', 'questionGroup'));
         } else {
+            $questionGroup = QuestionGroup::where('type',2)->where('test_id', $id)->get();
             $test = Test::findOrFail($id);
             return view('admin.question-group.listening.index', compact('test', 'questionGroup'));
         }

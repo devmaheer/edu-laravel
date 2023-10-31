@@ -20,7 +20,7 @@ echo "Deploying application ..."
     php artisan optimize:clear
 
     # Migrate database
-    php artisan migrate:fresh --seed
+    # php artisan migrate:fresh --seed
 
     # Note: If you're using queue workers, this is the place to restart them.
     # ...

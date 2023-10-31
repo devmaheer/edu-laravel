@@ -66,7 +66,7 @@
                             <label class="fs-5 fw-bolder form-label mb-2">
                                 <span class="required">Select Number Options</span>
                             </label>
-                            <select onchange="addOptions(this)" class="form-control form-control-solid required" >
+                            <select name="option_number" onchange="addOptions(this)" class="form-control form-control-solid required" >
                                 <option value="">Select Number Options</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>

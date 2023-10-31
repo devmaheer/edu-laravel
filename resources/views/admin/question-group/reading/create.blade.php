@@ -18,7 +18,7 @@
             </ul>
             <!--end::Breadcrumb-->
         </div>
-        
+
         <!--end::Page title-->
     </div>
     <!--end::Toolbar-->
@@ -29,8 +29,8 @@
 
             <form action="{{ route('admin.question.group.store') }}" method="post">
                 @csrf
-                  <input type="hidden" name="testId" value="{{$test->id}}">
-                  <input type="hidden" name="type" value="reading">
+                <input type="hidden" name="testId" value="{{ $test->id }}">
+                <input type="hidden" name="type" value="reading">
                 <div class="row g-9 mb-8">
 
                     <div class="col-md-6">
@@ -50,8 +50,7 @@
                             <span class="required">Description </span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid required" placeholder="Enter Description"
-                            name="description" ></textarea>
+                        <textarea class="form-control form-control-solid required" placeholder="Enter Description" name="description"></textarea>
                     </div>
                     <div class="col-md-12">
                         <table id="question_table" class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
@@ -75,11 +74,20 @@
 
                                         <td>{{ $question->type == 1 ? 'Reading' : 'Listening' }}</td>
                                         <td>{{ $question->paragraph }}</td>
-                                        <td>{{ $question->category == 1 ? 'MCQS' : 'Filling Blanks' }}</td>
+                                        <td>
+                                            @if ($question->category == 1)
+                                                MCQS
+                                            @elseif($question->category == 2)
+                                                Filling Blanks
+                                            @elseif($question->category == 3)
+                                                5 Options
+                                            @endif
+                                        </td>
 
 
                                         <td>
-                                            <input class="form-check-input" type="checkbox" value="{{$question->id}}" name="questionChecked[]" id="kt_permissions_core" />
+                                            <input class="form-check-input" type="checkbox" value="{{ $question->id }}"
+                                                name="questionChecked[]" id="kt_permissions_core" />
                                         </td>
                                     </tr>
                                 @endforeach
