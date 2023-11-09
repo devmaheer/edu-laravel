@@ -129,8 +129,11 @@ class QuestionController extends Controller
          $question = Question::where('id', $id)->with('options', 'test')->first();
          return view('admin.question.listening.partials.five-options-edit', compact('question')); 
       }
-      $question = Question::where('id', $id)->with('options', 'test')->first();
+      if($request->type == 'reading'){
+         $question = Question::where('id', $id)->with('options', 'test')->first();
       return view('admin.question.reading.partials.five-options-edit', compact('question')); 
+      }
+     
    }
    public function editFillInBlanks(Request $request, $id)
    {
