@@ -25,7 +25,7 @@ class TestController extends Controller
 
   public function store(Request $request)
   {
-
+     
     Test::create([
       'name' => $request->name,
       'status' => $request->status,
@@ -98,7 +98,7 @@ class TestController extends Controller
   public function audioStore(Request $request)
   {
     $test = Test::findOrFail($request->testId);
-    $audioUrl= null;
+    $audioUrl= $request->audio_url;
     if ($request->has('audio')) {
        $audio = $request->file('audio');
        $filename = uniqid() . '.' . $audio->getClientOriginalExtension();

@@ -67,7 +67,7 @@ class QuestionGroupController extends Controller
             $group = QuestionGroup::create([
                 'heading' => $request->name,
                 'test_id' => $request->testId,
-                'type' =>1,
+                'type' =>2,
                 'description' => $request->description,
                 'position'=> $position == null ? 1 : $position + 1,
             ]);

@@ -40,7 +40,7 @@
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                             <span class="required">Audio </span>
                         </label>
-                       
+                        <input type="hidden" name="audio_url" value="{{$test->audio}}">
                         <input type="file" id="upload"  name="audio" />
                         <audio id="audio" controls>
                             {{-- <source src="audio651db3e5b3706.mp3" id="src" /> --}}

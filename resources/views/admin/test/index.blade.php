@@ -80,10 +80,10 @@
                                     <td>
                                         @if ($test->type == '1')
                                             <span
-                                                class="badge badge-warning">{{ App\Helper\Helper::getTestType($test->type) }}</span>
-                                        @else
+                                                class="badge badge-primary">Paid</span>
+                                        @elseif($test->type == '2')
                                             <span
-                                                class="badge badge-primary">{{ App\Helper\Helper::getTestType($test->type) }}</span>
+                                                class="badge badge-warning">Mock</span>
                                         @endif
                                     </td>
                                     <td>
