@@ -39,8 +39,8 @@
                             <span class="required">Group Heading</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid required" placeholder="Enter Heading"
-                            name="name" />
+                        <textarea name="name"  placeholder="Enter Heading" ></textarea>
+                      
                     </div>
 
 
@@ -50,7 +50,7 @@
                             <span class="required">Description </span>
                         </label>
                         <!--end::Label-->
-                        <textarea class="form-control form-control-solid required" placeholder="Enter Description" name="description"></textarea>
+                        <textarea name="name"  placeholder="Enter Description" name="description" placeholder="Enter Heading" ></textarea>
                     </div>
                     <div class="col-md-12">
                         <table id="question_table" class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">
