@@ -87,9 +87,9 @@
                     <tbody>
                         @foreach ($questionGroup as $group)
                         <tr>
-                            <td>{{ $group->heading }}</td>
+                            <td>{!! $group->heading !!}</td>
 
-                            <td>{{ $group->description }}</td>
+                            <td>{!! $group->description  !!}</td>
                            
                             <td>{{ $group->position }}</td>
                             <td>

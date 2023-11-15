@@ -46,6 +46,7 @@ class QuestionGroupController extends Controller
 
     public function store(Request $request)
     {
+       
         if($request->type == 'reading'){
               $position = QuestionGroup::where('type',1)->where('test_id',$request->testId)->max('position');
            
