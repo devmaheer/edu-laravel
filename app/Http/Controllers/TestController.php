@@ -108,6 +108,6 @@ class TestController extends Controller
     }
    $test->audio =  $audioUrl;
    $test->save();
-   return redirect()->back();
+   return  redirect()->route('admin.question.index', ['id' => $test->id, 'listening' => 'true']);
   }
 }
