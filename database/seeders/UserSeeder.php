@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
     {
         $password = Hash::make(123456);
         $data = [
-            ['name' => 'Hamza Admin', 'email' => 'admin@gmail.com', 'password' => $password],
+            ['name' => 'Hamza Admin','status'=>'1', 'email' => 'admin@gmail.com', 'password' => $password],
         ];
 
         foreach ($data as $key => $value) {

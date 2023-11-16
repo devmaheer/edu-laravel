@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuestionGroupController;
+use App\Http\Controllers\RegisterationRequestController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,14 @@ Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
 Route::get('/ielts/prepration-courses', [FrontendController::class, 'preprationCourses'])->name('frontend.ielts.prepration-courses');
 Route::get('/ielts/practice-marterial', [FrontendController::class, 'practiceMarterial'])->name('frontend.ielts.practice-marterial');
 Route::get('/ielts/practice-ielts-online', [FrontendController::class, 'onlineTest'])->name('frontend.ielts.practice-ielts-online');
-
+Route::controller(RegisterationRequestController::class)->group(function () {
+    Route::get('registeration-request/create', 'create')->name('registeration-request-front-end.create');
+    Route::get('registeration-request/index', 'index')->name('registeration-request.index');
+    Route::post('registeration-request/store', 'store')->name('registeration-request.store');
+    Route::get('registeration-request/edit/{id}', 'edit')->name('registeration-request.edit');
+    Route::post('registeration-request/update', 'update')->name('registeration-request.update');
+    Route::get('registeration-request/delete/{id}', 'delete')->name('registeration-request.delete');
+});
 Route::get('admin/dashboard', [
     'as' => 'home',
     'uses' => 'HomeController@index'
@@ -42,9 +50,9 @@ Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
 // Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('admin/register', 'Auth\RegisterController@register');
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     // Admin Routes
-    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         // Roles
         Route::get('/roles', ['as' => 'roles.index', 'uses' => 'RoleController@index']);
@@ -72,7 +80,6 @@ Route::group(['middleware' => 'auth'], function() {
             Route::post('test/paragraph/store', 'paragraphStore')->name('test.paragraph.store');
             Route::get('test/{id}/audio/create/{type}', 'createAudio')->name('test.audio.create');
             Route::post('test/audio/store', 'audioStore')->name('test.audio.store');
-
         });
         Route::controller(QuestionController::class)->group(function () {
             Route::get('test/question/index/{id}', 'index')->name('question.index');
@@ -88,7 +95,6 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('test/question-group/create/{id}', 'create')->name('question.group.create');
             Route::post('test/question-group/store', 'store')->name('question.group.store');
             Route::get('test/question-group/delete/{id}', 'delete')->name('question.group.delete');
-
         });
         Route::controller(UserController::class)->group(function () {
             Route::get('user/index', 'index')->name('user.index');
@@ -99,8 +105,4 @@ Route::group(['middleware' => 'auth'], function() {
             Route::get('user/delete/{id}', 'delete')->name('user.delete');
         });
     });
-    
-
-
-
 });

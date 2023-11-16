@@ -50,7 +50,7 @@
                             <span class="required">Description </span>
                         </label>
                         <!--end::Label-->
-                        <textarea  placeholder="Enter Description" name="description" placeholder="Enter Heading" ></textarea>
+                        <textarea  placeholder="Enter Description" name="description" ></textarea>
                     </div>
                     <div class="col-md-12">
                         <table id="question_table" class="table table-row-dashed table-row-gray-100 align-middle gs-0 gy-3">

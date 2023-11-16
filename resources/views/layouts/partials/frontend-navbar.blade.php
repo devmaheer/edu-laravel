@@ -20,6 +20,6 @@
             </div>
             <a href="contact.html" class="nav-item nav-link">Testimonial</a>
         </div>
-        <a href="{{route('login.get')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+        <a href="{{route('registeration-request-front-end.create')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
