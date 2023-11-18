@@ -29,10 +29,11 @@ class RegisterationRequestController extends Controller
         return redirect()->back();
     }
 
-    public function index(){
+    public function index()
+    {
 
-     $requests = RegisterationRequest::get();
-    return view('admin.requests.index',compact('requests'));
+        $requests = RegisterationRequest::get();
+        return view('admin.requests.index', compact('requests'));
     }
     public function getCountries()
     {
