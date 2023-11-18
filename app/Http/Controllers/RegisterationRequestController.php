@@ -23,6 +23,7 @@ class RegisterationRequestController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'country' => $request->country,
+            'type' => $request->type == '2' ? '2' : '1',
         ]);
 
         return redirect()->back();

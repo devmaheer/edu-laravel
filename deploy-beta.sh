@@ -18,7 +18,7 @@ echo "Deploying application ..."
     # Clear cache
     php artisan config:cache
     php artisan optimize:clear
-
+    php artisan migrate
     # Migrate database
     # php artisan migrate:fresh --seed
 

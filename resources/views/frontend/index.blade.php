@@ -53,10 +53,12 @@
                                     <small>IELTS Crash Course </small>
                                     <br><br>
                                     <span class="h2"><del class="mr-2"
-                                            style="font-size: 15px; margin-right:8px">$50</del>$20</span>/month
+                                            style="font-size: 15px; margin-right:8px">$50</del>$20</span>
                                     <br><br>
                                 </div>
-                                <p class="card-text">Join our IELTS Crash Course, a focused 15-day program designed to accelerate your exam preparation. Gain expert insights, practice strategically, and boost your confidence for success in the IELTS test.</p>
+                                <p class="card-text">Join our IELTS Crash Course, a focused 15-day program designed to
+                                    accelerate your exam preparation. Gain expert insights, practice strategically, and
+                                    boost your confidence for success in the IELTS test.</p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -100,7 +102,7 @@
                                     </svg>Writing Tasks Evaluation
 
                                 </li>
-								     <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
@@ -110,11 +112,13 @@
                                 </li>
                             </ul>
                             <div class="card-body text-center">
-                                <a class="btn btn-outline-primary btn-lg" href="{{route('registeration-request-front-end.create')}}" style="border-radius:30px">Join Now</a>
+                                <a class="btn btn-outline-primary btn-lg"
+                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
                     </div>
-					
+
                     <div class="col-lg-4 col-md-12 mb-4">
                         <div class="card h-100 shadow-lg">
                             <div class="card-body">
@@ -122,19 +126,21 @@
                                     <h5 class="card-title">Standard</h5>
                                     <small> IELTS Complete Prep Course</small>
                                     <br><br>
-									<span class="h2"><del class="mr-2"
-										style="font-size: 15px; margin-right:8px">$70</del>$40</span>/month
+                                    <span class="h2"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$70</del>$40</span>
                                     <br><br>
                                 </div>
-                                <p class="card-text">Embark on a comprehensive IELTS Complete Preparation Course spanning one month.To make sure each student is provided Individual feedback, so we our groups of max 5 students. </p>
+                                <p class="card-text">Embark on a comprehensive IELTS Complete Preparation Course spanning
+                                    one month.To make sure each student is provided Individual feedback, so we keep our
+                                    groups of max 5 students. </p>
                             </div>
-							<ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                     </svg> 25 Live Sessions
-								</li>
+                                </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
@@ -173,7 +179,7 @@
                                     </svg>Writing Tasks Evaluation
 
                                 </li>
-								     <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
@@ -183,7 +189,9 @@
                                 </li>
                             </ul>
                             <div class="card-body text-center">
-                                <a class="btn btn-outline-primary btn-lg" href="{{route('registeration-request-front-end.create')}}" style="border-radius:30px">Join Now</a>
+                                <a class="btn btn-outline-primary btn-lg"
+                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -195,18 +203,20 @@
                                     <small> IELTS Intensive Prep Course</small>
                                     <br><br>
                                     <span class="h2"><del class="mr-2"
-										style="font-size: 15px; margin-right:8px">$150</del>$120</span>/month
+                                            style="font-size: 15px; margin-right:8px">$150</del>$120</span>
                                     <br><br>
                                 </div>
-                                <p class="card-text">Dive deep into success with our 45 Sessions Intensive IELTS Preparation Course, meticulously covering IELTS strategies, English grammar, and vocabulary. </p>
+                                <p class="card-text">Dive deep into success with our 45 Sessions Intensive IELTS
+                                    Preparation Course, meticulously covering IELTS strategies, English grammar, and
+                                    vocabulary. </p>
                             </div>
-							<ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                                     </svg>45 Live Sessions
-								</li>
+                                </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
@@ -245,7 +255,7 @@
                                     </svg>Mock Speaking Tests
 
                                 </li>
-								     <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
@@ -254,18 +264,20 @@
 
 
                                 </li>
-								<li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-									height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-									<path
-										d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-								</svg>Unlimited Access To Practice IELTS Online
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Unlimited Access To Practice IELTS Online
 
 
 
-							</li>
+                                </li>
                             </ul>
                             <div class="card-body text-center">
-								<a class="btn btn-outline-primary btn-lg" href="{{route('registeration-request-front-end.create')}}" style="border-radius:30px">Join Now</a>
+                                <a class="btn btn-outline-primary btn-lg"
+                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -274,7 +286,149 @@
         </div>
         <!-- Service End -->
 
+        <div class="row g-4 justify-content-center">
 
+            <div class="container p-5">
+                <div class="row">
+                    <h1 class="mb-4">IELTS Preparation Material</h1>
+                    <p class="mb-4">Unleash Your IELTS Potential with Our Comprehensive Resources. Explore a wealth of
+                        study guides,
+                        practice tests, and valuable tips crafted by experts in the field. You'll find everything you need
+                        to prepare
+                        for the IELTS exam effectively.</p>
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="card  shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Free Access</h5>
+
+                                </div>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg> Cambridge IELTS Books </li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Book for Writing & Speaking
+                                </li>
+
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"/>
+                                </svg>
+                                Custom Study Plan
+                                </li>
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"/>
+                                </svg>
+                                 List
+                                </li>
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"/>
+                                </svg>
+                                Grammar Notes
+                                </li>
+
+
+
+
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Free of Cost
+
+
+                                </li>
+                            </ul>
+                            <div class="card-body text-center">
+                                <a class="btn btn-outline-primary btn-lg"
+                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    style="border-radius:30px">Get Access</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="card  shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Paid Access</h5>
+
+                                </div>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg> Cambridge IELTS Books </li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Book for Writing & Speaking
+                                </li>
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Custom Study Plan
+                                </li>
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Vocabulary List
+                                </li>
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Grammar Notes
+                                </li>
+
+
+
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg> <span class="h2"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$30 USD</del>$10 USD</span>
+
+
+                                </li>
+                            </ul>
+                            <div class="card-body text-center">
+                                <a class="btn btn-outline-primary btn-lg"
+                                    href="{{ route('registeration-request-front-end.create',['type'=>'2']) }}"
+                                    style="border-radius:30px">Get Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">

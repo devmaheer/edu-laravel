@@ -10,7 +10,7 @@
 
                     <form action="{{ route('registeration-request.store') }}" method="post">
                         @csrf
-
+                          <input type="hidden" name="type" value="{{request()->query('type')}}">
                         <div class="row g-9 mb-8">
 
                             <div class="col-md-6">
@@ -104,7 +104,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p12.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p12.jpg')}}"></a></div>
                         <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p13.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p13.jpg')}}"></a></div>
                         <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p14.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p14.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p8.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p8.jpg')}}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p11.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p11.jpg')}}"></a></div>
                       
                     </div>
                 </div>

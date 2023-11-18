@@ -72,6 +72,14 @@
                                     <td>
                                         {{ $request->country }}
                                     </td>
+                                    <td>
+                                @if($request->type == '1')
+                                IELTS Preparation Courses
+                                @elseif($request->type == '2')
+                                IELTS Preparation Material
+
+                                @endif
+                                    </td>
 
 
                                     
@@ -111,6 +119,10 @@
                                 "orderable": true,
                                 
                             }, {
+                                "orderable": true,
+                               
+                            },
+                            {
                                 "orderable": true,
                                
                             },
