@@ -45,6 +45,12 @@
 
             <div class="container p-5">
                 <div class="row">
+                    <h1 class="mb-4">IELTS Preparation Courses</h1>
+                    <p class="mb-4">Unlock IELTS Success with Our Preparation Courses. Join our 1 on 1 IELTS preparation
+                        courses and
+                        empower yourself for success. Our expertly designed programs provide the guidance, resources, and
+                        support you need to excel in the IELTS exam. Prepare with confidence and achieve your desired band
+                        score with us.</p>
                     <div class="col-lg-4 col-md-12 mb-4">
                         <div class="card h-100 shadow-lg">
                             <div class="card-body">
@@ -113,7 +119,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    href="{{ route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'basic']) }}"
                                     style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
@@ -190,7 +196,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    href="{{ route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'standard']) }}"
                                     style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
@@ -276,7 +282,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    href="{{ route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'premium']) }}"
                                     style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
@@ -320,25 +326,28 @@
                                 </li>
 
 
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path
-                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"/>
-                                </svg>
-                                Custom Study Plan
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path
+                                            d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
+                                    </svg>
+                                    Custom Study Plan
                                 </li>
 
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path
-                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"/>
-                                </svg>
-                                 List
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path
+                                            d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
+                                    </svg>
+                                    List
                                 </li>
 
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path
-                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"/>
-                                </svg>
-                                Grammar Notes
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path
+                                            d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
+                                    </svg>
+                                    Grammar Notes
                                 </li>
 
 
@@ -356,7 +365,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create') }}"
+                                    href="{{ route('registeration-request-front-end.create', ['type' => '2', 'plan' => 'free']) }}"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>
@@ -421,7 +430,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create',['type'=>'2']) }}"
+                                    href="{{ route('registeration-request-front-end.create', ['type' => '2', 'plan' => 'paid']) }}"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>
@@ -700,4 +709,5 @@
     @endsection
 
     @section('script')
+    
     @endsection

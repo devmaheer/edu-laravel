@@ -24,9 +24,10 @@ class RegisterationRequestController extends Controller
             'phone' => $request->phone,
             'country' => $request->country,
             'type' => $request->type == '2' ? '2' : '1',
+            'plan' => $request->plan ?  $request->plan : null,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('frontend.index',['success'=>'true'])->with('success','true');
     }
 
     public function index()

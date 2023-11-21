@@ -23,8 +23,7 @@
         </div>
         <!--end::Page title-->
         <!--begin::Actions-->
-        <
-        <!--end::Actions-->
+        < <!--end::Actions-->
     </div>
     <!--end::Toolbar-->
     <div class="d-flex flex-wrap flex-stack pb-7">
@@ -48,8 +47,9 @@
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Country</th>
-                           
-                           
+                            <th>Type</th>
+                            <th>Plan</th>
+
                         </tr>
                     </thead>
                     <!--end::Table head-->
@@ -73,18 +73,21 @@
                                         {{ $request->country }}
                                     </td>
                                     <td>
-                                @if($request->type == '1')
-                                IELTS Preparation Courses
-                                @elseif($request->type == '2')
-                                IELTS Preparation Material
-
-                                @endif
+                                        @if ($request->type == '1')
+                                            IELTS Preparation Courses
+                                        @elseif($request->type == '2')
+                                            IELTS Preparation Material
+                                        @endif
                                     </td>
 
+                            <td>    {{ $request->plan }}</td>
 
-                                    
-                                 
-                                   
+
+
+
+
+
+
                                 </tr>
                             @endforeach
                         @endisset
@@ -103,35 +106,39 @@
 @endsection
 @section('script')
     <script>
-              $('#test_table').DataTable({
-                        
-                        // "responsivePriority": 1,
-                        // "dom": "<'table-responsive'tr>",
-                        searching: true,
-                        "order": [
-                            [2, "asc"]
-                        ],
-                        info: !1,
-                        columns: [{
-                                "orderable": true,
-                              
-                            }, {
-                                "orderable": true,
-                                
-                            }, {
-                                "orderable": true,
-                               
-                            },
-                            {
-                                "orderable": true,
-                               
-                            },
-                            {
-                                "orderable": true,
-                               
-                            },
-                         
-                        ]
-                });
+        $('#test_table').DataTable({
+
+            // "responsivePriority": 1,
+            // "dom": "<'table-responsive'tr>",
+            searching: true,
+            "order": [
+                [2, "asc"]
+            ],
+            info: !1,
+            columns: [{
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": true,
+
+                },
+
+            ]
+        });
     </script>
 @endsection

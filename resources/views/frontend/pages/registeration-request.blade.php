@@ -10,7 +10,9 @@
 
                     <form action="{{ route('registeration-request.store') }}" method="post">
                         @csrf
-                          <input type="hidden" name="type" value="{{request()->query('type')}}">
+                        <input type="hidden" name="type" value="{{ request()->query('type') }}">
+                        <input type="hidden" name="plan" value="{{ request()->query('plan') }}">
+
                         <div class="row g-9 mb-8">
 
                             <div class="col-md-6">
@@ -45,7 +47,7 @@
 
 
                         <div class="row g-9 mb-8">
-                     
+
 
 
                             <div class="col-md-6">
@@ -57,7 +59,7 @@
                                 <input type="email" class="form-control form-control-solid required"
                                     placeholder="Enter Email" name="email" />
                             </div>
-                            
+
                             <div class="col-md-6">
                                 <!--begin::Label-->
                                 <label class="d-flex align-items-center fs-6 fw-bold mb-2">
@@ -69,7 +71,7 @@
                             </div>
 
                         </div>
-                  
+
 
 
                         <!--begin::Actions-->
@@ -90,22 +92,52 @@
                     <h1 class="text-dark fw-bolder mt-1 mb-10 fs-3">Payment Methods</h1>
 
                     <div class="row photos">
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p1.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p1.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p2.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p2.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p3.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p3.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p4.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p4.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p5.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p5.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p6.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p6.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p7.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p7.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p8.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p8.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p9.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p9.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p10.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p10.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/11.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/11.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p12.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p12.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p13.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p13.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p14.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p14.jpg')}}"></a></div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('frontend/img-payment/p11.jpg')}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('frontend/img-payment/p11.jpg')}}"></a></div>
-                      
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p1.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p1.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p2.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p2.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p3.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p3.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p4.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p4.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p5.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p5.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p6.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p6.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p7.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p7.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p8.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p8.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p9.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p9.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/p10.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/p10.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ asset('frontend/img-payment/11.jpg') }}"
+                                data-lightbox="photos"><img class="img-fluid"
+                                    src="{{ asset('frontend/img-payment/11.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a
+                                href="{{ asset('frontend/img-payment/p12.jpg') }}" data-lightbox="photos"><img
+                                    class="img-fluid" src="{{ asset('frontend/img-payment/p12.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a
+                                href="{{ asset('frontend/img-payment/p13.jpg') }}" data-lightbox="photos"><img
+                                    class="img-fluid" src="{{ asset('frontend/img-payment/p13.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a
+                                href="{{ asset('frontend/img-payment/p14.jpg') }}" data-lightbox="photos"><img
+                                    class="img-fluid" src="{{ asset('frontend/img-payment/p14.jpg') }}"></a></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a
+                                href="{{ asset('frontend/img-payment/p11.jpg') }}" data-lightbox="photos"><img
+                                    class="img-fluid" src="{{ asset('frontend/img-payment/p11.jpg') }}"></a></div>
+
                     </div>
                 </div>
             </div>
@@ -115,4 +147,5 @@
 @endsection
 
 @section('script')
+ 
 @endsection

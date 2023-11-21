@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('country')->nullable();
             $table->string('type')->nullable();
+            $table->string('plan')->nullable();
             $table->timestamps();
         });
     }
