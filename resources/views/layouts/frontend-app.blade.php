@@ -42,8 +42,8 @@
             border: 1px solid #ddd
         }
 
- 
-        input[type="radio"]:checked ~ label .circle {
+
+        input[type="radio"]:checked~label .circle {
             border: 6px solid #06BBCC;
             background-color: #fff
         }
@@ -79,6 +79,11 @@
                 .subject {
                     font-size: 12px
                 }
+            }
+
+            .highlight {
+                background-color: #06BBCC;
+                color:white;
             }
     </style>
 </head>
