@@ -33,10 +33,53 @@
             opacity: 1;
         }
 
-        .card:hover .btn-outline-primary {
-            color: white;
-            background: #007bff;
+        label.box {
+            display: flex;
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #ddd
         }
+
+ 
+        input[type="radio"]:checked ~ label .circle {
+            border: 6px solid #06BBCC;
+            background-color: #fff
+        }
+
+
+        label.box:hover {
+            background: #baebf0
+        }
+
+        label.box .course {
+            display: flex;
+            align-items: center;
+            width: 100%
+        }
+
+        label.box .circle {
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #ddd;
+
+            display: inline-block}input[type="radio"] {
+                display: none
+            }
+
+            .btn.btn-primary {
+                border-radius: 25px;
+                margin-top: 20px
+            }
+
+            @media(max-width: 450px) {
+                .subject {
+                    font-size: 12px
+                }
+            }
     </style>
 </head>
 
@@ -60,6 +103,8 @@
     <!--end::Root-->
 
     @include('layouts.partials.frontend-footer')
+
+    @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')
 

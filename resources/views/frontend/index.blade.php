@@ -313,6 +313,7 @@
 
                             </div>
                             <ul class="list-group list-group-flush">
+
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
@@ -431,6 +432,118 @@
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
                                     href="{{ route('registeration-request-front-end.create', ['type' => '2', 'plan' => 'paid']) }}"
+                                    style="border-radius:30px">Get Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="container p-5">
+                <div class="row">
+                    <h1 class="mb-4">Practice IELTS Online</h1>
+                    <p class="mb-4">Experience IELTS Like Never Before with Computer-Based Testing Get a taste of the
+                        real IELTS Computer Based Test (CBT) environment right here. Our online plaƞorm mirrors the actual
+                        IELTS CBT, ensuring
+                        you're fully prepared for the exam day experience. Familiarize yourself with the digital format,
+                        timer, and
+                        question types to ace the CBT with confidence.</p>
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="card  shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Mock Test</h5>
+
+                                </div>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Unlimited </li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>2 Listening & Reading Tests</li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Expert Feedback for Improvement
+                                </li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Free of Cost
+
+
+                                </li>
+                            </ul>
+                            <div class="card-body text-center">
+                                <button style="border-radius:30px" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#test-type" class="btn btn-outline-primary btn-lg">
+                                    <span class="indicator-label">Start Praticing</span>
+
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="card  shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Full Access</h5>
+
+                                </div>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>1 Month</li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>24 Listening & Reading Tests
+                                </li>
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Expert Feedback for Improvement
+                                </li>
+
+
+
+
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg> <span class="h2"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$50 USD</del>$30 USD</span>
+
+
+                                </li>
+                            </ul>
+                            <div class="card-body text-center">
+                                <a class="btn btn-outline-primary btn-lg"
+                                    href="{{ route('registeration-request-front-end.create', ['type' => '3', 'plan' => 'paid']) }}"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>
@@ -709,5 +822,4 @@
     @endsection
 
     @section('script')
-    
     @endsection

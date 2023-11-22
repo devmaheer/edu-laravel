@@ -49,8 +49,8 @@
                         <!--end::Label-->
                         <select class="form-control form-control-solid required" name="type">
                             <option value="">Select type</option>
-                            <option value="1">Paid</option>
-                            <option value="2">Mock</option>
+                            <option value="2">Paid</option>
+                            <option value="1">Mock</option>
                             <!-- Add more options as needed -->
                         </select>
                     </div>

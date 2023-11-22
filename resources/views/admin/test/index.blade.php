@@ -78,10 +78,10 @@
 
 
                                     <td>
-                                        @if ($test->type == '1')
+                                        @if ($test->type == '2')
                                             <span
                                                 class="badge badge-primary">Paid</span>
-                                        @elseif($test->type == '2')
+                                        @elseif($test->type == '1')
                                             <span
                                                 class="badge badge-warning">Mock</span>
                                         @endif

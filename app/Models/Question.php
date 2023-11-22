@@ -14,6 +14,10 @@ class Question extends Model
     {
         return $this->hasMany(Option::class,'question_id','id');
     }
+    public function questionGroup()
+    {
+        return $this->hasMany(QuestionGroup::class,'question_id','id');
+    }
     public function fillInBlank()
     {
         return $this->hasOne(FillInBlank::class,'question_id','id');

@@ -12,6 +12,6 @@ class QuestionGroup extends Model
      
     public function questions()
     {
-        return $this->belongsTo(Question::class,'question_group_id','id');
+        return $this->hasMany(Question::class,'question_group_id','id');
     }
 }

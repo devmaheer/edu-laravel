@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AcademicTestController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\GeneralTrainingTestController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ListeningTestController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuestionGroupController;
+use App\Http\Controllers\ReadingTestController;
 use App\Http\Controllers\RegisterationRequestController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -24,6 +28,14 @@ Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
 Route::get('/ielts/prepration-courses', [FrontendController::class, 'preprationCourses'])->name('frontend.ielts.prepration-courses');
 Route::get('/ielts/practice-marterial', [FrontendController::class, 'practiceMarterial'])->name('frontend.ielts.practice-marterial');
 Route::get('/ielts/practice-ielts-online', [FrontendController::class, 'onlineTest'])->name('frontend.ielts.practice-ielts-online');
+///
+
+Route::get('/general-training/test', [GeneralTrainingTestController::class, 'getGeneralTrainingTests'])->name('general.training.test');
+Route::get('/Academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');
+Route::get('/listening/test/{id}', [ListeningTestController::class, 'index'])->name('listening.test');
+Route::get('/reading/test/{id}', [ReadingTestController::class, 'index'])->name('reading.test');
+Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->name('reading.test.finish');
+///////////////////////////////////////////
 Route::controller(RegisterationRequestController::class)->group(function () {
     Route::get('registeration-request/create', 'create')->name('registeration-request-front-end.create');
     Route::get('registeration-request/index', 'index')->name('registeration-request.index');
