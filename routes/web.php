@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AcademicTestController;
+use App\Http\Controllers\FinishedTestController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GeneralTrainingTestController;
 use App\Http\Controllers\HomeController;
@@ -118,3 +119,5 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 });
+Route::post('/startTimer', [FinishedTestController::class, 'startTimer'])->name('startTimer');
+Route::get('/getCountdownValue', [FinishedTestController::class, 'getCountdownValue'])->name('getCountdownValue');

@@ -86,27 +86,12 @@
                         $iteration = 1;
                     @endphp
                     @foreach ($data as $key => $group)
-                        <div class="row" style="border-bottom: 2px solid #06BBCC;">
-                            <h1 class="mt-4">
-                                @if ($key == 1)
-                                    Paragraph One
-                                @endif
-                                @if ($key == 2)
-                                    Paragraph Two
-                                @endif
-                                @if ($key == 3)
-                                    Paragraph Three
-                                @endif
-                                @if ($key == 4)
-                                    Paragraph Four
-                                @endif
-                                @if ($key == 5)
-                                    Paragraph Five
-                                @endif
-                            </h1>
+                        <div class="row">
+
                             <div class="col-md-6">
                                 <div class="row mt-5">
-                                    <div class="card  shadow-lg">
+                                    <div class="card  shadow-lg"
+                                        style="max-height: 700px; overflow-y:auto;  border: 2px solid #BFBDBD;">
                                         <div class="card-body ">
                                             @if ($key == 1)
                                                 {!! $test->paragraph1 !!}
@@ -128,7 +113,8 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mt-5"
+                                style="max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
 
                                 <div class="card-body">
 
@@ -186,6 +172,23 @@
             let className = '.' + ele;
             $(className).css("background-color", "#06BBCC");
         }
+        var countdownValue = 60 * 60;
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'GET',
+            url: '{{ route('getCountdownValue') }}',
+            success: function(response) {
+                if(response.countdownValue == null){
+                    countdownValue = 60 * 60;
+                }else{
+                countdownValue =   response.countdownValue;
+                }
+            }
+        });
         // Function to update the countdown display
         function updateCountdown() {
             const minutes = Math.floor(countdownValue / 60);
@@ -196,7 +199,6 @@
         // Function to be called every second
         function updateTimer() {
             countdownValue--;
-
             // Update the countdown display
             updateCountdown();
 
@@ -214,11 +216,29 @@
             localStorage.setItem('countdownValue', countdownValue);
 
             // Call the function again after 1 second
+
             setTimeout(updateTimer, 1000);
         }
 
+        function updateTimerInSession() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                data: {countdownValue},
+                url: '{{ route('startTimer') }}',
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        }
         // Retrieve the countdownValue from localStorage
-        let countdownValue = parseInt(localStorage.getItem('countdownValue')) || 60 * 60;
+        setInterval(updateTimerInSession, 10000);
+
+
 
         // Start the timer when the page loads
         updateTimer();
