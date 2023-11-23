@@ -80,11 +80,6 @@
                     font-size: 12px
                 }
             }
-
-            .highlight {
-                background-color: #06BBCC;
-                color:white;
-            }
     </style>
 </head>
 
@@ -99,11 +94,11 @@
     </div>
     <!-- Spinner End -->
 
-
+     @if(!Request::routeIs('reading.test'))
     <!-- Navbar Start -->
     @include('layouts.partials.frontend-navbar')
     <!-- Navbar End -->
-
+   @endif
     @yield('content')
     <!--end::Root-->
 

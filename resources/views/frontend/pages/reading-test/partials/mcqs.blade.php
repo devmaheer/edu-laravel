@@ -3,7 +3,7 @@
     <div>
         @foreach ($question->options as $key => $option)
             <div>
-                <input type="radio" name="{{ $question->id }}" value="{{ $option->id }}"
+                <input type="radio" onclick="changeColorCode('question_{{ $question->id }}')" name="{{ $question->id }}"  value="{{ $option->id }}"
                     id="option-{{ $option->id }}">
 
                 <label for="option-{{ $option->id }}" class="box first">

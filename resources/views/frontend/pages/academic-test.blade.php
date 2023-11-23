@@ -3,6 +3,7 @@
 @section('content')
     <!-- Service Start -->
     <div class="container-xxl py-5">
+  
         <div class="row g-4 justify-content-center">
 
             <div class="container p-5">
@@ -22,15 +23,16 @@
 
                                 <div class="card-body text-center">
                                     <button style="border-radius:30px" type="button" data-bs-toggle="modal"
-                                        data-bs-target="#test-category-{{$test->id}}" class="btn btn-outline-primary btn-lg">
+                                        data-bs-target="#test-category-{{ $test->id }}"
+                                        class="btn btn-outline-primary btn-lg">
                                         <span class="indicator-label">Start Test</span>
 
                                     </button>
-                                  
+
                                 </div>
                             </div>
                         </div>
-                          @include('layouts.partials.models.test-category')
+                        @include('layouts.partials.models.test-category')
                     @endforeach
 
 
