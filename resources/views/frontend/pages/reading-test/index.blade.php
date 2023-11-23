@@ -13,11 +13,13 @@
         margin-right: 10px;
         display: inline-block;
     }
+
+
 </style>
 
 @section('content')
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" style="max-width: 1500px;">
         <nav class="navbar navbar-expand-lg bg-white  navbar-light shadow sticky-top p-0">
 
 
@@ -80,7 +82,7 @@
         </nav>
         <div class="row g-4 justify-content-center">
             <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
-                <div class="container" id="highlightableText">
+                <div class="container" style="max-width: 1500px;" id="highlightableText">
 
                     @php
                         $iteration = 1;
@@ -182,10 +184,10 @@
             type: 'GET',
             url: '{{ route('getCountdownValue') }}',
             success: function(response) {
-                if(response.countdownValue == null){
+                if (response.countdownValue == null) {
                     countdownValue = 60 * 60;
-                }else{
-                countdownValue =   response.countdownValue;
+                } else {
+                    countdownValue = response.countdownValue;
                 }
             }
         });
@@ -220,9 +222,9 @@
             setTimeout(updateTimer, 1000);
         }
 
-       
+
         // Retrieve the countdownValue from localStorage
-      
+
 
 
 
