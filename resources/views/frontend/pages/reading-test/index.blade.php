@@ -220,23 +220,9 @@
             setTimeout(updateTimer, 1000);
         }
 
-        function updateTimerInSession() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: 'POST',
-                data: {countdownValue},
-                url: '{{ route('startTimer') }}',
-                success: function(response) {
-                    console.log(response);
-                }
-            });
-        }
+       
         // Retrieve the countdownValue from localStorage
-        setInterval(updateTimerInSession, 10000);
+      
 
 
 
