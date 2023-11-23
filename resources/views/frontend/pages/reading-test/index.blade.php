@@ -59,7 +59,7 @@
                                         @foreach ($group['questions'] as $question)
                                             <div class="number-box question_{{ $question->id }}">
 
-                                                {{ $question->id }}
+                                                {{ $itera }}
                                                 @php
                                                     $itera++;
                                                 @endphp
