@@ -1,8 +1,8 @@
-<div class="container mb-3">
+<div class="container">
     <div class="row">
         <div class="col-12">
             <p class="fw-bold">
-                <p class="fw-bold">
+                
                     
                     @if ($question->fillInBlank->fill_1)
                      {{ $question->fillInBlank->fill_1 }} {{$iteration}} <input type="text" style="width:100px" onkeyup="changeColorCode('question_{{$question->id}}')" name="fill[{{ $question->fillInBlank->id }}][]" id="fill_1">
@@ -19,7 +19,7 @@
                     @if ($question->fillInBlank->fill_4)
                         {{ $question->fillInBlank->fill_4 }}  {{$iteration}} <input type="text" style="width:100px"  onkeyup="changeColorCode('question_{{$question->id}}')" name="fill[{{ $question->fillInBlank->id }}][]" id="fill_4">
                     @endif
-                </p>
+               
             </p>
             <div>
             </div>
