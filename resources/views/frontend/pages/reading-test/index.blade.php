@@ -136,8 +136,8 @@
                                     <div class="container mb-5">
                                         @foreach ($group['questionGroups'] as $group)
                                             <div class="row mt-5 p-4" style="border: 2px solid #BFBDBD;">
-                                                <h5>{!! $group['questionGroup']->heading !!}</h5>
-                                                <p>{!! $group['questionGroup']->description !!}</p>
+                                                {!! $group['questionGroup']->heading !!}
+                                                {!! $group['questionGroup']->description !!}
                                                 @foreach ($group['questions'] as $question)
                                                     {{-- @include('layouts.partials.models.question-image') --}}
                                                     @if ($question->category == 1)
