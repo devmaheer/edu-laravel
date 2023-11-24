@@ -139,7 +139,7 @@
                                                 <h5>{!! $group['questionGroup']->heading !!}</h5>
                                                 <p>{!! $group['questionGroup']->description !!}</p>
                                                 @foreach ($group['questions'] as $question)
-                                                    @include('layouts.partials.models.question-image')
+                                                    {{-- @include('layouts.partials.models.question-image') --}}
                                                     @if ($question->category == 1)
                                                         @include('frontend.pages.reading-test.partials.mcqs')
                                                         @php
