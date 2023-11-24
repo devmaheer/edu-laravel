@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body text-center">
                     <a class="btn btn-outline-primary btn-lg"
-                        href="{{ route('general.training.test', ['type' => '']) }}"
+                        href="{{ route('general.training.test', ['type' => '1']) }}"
                         style="border-radius:30px"> General Training Test                  </a>
                 </div>
             </div>

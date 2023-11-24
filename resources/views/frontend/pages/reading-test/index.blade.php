@@ -13,8 +13,6 @@
         margin-right: 10px;
         display: inline-block;
     }
-
-
 </style>
 
 @section('content')
@@ -126,6 +124,7 @@
                                                 <h5>{!! $group['questionGroup']->heading !!}</h5>
                                                 <p>{!! $group['questionGroup']->description !!}</p>
                                                 @foreach ($group['questions'] as $question)
+                                                @include('layouts.partials.models.question-image')
                                                     @if ($question->category == 1)
                                                         @include('frontend.pages.reading-test.partials.mcqs')
                                                         @php
@@ -230,5 +229,23 @@
 
         // Start the timer when the page loads
         updateTimer();
+
+        $(document).ready(function() {
+            $('.image-container').each(function() {
+                var $this = $(this);
+                var $originalImage = $this.find('.original-image');
+                var $previewContainer = $this.find('.preview-container');
+                var $previewImage = $this.find('.preview-image');
+
+                $originalImage.on('mouseenter', function() {
+                    $previewImage.attr('src', $originalImage.attr('src'));
+                    $previewContainer.show();
+                });
+
+                $originalImage.on('mouseleave', function() {
+                    $previewContainer.hide();
+                });
+            });
+        });
     </script>
 @endsection
