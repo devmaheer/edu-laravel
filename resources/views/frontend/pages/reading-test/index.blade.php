@@ -29,6 +29,17 @@
                     <div class="row">
                         <h1 class="mb-4">{{ $test->name }}</h1>
                         <p id="timer">Timer: <span id="countdown">2520</span> seconds</p>
+                        <div style="max-width:200px;">
+                        <select id="fontSizeSelect" class="form-control form-control-solid required">
+                            <option value="">Change Font Size</option>
+                            <option value="12">12px</option>
+                            <option value="14">14px</option>
+                            <option value="16">16px</option>
+                            <option value="18">18px</option>
+                            <option value="20">20px</option>
+                            <option value="24">24px</option>
+                        </select>
+                        </div>
                     </div>
                     <div class="row">
                         @php
@@ -78,7 +89,7 @@
                 </div>
             </div>
         </nav>
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center" id="changeFontSize">
             <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
                 <div class="container" style="max-width: 1500px;" id="highlightableText">
 
@@ -124,7 +135,7 @@
                                                 <h5>{!! $group['questionGroup']->heading !!}</h5>
                                                 <p>{!! $group['questionGroup']->description !!}</p>
                                                 @foreach ($group['questions'] as $question)
-                                                @include('layouts.partials.models.question-image')
+                                                    @include('layouts.partials.models.question-image')
                                                     @if ($question->category == 1)
                                                         @include('frontend.pages.reading-test.partials.mcqs')
                                                         @php
@@ -169,6 +180,19 @@
 
 @section('script')
     <script>
+        $('#fontSizeSelect').on('change', function() {
+            var selectedFontSize = $(this).val();
+            $('#changeFontSize').children().each(function() {
+                // Update font size for each child element
+                $(this).css('font-size', selectedFontSize + 'px');
+
+            });
+            $('#changeFontSize .card-body *').each(function() {
+                // Update font size for each child element
+                $(this).css('font-size', selectedFontSize + 'px');
+            });
+        });
+
         function changeColorCode(ele) {
             let className = '.' + ele;
             $(className).css("background-color", "#06BBCC");
