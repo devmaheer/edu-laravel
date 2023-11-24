@@ -8,15 +8,7 @@
 
                 <label for="option-{{ $option->id }}" class="box first">
                     <div class="course"> <span class="circle"></span> <span class="subject">
-                            @if ($key == 0)
-                                (A)
-                            @elseif($key == 1)
-                            (B)
-                            @elseif($key == 2)
-                            (C)
-                            @elseif($key == 3)
-                            (D)
-                            @endif
+                           
                             {{ $option->name }}
                         </span> </div>
                 </label>

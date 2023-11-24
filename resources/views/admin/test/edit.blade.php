@@ -50,8 +50,8 @@
                         <!--end::Label-->
                         <select class="form-control form-control-solid required" name="type">
                             <option value="">Select type</option>
-                            <option value="1" {{ $test->type == '2' ? 'selected' : '' }}>Paid</option>
-                            <option value="2" {{ $test->type == '1' ? 'selected' : '' }}>Mock</option>
+                            <option value="2" {{ $test->type == '2' ? 'selected' : '' }}>Paid</option>
+                            <option value="1" {{ $test->type == '1' ? 'selected' : '' }}>Mock</option>
                             <!-- Add more options as needed -->
                         </select>
                     </div>
