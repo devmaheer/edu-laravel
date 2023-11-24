@@ -13,6 +13,10 @@
         margin-right: 10px;
         display: inline-block;
     }
+
+    .highlighted {
+        background-color: yellow;
+    }
 </style>
 
 @section('content')
@@ -30,15 +34,15 @@
                         <h1 class="mb-4">{{ $test->name }}</h1>
                         <p id="timer">Timer: <span id="countdown">2520</span> seconds</p>
                         <div style="max-width:200px;">
-                        <select id="fontSizeSelect" class="form-control form-control-solid required">
-                            <option value="">Change Font Size</option>
-                            <option value="12">12px</option>
-                            <option value="14">14px</option>
-                            <option value="16">16px</option>
-                            <option value="18">18px</option>
-                            <option value="20">20px</option>
-                            <option value="24">24px</option>
-                        </select>
+                            <select id="fontSizeSelect" class="form-control form-control-solid required">
+                                <option value="">Change Font Size</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                                <option value="18">18</option>
+                                <option value="20">20</option>
+                                <option value="24">24</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
