@@ -81,8 +81,9 @@
                 }
             }
     </style>
+    
 </head>
-
+@yield('css')
 <body>
     <!--begin::Root-->
     <!-- Spinner Start -->

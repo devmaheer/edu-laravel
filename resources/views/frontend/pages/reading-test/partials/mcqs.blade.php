@@ -6,7 +6,7 @@
                 @if ($question->image_url)
                   
                     <button type="button" data-bs-toggle="modal" data-bs-target="#question-image-{{ $question->id }}">
-                        <span class="indicator-label"> <img src="{{ $question->image_url }}" width="500" height="400"
+                        <span class="indicator-label"> <img src="{{ $question->image_url }}" 
                                 alt="{{ $question->image_url }}"></span>
 
                     </button>

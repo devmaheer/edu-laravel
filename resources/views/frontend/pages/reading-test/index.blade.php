@@ -1,24 +1,38 @@
 @extends('layouts.frontend-app')
-<style>
-    .number-box {
-        width: 13px;
-        height: 13px;
-        background-color: #c7cfcf;
-        color: #fff;
-        text-align: center;
-        font-size: 9px;
-        line-height: 13px;
-        font-weight: bold;
-        border-radius: 5px;
-        margin-right: 10px;
-        display: inline-block;
-    }
+@section('css')
+    <style>
+        .number-box {
+            width: 13px;
+            height: 13px;
+            background-color: #c7cfcf;
+            color: #fff;
+            text-align: center;
+            font-size: 9px;
+            line-height: 13px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: inline-block;
+        }
 
-    .highlighted {
-        background-color: yellow;
-    }
-</style>
+        .highlight {
+            background-color: yellow;
+            /* You can customize the highlight color */
+        }
 
+        .card:hover {
+            transform: scale(1, 1);
+            /* Reset the scale transformation */
+            -webkit-transform: scale(1, 1);
+            backface-visibility: visible;
+            /* Reset backface visibility */
+            will-change: auto;
+            /* Reset will-change property */
+            box-shadow: none !important;
+            /* Remove the box shadow */
+        }
+    </style>
+@endsection
 @section('content')
     <!-- Service Start -->
     <div class="container-xxl py-5" style="max-width: 1500px;">
@@ -31,18 +45,27 @@
                     $iteration = 1;
                 @endphp --}}
                     <div class="row">
-                        <h1 class="mb-4">{{ $test->name }}</h1>
-                        <p id="timer">Timer: <span id="countdown">2520</span> seconds</p>
-                        <div style="max-width:200px;">
-                            <select id="fontSizeSelect" class="form-control form-control-solid required">
-                                <option value="">Change Font Size</option>
-                                <option value="12">12</option>
-                                <option value="14">14</option>
-                                <option value="16">16</option>
-                                <option value="18">18</option>
-                                <option value="20">20</option>
-                                <option value="24">24</option>
-                            </select>
+                        <div class="col-md-6">
+                            <h4 class="mb-4">{{ $test->name }}</h4>
+                            <p id="timer">Timer: <span id="countdown">2520</span>sec</p>
+                            <div style="max-width:200px;">
+                                <select id="fontSizeSelect" class="form-control form-control-solid required">
+                                    <option value="">Font Size</option>
+                                    <option value="12">12</option>
+                                    <option value="14">14</option>
+                                    <option value="16">16</option>
+                                    <option value="18">18</option>
+                                    <option value="20">20</option>
+                                    <option value="24">24</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="max-width:200px;" class="mr-2">
+                                <button class="btn btn-primary" id="highlightButton">Highlight Text</button>
+                                <button class="btn btn-primary" id="removeHighlightButton">Remove Highlight </button>
+
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -95,7 +118,7 @@
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
             <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
-                <div class="container" style="max-width: 1500px;" id="highlightableText">
+                <div class="container " style="max-width: 1500px;">
 
                     @php
                         $iteration = 1;
@@ -107,7 +130,7 @@
                                 <div class="row mt-5">
                                     <div class="card  shadow-lg"
                                         style="max-height: 700px; overflow-y:auto;  border: 2px solid #BFBDBD;">
-                                        <div class="card-body ">
+                                        <div class="card-body highlightme ">
                                             @if ($key == 1)
                                                 {!! $test->paragraph1 !!}
                                             @endif
@@ -184,6 +207,53 @@
 
 @section('script')
     <script>
+        document.getElementById('highlightButton').addEventListener('click', function() {
+            var selectedText = getSelectedText();
+            if (selectedText !== "") {
+                highlightSelectedText(selectedText);
+            }
+        });
+
+        document.getElementById('removeHighlightButton').addEventListener('click', function() {
+            removeHighlight();
+        });
+
+        function getSelectedText() {
+            var text = "";
+            if (window.getSelection) {
+                text = window.getSelection().toString();
+            } else if (document.selection && document.selection.type !== "Control") {
+                text = document.selection.createRange().text;
+            }
+            return text;
+        }
+
+        function highlightSelectedText(selectedText) {
+            var range, sel;
+            if (window.getSelection) {
+                sel = window.getSelection();
+                if (sel.rangeCount) {
+                    range = sel.getRangeAt(0);
+                    var span = document.createElement('span');
+                    span.className = 'highlight';
+                    range.surroundContents(span);
+                }
+            } else if (document.selection && document.selection.createRange) {
+                range = document.selection.createRange();
+                var span = document.createElement('span');
+                span.className = 'highlight';
+                range.pasteHTML(span.outerHTML);
+            }
+        }
+
+        function removeHighlight() {
+            var highlightedElements = document.querySelectorAll('.highlight');
+            highlightedElements.forEach(function(element) {
+                var parent = element.parentNode;
+                parent.replaceChild(document.createTextNode(element.textContent), element);
+            });
+        }
+
         $('#fontSizeSelect').on('change', function() {
             var selectedFontSize = $(this).val();
             $('#changeFontSize').children().each(function() {
@@ -257,23 +327,5 @@
 
         // Start the timer when the page loads
         updateTimer();
-
-        $(document).ready(function() {
-            $('.image-container').each(function() {
-                var $this = $(this);
-                var $originalImage = $this.find('.original-image');
-                var $previewContainer = $this.find('.preview-container');
-                var $previewImage = $this.find('.preview-image');
-
-                $originalImage.on('mouseenter', function() {
-                    $previewImage.attr('src', $originalImage.attr('src'));
-                    $previewContainer.show();
-                });
-
-                $originalImage.on('mouseleave', function() {
-                    $previewContainer.hide();
-                });
-            });
-        });
     </script>
 @endsection
