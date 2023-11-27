@@ -91,7 +91,7 @@
                         @endforeach
                         <div class="col-md-2">
                             <h4 class="mb-4">{{ $test->name }}</h4>
-                            <p id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</p>
+                            <h4 id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</h4>
                         </div>
 
                     </div>

@@ -35,7 +35,7 @@ class QuestionController extends Controller
    }
    public function  store(Request $request)
    {
-     
+ 
       if ($request->question_type == "reading") {
          if ($request->filling_blanks == '1') {
 
@@ -220,19 +220,19 @@ class QuestionController extends Controller
       $question = Question::findOrFail($request->questionId);
       FillInBlank::where('id', $question->fillInBlank->id)->update([
          'question_id' => $question->id,
-         "fill_1" => strtolower($request->fill_1),
+         "fill_1" => $request->fill_1,
          "ans_first_1" => strtolower($request->ans_first_1),
          "ans_first_2" => strtolower($request->ans_first_2),
          "ans_first_3" => strtolower($request->ans_first_3),
-         "fill_2" => strtolower($request->fill_2),
+         "fill_2" => $request->fill_2,
          "ans_sec_1" => strtolower($request->ans_sec_1),
          "ans_sec_2" => strtolower($request->ans_sec_2),
          "ans_sec_3" => strtolower($request->ans_sec_3),
-         "fill_3" => strtolower($request->fill_3),
+         "fill_3" => $request->fill_3,
          "ans_third_1" => strtolower($request->ans_third_1),
          "ans_third_2" => strtolower($request->ans_third_2),
          "ans_third_3" => strtolower($request->ans_third_3),
-         "fill_4" => strtolower($request->fill_4),
+         "fill_4" => $request->fill_4,
       ]);
       return $question;
    }

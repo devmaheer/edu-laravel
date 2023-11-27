@@ -17,7 +17,7 @@ class ReadingTestController extends Controller
         $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
             $query->WhereNotNull('paragraph')->orderBy('paragraph', 'asc');
         })->orderBy('position', 'asc')->get();
-
+          
 
         $organizedData = [];
 
