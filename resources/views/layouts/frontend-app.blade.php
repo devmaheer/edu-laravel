@@ -3,6 +3,8 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofP+NM6P1d5Eegx6A7Yq4MK5S+76E4uBxj" crossorigin="anonymous">
 
     @include('layouts.partials.frontend-head')
     <style>
@@ -81,9 +83,10 @@
                 }
             }
     </style>
-    
+
 </head>
 @yield('css')
+
 <body>
     <!--begin::Root-->
     <!-- Spinner Start -->
@@ -95,11 +98,11 @@
     </div>
     <!-- Spinner End -->
 
-     @if(!Request::routeIs('reading.test'))
-    <!-- Navbar Start -->
-    @include('layouts.partials.frontend-navbar')
-    <!-- Navbar End -->
-   @endif
+    @if (!Request::routeIs('reading.test'))
+        <!-- Navbar Start -->
+        @include('layouts.partials.frontend-navbar')
+        <!-- Navbar End -->
+    @endif
     @yield('content')
     <!--end::Root-->
 

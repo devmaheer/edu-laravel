@@ -40,35 +40,11 @@
 
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-2">
+                <div class="navbar-nav p-2">
                     {{-- @php
                     $iteration = 1;
                 @endphp --}}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 class="mb-4">{{ $test->name }}</h4>
-                            <p id="timer">Timer: <span id="countdown">2520</span>sec</p>
-                            <div style="max-width:200px;">
-                                <select id="fontSizeSelect" class="form-control form-control-solid required">
-                                    <option value="">Font Size</option>
-                                    <option value="12">12</option>
-                                    <option value="14">14</option>
-                                    <option value="16">16</option>
-                                    <option value="18">18</option>
-                                    <option value="20">20</option>
-                                    <option value="24">24</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div style="max-width:200px;" class="mr-2">
-                                <button class="btn btn-primary" id="highlightButton">Highlight</button>
-                                <button class="btn btn-primary" id="removeHighlightButton">Remove</button>
-                                <button class="btn btn-primary" id="removeAllButton">Remove All</button>
 
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
                         @php
                             $itera = 1;
@@ -113,7 +89,37 @@
                                 </div>
                             </div>
                         @endforeach
+                        <div class="col-md-2">
+                            <h4 class="mb-4">{{ $test->name }}</h4>
+                            <p id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</p>
+                        </div>
+
                     </div>
+                    <div class="col-md-2">
+
+
+                        <select id="fontSizeSelect" class="form-control form-control-solid required">
+                            <option value="">Font</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                            <option value="20">20</option>
+                            <option value="24">24</option>
+                        </select>
+
+                        <div class="mr-2">
+                            <button class="btn btn-primary" id="highlightButton"><i class="fas fa-pen"></i>
+                            </button>
+
+                            <button class="btn btn-primary" id="removeHighlightButton"><i
+                                    class="fas fa-trash-alt"></i></button>
+                            <button class="btn btn-primary" id="removeAllButton"><i
+                                    class="fas fa-times-circle"></i></button>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </nav>
@@ -130,7 +136,7 @@
                             <div class="col-md-6">
                                 <div class="row mt-5">
                                     <div class="card  shadow-lg"
-                                        style="max-height: 700px; overflow-y:auto;  border: 2px solid #BFBDBD;">
+                                        style="padding : 0px; max-height: 700px; overflow-y:auto;  border: 2px solid #BFBDBD;">
                                         <div class="card-body highlightme ">
                                             @if ($key == 1)
                                                 {!! $test->paragraph1 !!}
@@ -153,13 +159,13 @@
 
                             </div>
                             <div class="col-md-6 mt-5"
-                                style="max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
+                                style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
 
-                                <div class="card-body">
+                                <div class="card-body mb-5" style="padding : 0px; ">
 
                                     <div class="container mb-5">
                                         @foreach ($group['questionGroups'] as $group)
-                                            <div class="row mt-5 p-4" style="border: 2px solid #BFBDBD;">
+                                            <div class="row mt-5 p-2" style="border: 2px solid #BFBDBD;">
                                                 {!! $group['questionGroup']->heading !!}
                                                 {!! $group['questionGroup']->description !!}
                                                 @foreach ($group['questions'] as $question)
