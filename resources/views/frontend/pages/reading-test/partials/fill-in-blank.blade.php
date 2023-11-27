@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p class="fw-bold">
+          
                 @if ($question->image_url)
-                    <button class="mb-1" type="button" data-bs-toggle="modal" data-bs-target="#question-image-{{ $question->id }}">
-                        <span class="indicator-label"> <img src="{{ $question->image_url }}" 
-                                alt="{{ $question->image_url }}"></span>
+                    {{-- <button class="mb-1" type="button" data-bs-toggle="modal" data-bs-target="#question-image-{{ $question->id }}"> --}}
+                       <img src="{{ $question->image_url }}" 
+                                alt="{{ $question->image_url }}">
 
-                    </button>
+                    {{-- </button> --}}
                     </br>
                 @endif
-
+                <p class="fw-bold">
                 @if ($question->fillInBlank->fill_1)
                     {!! $question->fillInBlank->fill_1 !!} {{ $iteration }} <input type="text" style="width:100px"
                         onkeyup="changeColorCode('question_{{ $question->id }}')"
