@@ -119,5 +119,5 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 });
-Route::post('/startTimer', [FinishedTestController::class, 'startTimer'])->name('startTimer');
+Route::post('/startTimer', [FinishedTestControl3ler::class, 'startTimer'])->name('startTimer');
 Route::get('/getCountdownValue', [FinishedTestController::class, 'getCountdownValue'])->name('getCountdownValue');

@@ -62,8 +62,9 @@
                         </div>
                         <div class="col-md-6">
                             <div style="max-width:200px;" class="mr-2">
-                                <button class="btn btn-primary" id="highlightButton">Highlight Text</button>
-                                <button class="btn btn-primary" id="removeHighlightButton">Remove Highlight </button>
+                                <button class="btn btn-primary" id="highlightButton">Highlight</button>
+                                <button class="btn btn-primary" id="removeHighlightButton">Remove</button>
+                                <button class="btn btn-primary" id="removeAllButton">Remove All</button>
 
                             </div>
                         </div>
@@ -207,15 +208,20 @@
 
 @section('script')
     <script>
-        document.getElementById('highlightButton').addEventListener('click', function() {
+        $('#highlightButton').on('click', function() {
             var selectedText = getSelectedText();
             if (selectedText !== "") {
                 highlightSelectedText(selectedText);
             }
         });
 
-        document.getElementById('removeHighlightButton').addEventListener('click', function() {
-            removeHighlight();
+        $('#removeHighlightButton').on('click', function() {
+            var selectedText = getSelectedText();
+            removeHighlight(selectedText);
+        });
+
+        $('#removeAllButton').on('click', function() {
+            removeAll();
         });
 
         function getSelectedText() {
@@ -234,26 +240,29 @@
                 sel = window.getSelection();
                 if (sel.rangeCount) {
                     range = sel.getRangeAt(0);
-                    var span = document.createElement('span');
-                    span.className = 'highlight';
+                    var span = $('<span class="highlight"></span>').get(0);
                     range.surroundContents(span);
                 }
             } else if (document.selection && document.selection.createRange) {
                 range = document.selection.createRange();
-                var span = document.createElement('span');
-                span.className = 'highlight';
+                var span = $('<span class="highlight"></span>').get(0);
                 range.pasteHTML(span.outerHTML);
             }
         }
 
-        function removeHighlight() {
-            var highlightedElements = document.querySelectorAll('.highlight');
-            highlightedElements.forEach(function(element) {
-                var parent = element.parentNode;
-                parent.replaceChild(document.createTextNode(element.textContent), element);
+        function removeHighlight(selectedText) {
+            $('.highlight').each(function() {
+                if ($(this).text() === selectedText) {
+                    $(this).replaceWith($(this).contents());
+                }
             });
         }
 
+        function removeAll() {
+            $('.highlight').each(function() {
+                $(this).replaceWith($(this).contents());
+            });
+        }
         $('#fontSizeSelect').on('change', function() {
             var selectedFontSize = $(this).val();
             $('#changeFontSize').children().each(function() {
