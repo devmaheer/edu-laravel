@@ -49,6 +49,10 @@
             border: 6px solid #06BBCC;
             background-color: #fff
         }
+        input[type="checkbox"]:checked~label .circle {
+            border: 6px solid #06BBCC;
+            background-color: #fff
+        }
 
 
         label.box:hover {
@@ -71,6 +75,10 @@
             display: inline-block}input[type="radio"] {
                 display: none
             }
+            input[type="checkbox"] {
+                display: none
+            }
+
 
             .btn.btn-primary {
                 border-radius: 25px;

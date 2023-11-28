@@ -125,6 +125,8 @@
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
             <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
+                <input type="hidden" name="test_id" value="{{ $test->id }}">
+                <input type="hidden" name="type" value="reading">
                 <div class="container " style="max-width: 1500px;">
 
                     @php
@@ -178,6 +180,12 @@
                                                     @endif
                                                     @if ($question->category == 2)
                                                         @include('frontend.pages.reading-test.partials.fill-in-blank')
+                                                        @php
+                                                            $iteration++;
+                                                        @endphp
+                                                    @endif
+                                                    @if ($question->category == 3)
+                                                        @include('frontend.pages.reading-test.partials.five-choice')
                                                         @php
                                                             $iteration++;
                                                         @endphp
@@ -282,9 +290,23 @@
             });
         });
 
-        function changeColorCode(ele) {
+        function changeColorCode(ele, fivechoice) {
             let className = '.' + ele;
             $(className).css("background-color", "#06BBCC");
+            if (fivechoice) {
+                var checkboxes = document.getElementsByName('fivechoice[' + fivechoice + '][]');
+                var checkedCount = 0;
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        checkedCount++;
+                        if (checkedCount > 2) {
+                            alert('You can only select a maximum of two options.');
+                            checkboxes[i].checked = false;
+                            return;
+                        }
+                    }
+                }
+            }
         }
         var countdownValue = 60 * 60;
         $.ajaxSetup({
