@@ -52,6 +52,9 @@ class FinishedTestController extends Controller
     }
     public function correctAnswers(Request $request,$id)
     {
-
+     $test = FinishedTest::findOrFail($id);
+     $userTest = json_decode($test->test);
+    
+     return view ('frontend.pages.correct-answer', compact('test'));
     }
 }
