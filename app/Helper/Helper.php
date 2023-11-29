@@ -225,10 +225,10 @@ class Helper
         } elseif ($question->category == 3) {
             $option = Option::where('question_id', $id)->where('is_correct', 1)->get();
 
-            if ($option[0]->name && $option[1]->name) {
+            if (isset($option[0]->name) && isset($option[1]->name)) {
                 return $option[0]->name . ' / ' . $option[1]->name;
             }
-            if ($option[0]->name) {
+            if (isset($option[0]->name)) {
                 return $option[0]->name;
             }
         }
@@ -264,7 +264,7 @@ class Helper
                 }
             }
             return $text;
-        } elseif ($question->category == 3 && $json->fivechoice) {
+        } elseif ($question->category == 3 && isset($json->fivechoice)) {
             $text = '';
             foreach ($json->fivechoice as $key => $option) {
                 if (isset($option[0])) {

@@ -60,7 +60,9 @@
                                            
                                             </div>
                                         @endif
+                                        <div class="card">
                                         <div  class=" number-box question_{{ $question->id }}">
+                                         
                                               <table class="table">
                                                 <header>
                                                     <th style="border: 1px solid black;">No</th>
@@ -79,6 +81,7 @@
                                             @php
                                                 $itera++;
                                             @endphp
+                                              </div>
                                         </div>
                                     @endforeach
                                 @endforeach
