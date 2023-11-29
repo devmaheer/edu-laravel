@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\FinishedTest;
 use App\Models\Question;
+use App\Models\QuestionGroup;
+use App\Models\Test;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -50,11 +52,35 @@ class FinishedTestController extends Controller
         $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
         return view('frontend.pages.score', compact('test', 'finishtest', 'toalPercentage', 'totalFiveChoice', 'totalFills', 'totalMcqs', 'fiveChoicePercentage', 'fillPercentage', 'mcqsPercentage'));
     }
-    public function correctAnswers(Request $request,$id)
+    public function correctAnswers(Request $request, $id)
     {
-     $test = FinishedTest::findOrFail($id);
-     $userTest = json_decode($test->test);
-    
-     return view ('frontend.pages.correct-answer', compact('test'));
+        $test = FinishedTest::findOrFail($id);
+        $userTest = json_decode($test->test);
+
+        $test = Test::where('id', $test->tests->id)->with('questions')->first();
+        $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
+            $query->WhereNotNull('paragraph')->orderBy('paragraph', 'asc');
+        })->orderBy('position', 'asc')->get();
+
+
+        $organizedData = [];
+
+        // Separate questions by paragraph within their respective question groups
+        $questionsGroup->each(function ($questionGroup) use (&$organizedData) {
+            $paragraphId = $questionGroup->questions->first()->paragraph;
+
+            // Initialize the arrays if not set
+            $organizedData[$paragraphId]['questionGroups'] ??= collect();
+            $organizedData[$paragraphId]['paragraph'] = $paragraphId;
+
+            // Add the question group to the corresponding collection based on paragraph ID
+            $organizedData[$paragraphId]['questionGroups']->push([
+                'questionGroup' => $questionGroup,
+                'questions' => $questionGroup->questions,
+            ]);
+        });
+
+        $data =  $organizedData;
+        return view('frontend.pages.correct-answer', compact('test','data'));
     }
 }

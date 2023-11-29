@@ -2,6 +2,10 @@
 
 namespace App\Helper;
 
+use App\Models\FillInBlank;
+use App\Models\Option;
+use App\Models\Question;
+
 class Helper
 {
     /**
@@ -193,6 +197,27 @@ class Helper
                 }
             }
         } else {
+        }
+    }
+
+    public static function correctAnswer($id)
+    {
+
+        $question = Question::findOrFail($id);
+        if ($question->category == 1) {
+
+            $option = Option::where('question_id', $id)->where('is_correct', 1)->first();
+
+            return $option->name;
+        } elseif ($question->category == 2) {
+
+            $fill = FillInBlank::where('question_id', $id)->first();
+
+            return $fill->ans_first_1 . ' ' .  $fill->ans_sec_1 . " " .  $fill->ans_third_1;
+        } elseif ($question->category == 3) {
+            $option = Option::where('question_id', $id)->where('is_correct', 1)->get();
+
+            return $option[0]->name . ' ' . $option[1]->name;
         }
     }
 }
