@@ -212,12 +212,25 @@ class Helper
         } elseif ($question->category == 2) {
 
             $fill = FillInBlank::where('question_id', $id)->first();
+            if ($fill->ans_first_1 && $fill->ans_sec_2 &&  $fill->ans_third_1) {
+                return  $fill->ans_first_1  . ' / ' .  $fill->ans_sec_1 . " / " .  $fill->ans_third_1;
+            }
+            if ($fill->ans_first_1 && $fill->ans_sec_2) {
 
-            return '1: ' . $fill->ans_first_1 . ' </br> 2: ' .  $fill->ans_sec_1 . " </br> 3: " .  $fill->ans_third_1;
+                return  $fill->ans_first_1  . ' / ' .  $fill->ans_sec_1;
+            }
+            if ($fill->ans_first_1) {
+                return  $fill->ans_first_1;
+            }
         } elseif ($question->category == 3) {
             $option = Option::where('question_id', $id)->where('is_correct', 1)->get();
 
-            return '1: ' . $option[0]->name . '</br> 2: ' . $option[1]->name;
+            if ($option[0]->name && $option[1]->name) {
+                return $option[0]->name . ' / ' . $option[1]->name;
+            }
+            if ($option[0]->name) {
+                return $option[0]->name;
+            }
         }
     }
     public static function userAnswer($json, $id)
@@ -244,10 +257,10 @@ class Helper
                     $text =  $fill[0];
                 }
                 if (isset($fill[1])) {
-                    $text = $text . ' ' . $fill[1];
+                    $text = $text . ' /' . $fill[1];
                 }
                 if (isset($fill[2])) {
-                    $text = $text . ' ' . $fill[2];
+                    $text = $text . ' /' . $fill[2];
                 }
             }
             return $text;
@@ -260,7 +273,7 @@ class Helper
                 }
                 if (isset($option[1])) {
                     $ans = Option::where('id', $option[1])->first();
-                    $text =  '1:' . $text . '</br> 2:' . $ans->name;
+                    $text =   $text . '/' . $ans->name;
                 }
             }
             return $text;
