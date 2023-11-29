@@ -72,20 +72,26 @@
                                 <div>
                                     @foreach ($group['questionGroups'] as $group)
                                         @foreach ($group['questions'] as $question)
+                                            @if ($question->category == 3)
+                                                <div class="number-box question_{{ $question->id }}">
+
+                                                    {{ $itera }}
+
+                                                    @php
+                                                        $itera++;
+                                                    @endphp
+                                                </div>
+                                            @endif
                                             <div class="number-box question_{{ $question->id }}">
 
                                                 {{ $itera }}
+
                                                 @php
                                                     $itera++;
                                                 @endphp
                                             </div>
                                         @endforeach
                                     @endforeach
-
-
-
-
-
                                 </div>
                             </div>
                         @endforeach

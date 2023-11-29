@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FillInBlank;
+use App\Models\FinishedTest;
 use App\Models\Option;
 use App\Models\Question;
 use App\Models\QuestionGroup;
@@ -125,6 +126,66 @@ class ReadingTestController extends Controller
                 }
             }
         }
-        dd($fiveChoice);
+        
+        $fiveScoreResult = $this->fiveChoiceScore($fiveChoice);
+        $fillResult = $this->fillScore($fillResult);
+        $mcqsResult =  $this->mcqsScore($mcqsResult);
+        $test =   FinishedTest::create([
+            'test_id' => $request->test_id,
+            'fill_score' => $fillResult,
+            'mcqs_score' => $mcqsResult,
+            'five_choice_score' => $fiveScoreResult,
+            'total_score' => $fillResult + $mcqsResult + $fiveScoreResult,
+            'test' => json_encode($request->all()),
+            'user_id' => isset(auth()->user()->id) ? auth()->user()->id : null,
+        ]);
+
+
+        return redirect()->route('test.score',$test->id);
+    }
+    public function fiveChoiceScore($data)
+    {
+        $score = 0;
+        // Iterate through the outer array
+        foreach ($data as $questionId => $innerArray) {
+            // Check if any value in the inner array is true
+            if (in_array(true, $innerArray, true)) {
+                // Increment the score
+                $score++;
+            }
+        }
+        return $score;
+    }
+    public function mcqsScore($data)
+    {
+        // Initialize score variable
+        $score = 0;
+        // Iterate through the array
+        foreach ($data as $questionId => $value) {
+            // Check if the value is true
+            if ($value === true) {
+                // Increment the score
+                $score++;
+            }
+        }
+        return $score;
+    }
+    public function fillScore($data)
+    {
+        $score = 0;
+        // Iterate through the array
+        foreach ($data as $questionId => $values) {
+
+            // Check if "first" or "sec" is false
+            if (isset($values["first"]) && $values["first"] === true) {
+                // Increment social variable
+                $score++;
+            }
+            if (isset($values["sec"]) && $values["sec"] === true) {
+                // Increment social variable
+                $score++;
+            }
+        }
+        return $score;
     }
 }

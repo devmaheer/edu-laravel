@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('finished_tests', function (Blueprint $table) {
             $table->id();
             $table->integer('test_id')->nullable();
-            $table->time('current_time')->nullable();
-            $table->longText('band')->nullable();
-            $table->longText('heading')->nullable();
-            $table->integer('position')->nullable();
+            $table->string('fill_score')->nullable();
+            $table->string('mcqs_score')->nullable();
+            $table->string('five_choice_score')->nullable();
+            $table->string('total_score')->nullable();
+            $table->json('test')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }

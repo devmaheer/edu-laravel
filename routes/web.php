@@ -12,6 +12,7 @@ use App\Http\Controllers\ReadingTestController;
 use App\Http\Controllers\RegisterationRequestController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Models\FinishedTest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,7 @@ Route::get('/Academic/test', [AcademicTestController::class, 'getAcademicTest'])
 Route::get('/listening/test/{id}', [ListeningTestController::class, 'index'])->name('listening.test');
 Route::get('/reading/test/{id}', [ReadingTestController::class, 'index'])->name('reading.test');
 Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->name('reading.test.finish');
+Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('test.score');
 ///////////////////////////////////////////
 Route::controller(RegisterationRequestController::class)->group(function () {
     Route::get('registeration-request/create', 'create')->name('registeration-request-front-end.create');
