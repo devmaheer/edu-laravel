@@ -38,6 +38,7 @@ Route::get('/listening/test/{id}', [ListeningTestController::class, 'index'])->n
 Route::get('/reading/test/{id}', [ReadingTestController::class, 'index'])->name('reading.test');
 Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->name('reading.test.finish');
 Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('test.score');
+Route::get('/test/correct/answer/{id}', [FinishedTestController::class, 'correctAnswers'])->name('test.correct.answer');
 ///////////////////////////////////////////
 Route::controller(RegisterationRequestController::class)->group(function () {
     Route::get('registeration-request/create', 'create')->name('registeration-request-front-end.create');

@@ -48,6 +48,11 @@
                       </div>
                    
                 </div>
+                <div class="row">
+                    <center><h4><a class="btn btn-primary" href="{{route('test.correct.answer',$finishtest->id)}}">View Correct Answers</a></center>
+                   
+                   
+                </div>
 
 
             </div>
