@@ -213,11 +213,57 @@ class Helper
 
             $fill = FillInBlank::where('question_id', $id)->first();
 
-            return $fill->ans_first_1 . ' ' .  $fill->ans_sec_1 . " " .  $fill->ans_third_1;
+            return '1: ' . $fill->ans_first_1 . ' </br> 2: ' .  $fill->ans_sec_1 . " </br> 3: " .  $fill->ans_third_1;
         } elseif ($question->category == 3) {
             $option = Option::where('question_id', $id)->where('is_correct', 1)->get();
 
-            return $option[0]->name . ' ' . $option[1]->name;
+            return '1: ' . $option[0]->name . '</br> 2: ' . $option[1]->name;
+        }
+    }
+    public static function userAnswer($json, $id)
+    {
+        $question = Question::findOrFail($id);
+
+        if ($question->category == 1 && isset($json->mcqs)) {
+
+            foreach ($json->mcqs as $key => $mcqs) {
+
+                if ($id == $key) {
+                    $option = Option::where('id', $mcqs)->first();
+                    return $option->name;
+                }
+            }
+        } elseif ($question->category == 2 && isset($json->fill)) {
+
+
+            foreach ($json->fill as $key => $fill) {
+
+                $fills = FillInBlank::where('question_id', $key)->first();
+                $text = '';
+                if (isset($fill[0])) {
+                    $text =  $fill[0];
+                }
+                if (isset($fill[1])) {
+                    $text = $text . ' ' . $fill[1];
+                }
+                if (isset($fill[2])) {
+                    $text = $text . ' ' . $fill[2];
+                }
+            }
+            return $text;
+        } elseif ($question->category == 3 && $json->fivechoice) {
+            $text = '';
+            foreach ($json->fivechoice as $key => $option) {
+                if (isset($option[0])) {
+                    $ans = Option::where('id', $option[0])->first();
+                    $text =  $ans->name;
+                }
+                if (isset($option[1])) {
+                    $ans = Option::where('id', $option[1])->first();
+                    $text =  '1:' . $text . '</br> 2:' . $ans->name;
+                }
+            }
+            return $text;
         }
     }
 }

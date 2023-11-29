@@ -81,6 +81,6 @@ class FinishedTestController extends Controller
         });
 
         $data =  $organizedData;
-        return view('frontend.pages.correct-answer', compact('test','data'));
+        return view('frontend.pages.correct-answer', compact('test','data','userTest'));
     }
 }

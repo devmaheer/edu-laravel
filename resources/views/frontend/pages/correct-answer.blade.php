@@ -39,20 +39,43 @@
                                 @foreach ($group['questionGroups'] as $group)
                                     @foreach ($group['questions'] as $question)
                                         @if ($question->category == 3)
-                                            <div style="border: 1px solid" class=" mt-5  ps-5 number-box question_{{ $question->id }}">
+                                            <div style="border: 1px solid" class=" number-box question_{{ $question->id }}">
 
-                                                {{ $itera }}
+                                                <table class="table">
+                                                    <header>
+                                                        <th style="border: 1px solid black;">No</th>
+                                                        <th style="border: 1px solid black;">Correct</th>
+                                                        <th style="border: 1px solid black;">Your Answer</th>
+                                                    </header>
+                                                    <tbody>
+                                                        <td style="border: 1px solid black;"> {{ $itera }}</td>
+                                                        <td style="border: 1px solid black;">  {!!App\Helper\Helper::correctAnswer( $question->id )!!}</td>
+                                                        <td style="border: 1px solid black;" >{!!App\Helper\Helper::userAnswer( $userTest,$question->id )!!}</td>
+                                                    </tbody>
+                                                  </table>
 
                                                 @php
                                                     $itera++;
                                                 @endphp
-                                              {{App\Helper\Helper::correctAnswer( $question->id )}}  
+                                           
                                             </div>
                                         @endif
-                                        <div class="mt-5 ps-5 number-box question_{{ $question->id }}">
-
-                                            {{ $itera }}
-                                            {{App\Helper\Helper::correctAnswer( $question->id )}}
+                                        <div  class=" number-box question_{{ $question->id }}">
+                                              <table class="table">
+                                                <header>
+                                                    <th style="border: 1px solid black;">No</th>
+                                                    <th style="border: 1px solid black;">Correct</th>
+                                                    <th style="border: 1px solid black;">Your Answer</th>
+                                                </header>
+                                                <tbody>
+                                                    <td style="border: 1px solid black;"> {{ $itera }}</td>
+                                                    <td style="border: 1px solid black;">  {!!App\Helper\Helper::correctAnswer( $question->id )!!}</td>
+                                                    <td style="border: 1px solid black;" >{!!App\Helper\Helper::userAnswer( $userTest,$question->id )!!}</td>
+                                                </tbody>
+                                              </table>
+                                           
+                                          
+                                           
                                             @php
                                                 $itera++;
                                             @endphp
