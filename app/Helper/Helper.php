@@ -213,7 +213,7 @@ class Helper
             $fill = FillInBlank::where('question_id', $id)->first();
 
             $answerParts = [];
-            
+
             if ($fill->ans_first_1) {
                 $answerParts[] = $fill->ans_first_1;
             }
@@ -223,8 +223,8 @@ class Helper
             if ($fill->ans_first_3) {
                 $answerParts[] = $fill->ans_first_3;
             }
-     
-            
+
+
             if ($fill->ans_sec_1) {
                 $answerParts[] = $fill->ans_sec_1;
             }
@@ -234,7 +234,7 @@ class Helper
             if ($fill->ans_sec_3) {
                 $answerParts[] = $fill->ans_sec_3;
             }
-            
+
             if ($fill->ans_third_1) {
                 $answerParts[] = $fill->ans_third_1;
             }
@@ -244,11 +244,9 @@ class Helper
             if ($fill->ans_third_3) {
                 $answerParts[] = $fill->ans_third_2;
             }
-            
-            
+
+
             return implode(' / ', $answerParts);
-         
-           
         } elseif ($question->category == 3) {
             $option = Option::where('question_id', $id)->where('is_correct', 1)->get();
 
@@ -274,23 +272,23 @@ class Helper
                 }
             }
         } elseif ($question->category == 2 && isset($json->fill)) {
-
-
+          
+            $answerParts = [];
             foreach ($json->fill as $key => $fill) {
 
-                $fills = FillInBlank::where('question_id', $key)->first();
-                $text = '';
-                if (isset($fill[0])) {
-                    $text =  $fill[0];
-                }
-                if (isset($fill[1])) {
-                    $text = $text . ' /' . $fill[1];
-                }
-                if (isset($fill[2])) {
-                    $text = $text . ' /' . $fill[2];
+                if ($id == $key) {
+                    if (isset($fill[0])) {
+                        $answerParts[] =  $fill[0];
+                    }
+                    if (isset($fill[1])) {
+                        $answerParts[] =  $fill[1];
+                    }
+                    if (isset($fill[2])) {
+                        $answerParts[] =  $fill[2];
+                    }
                 }
             }
-            return $text;
+            return implode(' / ', $answerParts);
         } elseif ($question->category == 3 && isset($json->fivechoice)) {
             $text = '';
             foreach ($json->fivechoice as $key => $option) {
