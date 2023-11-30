@@ -210,18 +210,45 @@ class Helper
 
             return $option->name;
         } elseif ($question->category == 2) {
-
             $fill = FillInBlank::where('question_id', $id)->first();
-            if ($fill->ans_first_1 && $fill->ans_sec_2 &&  $fill->ans_third_1) {
-                return  $fill->ans_first_1  . ' / ' .  $fill->ans_sec_1 . " / " .  $fill->ans_third_1;
-            }
-            if ($fill->ans_first_1 && $fill->ans_sec_2) {
 
-                return  $fill->ans_first_1  . ' / ' .  $fill->ans_sec_1;
-            }
+            $answerParts = [];
+            
             if ($fill->ans_first_1) {
-                return  $fill->ans_first_1;
+                $answerParts[] = $fill->ans_first_1;
             }
+            if ($fill->ans_first_2) {
+                $answerParts[] = $fill->ans_first_2;
+            }
+            if ($fill->ans_first_3) {
+                $answerParts[] = $fill->ans_first_3;
+            }
+     
+            
+            if ($fill->ans_sec_1) {
+                $answerParts[] = $fill->ans_sec_1;
+            }
+            if ($fill->ans_sec_2) {
+                $answerParts[] = $fill->ans_sec_2;
+            }
+            if ($fill->ans_sec_3) {
+                $answerParts[] = $fill->ans_sec_3;
+            }
+            
+            if ($fill->ans_third_1) {
+                $answerParts[] = $fill->ans_third_1;
+            }
+            if ($fill->ans_third_2) {
+                $answerParts[] = $fill->ans_third_2;
+            }
+            if ($fill->ans_third_3) {
+                $answerParts[] = $fill->ans_third_2;
+            }
+            
+            
+            return implode(' / ', $answerParts);
+         
+           
         } elseif ($question->category == 3) {
             $option = Option::where('question_id', $id)->where('is_correct', 1)->get();
 

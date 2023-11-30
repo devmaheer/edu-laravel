@@ -63,7 +63,7 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Correct</th>
+                                                            <th >Correct</th>
                                                             <th>Your Answer</th>
                                                         </tr>
                                                     </thead>
