@@ -46,62 +46,15 @@
                 @endphp --}}
 
                     <div class="row">
-                        @php
-                            $itera = 1;
-                        @endphp
-                        @foreach ($data as $key => $group)
-                            <div class="col-md-2">
-                                <h6>
-                                    @if ($key == 1)
-                                        Paragraph One
-                                    @endif
-                                    @if ($key == 2)
-                                        Paragraph Two
-                                    @endif
-                                    @if ($key == 3)
-                                        Paragraph Three
-                                    @endif
-                                    @if ($key == 4)
-                                        Paragraph Four
-                                    @endif
-                                    @if ($key == 5)
-                                        Paragraph Five
-                                    @endif
-                                </h6>
-
-                                <div>
-                                    @foreach ($group['questionGroups'] as $group)
-                                        @foreach ($group['questions'] as $question)
-                                            @if ($question->category == 3)
-                                                <div class="number-box question_{{ $question->id }}">
-
-                                                    {{ $itera }}
-
-                                                    @php
-                                                        $itera++;
-                                                    @endphp
-                                                </div>
-                                            @endif
-                                            <div class="number-box question_{{ $question->id }}">
-
-                                                {{ $itera }}
-
-                                                @php
-                                                    $itera++;
-                                                @endphp
-                                            </div>
-                                        @endforeach
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endforeach
+                       
+                    
                         <div class="col-md-2">
                             <h4 class="mb-4">{{ $test->name }}</h4>
                             <h4 id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</h4>
                         </div>
 
                     </div>
-                    <div class="col-md-2">
+                    {{-- <div class="col-md-2">
 
 
                         <select id="fontSizeSelect" class="form-control form-control-solid required">
@@ -124,15 +77,15 @@
                                     class="fas fa-times-circle"></i></button>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
-            <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
+            <form action="{{ route('reading.test.finish') }}" id="listeningTest" method="post">
                 <input type="hidden" name="test_id" value="{{ $test->id }}">
-                <input type="hidden" name="type" value="reading">
+                <input type="hidden" name="type" value="listeing">
                 <div class="container " style="max-width: 1500px;">
 
                     @php
@@ -141,32 +94,7 @@
                     @foreach ($data as $key => $group)
                         <div class="row">
 
-                            <div class="col-md-6">
-                                <div class="row mt-5">
-                                    <div class="card  shadow-lg"
-                                        style="padding : 0px; max-height: 700px; overflow-y:auto;  border: 2px solid #BFBDBD;">
-                                        <div class="card-body highlightme ">
-                                            @if ($key == 1)
-                                                {!! $test->paragraph1 !!}
-                                            @endif
-                                            @if ($key == 2)
-                                                {!! $test->paragraph2 !!}
-                                            @endif
-                                            @if ($key == 3)
-                                                {!! $test->paragraph3 !!}
-                                            @endif
-                                            @if ($key == 4)
-                                                {!! $test->paragraph4 !!}
-                                            @endif
-                                            @if ($key == 5)
-                                                {!! $test->paragraph5 !!}
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-6 mt-5"
+                            <div class="col-md-12 mt-5"
                                 style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
 
                                 <div class="card-body mb-5" style="padding : 0px; ">
@@ -326,11 +254,7 @@
             success: function(response) {
                 if (response.countdownValue == null) {
                     countdownValue = 60 * 60;
-                } 
-                else if(response.countdownValue == 0){
-                    $("#readingTest").submit();
-                }
-                else {
+                } else {
                     countdownValue = response.countdownValue;
                 }
             }
@@ -350,9 +274,8 @@
 
             // Check if the countdown has reached zero
             if (countdownValue === 0) {
-              
                 // Perform actions when the timer reaches zero
-                $("#readingTest").submit();
+                alert('Time is up!');
                 // You can add more actions here
 
                 // Reset the countdown for a new timer (here, it's set to 42 minutes)

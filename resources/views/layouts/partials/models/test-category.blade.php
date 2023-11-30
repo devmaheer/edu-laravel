@@ -8,16 +8,17 @@
 
                 <div class="card-body text-center">
                     <a class="btn btn-outline-primary btn-lg"
-                        href="{{ route('listening.test', ['id' =>  $test->id]) }}"
+                        href="{{ route('show.listening.test', ['id' => $test->id]) }}"
                         style="border-radius:30px">Listening Test</a>
                 </div>
                 <div class="card-body text-center">
                     <a class="btn btn-outline-primary btn-lg"
-                        href="{{ route('show.reading.test', ['id' =>  $test->id]) }}" style="border-radius:30px"> Reading Test </a>
+                        href="{{ route('show.reading.test', ['id' => $test->id]) }}" style="border-radius:30px">
+                        Reading Test </a>
                 </div>
             </div>
         </div>
         <!--end::Modal content-->
     </div>
-  
+
 </div>

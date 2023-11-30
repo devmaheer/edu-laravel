@@ -41,7 +41,7 @@ Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('
 Route::get('/test/correct/answer/{id}', [FinishedTestController::class, 'correctAnswers'])->name('test.correct.answer');
 ///////////////////////////////////////////
 
-
+Route::get('/show/listening/test/{id}', [ListeningTestController::class, 'show'])->name('show.listening.test');
 Route::get('/show/reading/test/{id}', [ReadingTestController::class, 'show'])->name('show.reading.test');
 Route::controller(RegisterationRequestController::class)->group(function () {
     Route::get('registeration-request/create', 'create')->name('registeration-request-front-end.create');
@@ -125,5 +125,5 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 });
-Route::post('/startTimer', [FinishedTestControl3ler::class, 'startTimer'])->name('startTimer');
+Route::post('/startTimer', [FinishedTestController::class, 'startTimer'])->name('startTimer');
 Route::get('/getCountdownValue', [FinishedTestController::class, 'getCountdownValue'])->name('getCountdownValue');

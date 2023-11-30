@@ -15,7 +15,7 @@ class ReadingTestController extends Controller
 
     public function index(Request $request, $id)
     {
-
+      
         $test = Test::where('id', $id)->with('questions')->first();
         $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
             $query->WhereNotNull('paragraph')->orderBy('paragraph', 'asc');
@@ -46,7 +46,7 @@ class ReadingTestController extends Controller
 
     public function finish(Request $request)
     {
-
+        session()->forget('countdowntime');
         $test = Test::findOrFail($request->test_id);
         $mcqsResult = [];
         if ($request->mcqs) {

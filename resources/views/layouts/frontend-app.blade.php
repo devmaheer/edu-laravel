@@ -106,7 +106,7 @@
     </div>
     <!-- Spinner End -->
 
-    @if (!Request::routeIs('reading.test'))
+    @if (!Request::routeIs('reading.test') && !Request::routeIs('listening.test'))
         <!-- Navbar Start -->
         @include('layouts.partials.frontend-navbar')
         <!-- Navbar End -->

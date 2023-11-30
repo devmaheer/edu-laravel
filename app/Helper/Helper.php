@@ -195,6 +195,10 @@ class Helper
 
                     return 2.5;
                 }
+                if ($score->total_score >= 5 && $score->total_score <= 0) {
+
+                    return 2;
+                }
             }
         } else {
         }
