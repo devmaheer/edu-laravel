@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body text-center">
                     <a class="btn btn-outline-primary btn-lg"
-                        href="{{ route('reading.test', ['id' =>  $test->id]) }}" style="border-radius:30px"> Reading Test </a>
+                        href="{{ route('show.reading.test', ['id' =>  $test->id]) }}" style="border-radius:30px"> Reading Test </a>
                 </div>
             </div>
         </div>

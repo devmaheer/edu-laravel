@@ -190,4 +190,9 @@ class ReadingTestController extends Controller
         }
         return $count;
     }
+    public function show(Request $request,$id){
+    $test = Test::findOrFail($id);
+
+    return view('frontend.pages.reading-test.partials.show',compact('test'));
+    }
 }

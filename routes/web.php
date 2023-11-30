@@ -40,6 +40,9 @@ Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->n
 Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('test.score');
 Route::get('/test/correct/answer/{id}', [FinishedTestController::class, 'correctAnswers'])->name('test.correct.answer');
 ///////////////////////////////////////////
+
+
+Route::get('/show/reading/test/{id}', [ReadingTestController::class, 'show'])->name('show.reading.test');
 Route::controller(RegisterationRequestController::class)->group(function () {
     Route::get('registeration-request/create', 'create')->name('registeration-request-front-end.create');
     Route::get('registeration-request/index', 'index')->name('registeration-request.index');
