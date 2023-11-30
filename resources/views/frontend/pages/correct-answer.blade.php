@@ -1,26 +1,27 @@
 @extends('layouts.frontend-app')
 @section('css')
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
 
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: center;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
 
-    th {
-        background-color: #f2f2f2;
-    }
+        th {
+            background-color: #f2f2f2;
+        }
 
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-</style>
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
 @endsection
 @section('content')
     <!-- Service Start -->
@@ -55,64 +56,50 @@
 
                             <div>
                                 @foreach ($group['questionGroups'] as $group)
-                                    @foreach ($group['questions'] as $question)
-                                        @if ($question->category == 3)
-                                            <div  class=" number-box question_{{ $question->id }}">
-
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th >Correct</th>
-                                                            <th>Your Answer</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>{{ $itera }}</td>
-                                                            <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
-                                                            <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                               
-
-                                                @php
-                                                    $itera++;
-                                                @endphp
-                                           
-                                            </div>
-                                        @endif
-                                        <div  class=" number-box question_{{ $question->id }}">
-                                            
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>Correct</th>
-                                                        <th>Your Answer</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Correct</th>
+                                                <th>Your Answer</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($group['questions'] as $question)
+                                                @if ($question->category == 3)
                                                     <tr>
                                                         <td>{{ $itera }}</td>
                                                         <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
                                                         <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                          
-                                           
-                                            @php
-                                                $itera++;
-                                            @endphp
-                                        </div>
-                                    @endforeach
+
+
+                                                        @php
+                                                            $itera++;
+                                                        @endphp
+                                                @endif
+
+
+
+                                                <tr>
+                                                    <td>{{ $itera }}</td>
+                                                    <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
+                                                    <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
+                                                </tr>
+
+
+
+                                                @php
+                                                    $itera++;
+                                                @endphp
+                                            @endforeach
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 @endforeach
                             </div>
                         </div>
                     @endforeach
-                  
+
 
                 </div>
 
