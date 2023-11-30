@@ -328,36 +328,43 @@ class Helper
                 if (strtolower($data->ans_first_1) == strtolower($currentValue[0])) {
                     array_push($fillResult,true);
                 }
-                if (strtolower($data->ans_first_2) == strtolower($currentValue[0])) {
+                elseif (strtolower($data->ans_first_2) == strtolower($currentValue[0])) {
                     array_push($fillResult,true);
                 }
-                if (strtolower($data->ans_first_3) == strtolower($currentValue[0])) {
+                elseif (strtolower($data->ans_first_3) == strtolower($currentValue[0])) {
                     array_push($fillResult,true);
+                }else{
+                    array_push($fillResult,false);    
                 }
             }
                 if(isset($currentValue[1])){
                 if (strtolower($data->ans_sec_1) == strtolower($currentValue[1])) {
                     array_push($fillResult,true);
                 }
-                if (strtolower($data->ans_sec_2) == strtolower($currentValue[1])) {
+                elseif (strtolower($data->ans_sec_2) == strtolower($currentValue[1])) {
                     array_push($fillResult,true);
                 }
-                if (strtolower($data->ans_sec_3) == strtolower($currentValue[1])) {
+                elseif (strtolower($data->ans_sec_3) == strtolower($currentValue[1])) {
                     array_push($fillResult,true);
+                }else{
+                    array_push($fillResult,false);    
                 }
             }
             if(isset($currentValue[3])){
                 if (strtolower($data->ans_third_1) == strtolower($currentValue[3])) {
                     array_push($fillResult,true);
                 }
-                if (strtolower($data->ans_third_2) == strtolower($currentValue[3])) {
+                elseif (strtolower($data->ans_third_2) == strtolower($currentValue[3])) {
                     array_push($fillResult,true);
                 }
-                if (strtolower($data->ans_third_3) == strtolower($currentValue[3])) {
+                elseif (strtolower($data->ans_third_3) == strtolower($currentValue[3])) {
                     array_push($fillResult,true);
+                }else{
+                    array_push($fillResult,false);    
                 }
                
             }
+         
                 if(count(array_unique($fillResult)) === 1)  {
                     return true;
                 }else{
