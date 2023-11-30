@@ -342,12 +342,8 @@
                         $itera = 1;
                     @endphp
                     @foreach ($data as $key => $group)
-                        <div role="tabpanel" class="tab-pane fade active show" id="paragraph-{{$key}}">
+                        <div role="tabpanel" class="tab-pane fade {{$key == 1 ? 'active show' : ' '}}" id="paragraph-{{$key}}">
                             <div class="row">
-
-
-
-
                                 <table class="table">
                                     <thead>
                                         <tr>
