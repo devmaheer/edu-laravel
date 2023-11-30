@@ -373,5 +373,36 @@ class Helper
             }
            
         }
+        if ($question->category == 3 && isset($json->fivechoice)) {
+            $fiveChoiceResult= [];
+            foreach ($json->fivechoice as $key => $option) {
+                if (isset($option[0])) {
+                    $ans = Option::where('id', $option[0])->first();
+                    if ($ans->is_correct == 0) {
+                        array_push($fiveChoiceResult,false);    
+                    } else {
+                        array_push($fiveChoiceResult,true);    
+                    }
+                }
+                if (isset($option[1])) {
+                    $ans = Option::where('id', $option[1])->first();
+                    if ($ans->is_correct == 0) {
+                        array_push($fiveChoiceResult,false);    
+                    } else {
+                        array_push($fiveChoiceResult,true);    
+                    }
+                }
+
+              if($fiveChoiceResult[0] && $fiveChoiceResult[1] ){
+                return true;
+              }
+              if(!$fiveChoiceResult[0] && !$fiveChoiceResult[1] ){
+                return false;
+              }
+              if(!$fiveChoiceResult[0]|| !$fiveChoiceResult[1] ){
+                return 'one';
+              }
+            }
+        }
     }
 }

@@ -324,19 +324,19 @@
             <div class="job-tab text-center">
                 <ul class="nav nav-tabs justify-content-center" role="tablist">
                     <li role="presentation" class="active">
-                        <a class="active show" href="#paragraph-1" aria-controls="paragraph-1" role="tab" data-toggle="tab"
-                            aria-selected="true">Paragraph One</a>
+                        <a class="active show" href="#paragraph-1" aria-controls="paragraph-1" role="tab"
+                            data-toggle="tab" aria-selected="true">Paragraph One</a>
                     </li>
                     <li role="presentation"><a href="#paragraph-2" aria-controls="paragraph-2" role="tab"
                             data-toggle="tab" class aria-selected="false">Paragraph Two</a></li>
                     <li role="presentation"><a href="#paragraph-3" aria-controls="paragraph-3" role="tab"
                             data-toggle="tab" class aria-selected="false">Paragraph Three</a></li>
-                            @if(array_key_exists("4",$data))
-                            <li role="presentation"><a href="#paragraph-4" aria-controls="paragraph-4" role="tab"
+                    @if (array_key_exists('4', $data))
+                        <li role="presentation"><a href="#paragraph-4" aria-controls="paragraph-4" role="tab"
                                 data-toggle="tab" class aria-selected="false">Paragraph Four</a></li>
-                                <li role="presentation"><a href="#paragraph-5" aria-controls="paragraph-5" role="tab"
-                                    data-toggle="tab" class aria-selected="false">Paragraph Five</a></li>
-                                    @endif
+                        <li role="presentation"><a href="#paragraph-5" aria-controls="paragraph-5" role="tab"
+                                data-toggle="tab" class aria-selected="false">Paragraph Five</a></li>
+                    @endif
                 </ul>
                 <div class="tab-content text-left">
 
@@ -344,7 +344,8 @@
                         $itera = 1;
                     @endphp
                     @foreach ($data as $key => $group)
-                        <div role="tabpanel" class="tab-pane fade {{$key == 1 ? 'active show' : ' '}}" id="paragraph-{{$key}}">
+                        <div role="tabpanel" class="tab-pane fade {{ $key == 1 ? 'active show' : ' ' }}"
+                            id="paragraph-{{ $key }}">
                             <div class="row">
                                 <table class="table">
                                     <thead>
@@ -359,15 +360,26 @@
                                         @foreach ($group['questionGroups'] as $group)
                                             @foreach ($group['questions'] as $question)
                                                 @if ($question->category == 3)
+                                              
                                                     <tr>
                                                         <td>{{ $itera }}</td>
                                                         <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
-                                                        <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
-
-
-                                                        @php
-                                                            $itera++;
-                                                        @endphp
+                                                        <td>
+                                                            @if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 1)
+                                                           
+                                                                <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
+                                                            @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 0)
+                                                                <i class="bi bi-x" style="color:red"></i>
+                                                            @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 'one')
+                                                                <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
+                                                                <i class="bi bi-x" style="color:red"></i>
+                                                            @endif
+                                                            {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}
+                                                        </td>
+                                                    </tr>
+                                                    @php
+                                                        $itera++;
+                                                    @endphp
                                                 @endif
 
 
@@ -375,12 +387,17 @@
                                                 <tr>
                                                     <td>{{ $itera }}</td>
                                                     <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
-                                                    <td>@if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id))
-                                                        <i class="bi bi-check" style="color:rgb(91, 255, 91)" ></i>
-                                                        @else 
-                                                        <i class="bi bi-x" style="color:red"></i>
+                                                    <td>
+                                                        @if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 1)
+                                                            <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
+                                                        @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 0)
+                                                            <i class="bi bi-x" style="color:red"></i>
+                                                        @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 'one')
+                                                            <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
+                                                            <i class="bi bi-x" style="color:red"></i>
                                                         @endif
-                                                        {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
+                                                        {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}
+                                                    </td>
                                                 </tr>
 
 
@@ -395,7 +412,7 @@
                                 </table>
                             </div>
                         </div>
-                        @endforeach
+                    @endforeach
 
                 </div>
             </div>
