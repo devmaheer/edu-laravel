@@ -55,16 +55,17 @@
                             </h6>
 
                             <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Correct</th>
+                                            <th>Your Answer</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                 @foreach ($group['questionGroups'] as $group)
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Correct</th>
-                                                <th>Your Answer</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                 
                                             @foreach ($group['questions'] as $question)
                                                 @if ($question->category == 3)
                                                     <tr>
@@ -92,10 +93,11 @@
                                                     $itera++;
                                                 @endphp
                                             @endforeach
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                          
                                 @endforeach
+                            </tr>
+                        </tbody>
+                    </table>
                             </div>
                         </div>
                     @endforeach
