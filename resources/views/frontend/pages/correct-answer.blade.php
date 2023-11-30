@@ -375,7 +375,12 @@
                                                 <tr>
                                                     <td>{{ $itera }}</td>
                                                     <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
-                                                    <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
+                                                    <td>@if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id))
+                                                        <i class="bi bi-check" style="color:rgb(91, 255, 91)" ></i>
+                                                        @else 
+                                                        <i class="bi bi-x" style="color:red"></i>
+                                                        @endif
+                                                        {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
                                                 </tr>
 
 

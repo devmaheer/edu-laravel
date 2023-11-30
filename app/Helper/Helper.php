@@ -272,7 +272,7 @@ class Helper
                 }
             }
         } elseif ($question->category == 2 && isset($json->fill)) {
-          
+
             $answerParts = [];
             foreach ($json->fill as $key => $fill) {
 
@@ -302,6 +302,69 @@ class Helper
                 }
             }
             return $text;
+        }
+    }
+    public static function checkCorrectOrNot($json, $id)
+    {
+        $question = Question::findOrFail($id);
+        if ($question->category == 1 && isset($json->mcqs)) {
+
+            if ($json->mcqs) {
+                $options = Option::where('question_id', $id)->where('is_correct', 1)->first();
+                if (in_array($options->id, (array)$json->mcqs)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        if ($question->category == 2 && isset($json->fill)) {
+            $data = FillInBlank::where('question_id', $id)->first();
+            $fill = (array)$json->fill;
+            $fillResult= [];
+            if (array_key_exists($id,$fill)) {
+                $currentValue = $fill[$id];
+                if(isset($currentValue[0])){
+                if (strtolower($data->ans_first_1) == strtolower($currentValue[0])) {
+                    array_push($fillResult,true);
+                }
+                if (strtolower($data->ans_first_2) == strtolower($currentValue[0])) {
+                    array_push($fillResult,true);
+                }
+                if (strtolower($data->ans_first_3) == strtolower($currentValue[0])) {
+                    array_push($fillResult,true);
+                }
+            }
+                if(isset($currentValue[1])){
+                if (strtolower($data->ans_sec_1) == strtolower($currentValue[1])) {
+                    array_push($fillResult,true);
+                }
+                if (strtolower($data->ans_sec_2) == strtolower($currentValue[1])) {
+                    array_push($fillResult,true);
+                }
+                if (strtolower($data->ans_sec_3) == strtolower($currentValue[1])) {
+                    array_push($fillResult,true);
+                }
+            }
+            if(isset($currentValue[3])){
+                if (strtolower($data->ans_third_1) == strtolower($currentValue[3])) {
+                    array_push($fillResult,true);
+                }
+                if (strtolower($data->ans_third_2) == strtolower($currentValue[3])) {
+                    array_push($fillResult,true);
+                }
+                if (strtolower($data->ans_third_3) == strtolower($currentValue[3])) {
+                    array_push($fillResult,true);
+                }
+               
+            }
+                if(count(array_unique($fillResult)) === 1)  {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+           
         }
     }
 }

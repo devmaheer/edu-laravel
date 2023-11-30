@@ -61,6 +61,7 @@ class ReadingTestController extends Controller
             }
         }
         $fillResult = [];
+
         if ($request->fill) {
             foreach ($request->fill as $key => $fill) {
 
@@ -126,7 +127,7 @@ class ReadingTestController extends Controller
                 }
             }
         }
-        
+
         $fiveScoreResult = $this->fiveChoiceScore($fiveChoice);
         $fillResult = $this->fillScore($fillResult);
         $mcqsResult =  $this->mcqsScore($mcqsResult);
@@ -141,7 +142,7 @@ class ReadingTestController extends Controller
         ]);
 
 
-        return redirect()->route('test.score',$test->id);
+        return redirect()->route('test.score', $test->id);
     }
     public function fiveChoiceScore($data)
     {
@@ -172,20 +173,21 @@ class ReadingTestController extends Controller
     }
     public function fillScore($data)
     {
-        $score = 0;
-        // Iterate through the array
-        foreach ($data as $questionId => $values) {
+       
+        // Initialize a variable to store the count
+        $count = 0;
 
-            // Check if "first" or "sec" is false
-            if (isset($values["first"]) && $values["first"] === true) {
-                // Increment social variable
-                $score++;
+        // Iterate through the outer array
+        foreach ($data as $innerArray) {
+            // Check if any value in the inner array is false
+            if (in_array(false, $innerArray, true)) {
+                // If false is found, do not increment count
+                continue;
             }
-            if (isset($values["sec"]) && $values["sec"] === true) {
-                // Increment social variable
-                $score++;
-            }
+
+            // If all values are true, increment count
+            $count++;
         }
-        return $score;
+        return $count;
     }
 }
