@@ -46,15 +46,62 @@
                 @endphp --}}
 
                     <div class="row">
-                       
-                    
+                        @php
+                            $itera = 1;
+                        @endphp
+                        @foreach ($data as $key => $group)
+                            <div class="col-md-2">
+                                <h6>
+                                    @if ($key == 1)
+                                        Part One
+                                    @endif
+                                    @if ($key == 2)
+                                        Part Two
+                                    @endif
+                                    @if ($key == 3)
+                                        Part Three
+                                    @endif
+                                    @if ($key == 4)
+                                        Part Four
+                                    @endif
+                                    @if ($key == 5)
+                                        Part Five
+                                    @endif
+                                </h6>
+
+                                <div>
+                                    @foreach ($group['questionGroups'] as $group)
+                                        @foreach ($group['questions'] as $question)
+                                            @if ($question->category == 3)
+                                                <div class="number-box question_{{ $question->id }}">
+
+                                                    {{ $itera }}
+
+                                                    @php
+                                                        $itera++;
+                                                    @endphp
+                                                </div>
+                                            @endif
+                                            <div class="number-box question_{{ $question->id }}">
+
+                                                {{ $itera }}
+
+                                                @php
+                                                    $itera++;
+                                                @endphp
+                                            </div>
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
                         <div class="col-md-2">
                             <h4 class="mb-4">{{ $test->name }}</h4>
                             <h4 id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</h4>
                         </div>
 
                     </div>
-                    {{-- <div class="col-md-2">
+                    <div class="col-md-2">
 
 
                         <select id="fontSizeSelect" class="form-control form-control-solid required">
@@ -77,15 +124,15 @@
                                     class="fas fa-times-circle"></i></button>
 
                         </div>
-                    </div> --}}
+                    </div>
 
                 </div>
             </div>
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
-            <form action="{{ route('reading.test.finish') }}" id="listeningTest" method="post">
+            <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
                 <input type="hidden" name="test_id" value="{{ $test->id }}">
-                <input type="hidden" name="type" value="listeing">
+                <input type="hidden" name="type" value="reading">
                 <div class="container " style="max-width: 1500px;">
 
                     @php

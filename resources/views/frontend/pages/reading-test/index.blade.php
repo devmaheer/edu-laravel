@@ -228,6 +228,13 @@
 
 @section('script')
     <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'f' || event.key === 'F')) {
+                event.preventDefault();
+                // Optionally, you can add a custom message or behavior here.
+                console.log("Ctrl+F is disabled on this website.");
+            }
+        });
         $('#highlightButton').on('click', function() {
             var selectedText = getSelectedText();
             if (selectedText !== "") {
@@ -326,11 +333,9 @@
             success: function(response) {
                 if (response.countdownValue == null) {
                     countdownValue = 60 * 60;
-                } 
-                else if(response.countdownValue == 0){
+                } else if (response.countdownValue == 0) {
                     $("#readingTest").submit();
-                }
-                else {
+                } else {
                     countdownValue = response.countdownValue;
                 }
             }
@@ -350,7 +355,7 @@
 
             // Check if the countdown has reached zero
             if (countdownValue === 0) {
-              
+
                 // Perform actions when the timer reaches zero
                 $("#readingTest").submit();
                 // You can add more actions here
