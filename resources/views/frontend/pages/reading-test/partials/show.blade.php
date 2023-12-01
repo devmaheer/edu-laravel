@@ -19,8 +19,10 @@
                             <li>You can see a timer on-screen so you know how much time has passed, you cannot stop
                         it. If you want to submit before 60 minutes, use the Finish Test button at the end of the
                         page. After 60 minutes the test will close, and you can check your results.</li>
-                        <li>There is an on-screen highlighter as well like in the actual IELTS test. Use (image) to
-                        highlight the selected text. (image) to remove selected words or text and (image) to
+                        <li>There is an on-screen highlighter as well like in the actual IELTS test. Use <i class="fas fa-pen"></i> to
+                        highlight the selected text. <i
+                        class="fas fa-trash-alt"></i> to remove selected words or text and <i
+                        class="fas fa-times-circle"></i> to
                         clear all the highlighted text.</li>
                         <li>In the actual IELTS test you should write all answers in capital letters except Roman
                         numbers (i, ii, iii, iv, ….), as sometimes the answers can be proper nouns which should be
@@ -39,9 +41,11 @@
                                 it. If you want to submit before 60 minutes, use the Finish Test button at the end of the
                                 page. Ater 60 minutes the test will close, and you can check your results. 
                                 </li>
-                        <li>There is an on-screen highlighter as well like in the actual IELTS test. Use (image) to
-                            highlight the selected text. (image) to remove selected words or text and (image) to
-                            clear all the highlighted text. </li>
+                                <li>There is an on-screen highlighter as well like in the actual IELTS test. Use <i class="fas fa-pen"></i> to
+                                    highlight the selected text. <i
+                                    class="fas fa-trash-alt"></i> to remove selected words or text and <i
+                                    class="fas fa-times-circle"></i> to
+                                    clear all the highlighted text.</li>
                         <li>In the actual IELTS test you should write all answers in capital letters except Roman
                             numbers (i, ii, iii, iv, ….), as sometmes the answers can be proper nouns which should be
                             written with the first letter as capital but here it will not be considered.</b>

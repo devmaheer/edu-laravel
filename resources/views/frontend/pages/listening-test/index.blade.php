@@ -51,7 +51,7 @@
                         @endphp
                         @foreach ($data as $key => $group)
                             <div class="col-md-2">
-                                <h6>
+                                {{-- <h6>
                                     @if ($key == 1)
                                         Part One
                                     @endif
@@ -67,7 +67,7 @@
                                     @if ($key == 5)
                                         Part Five
                                     @endif
-                                </h6>
+                                </h6> --}}
 
                                 <div>
                                     @foreach ($group['questionGroups'] as $group)
@@ -100,6 +100,7 @@
                             <h4 id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</h4>
                         </div>
 
+
                     </div>
                     <div class="col-md-2">
 
@@ -130,6 +131,16 @@
             </div>
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
+            <div id="audioPlayer">
+                <audio id="customAudio">
+                    <source src="{{ $test->audio }}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <br>
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" name="volume" min="0" max="1" step="0.1"
+                    value="1">
+            </div>
             <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
                 <input type="hidden" name="test_id" value="{{ $test->id }}">
                 <input type="hidden" name="type" value="reading">
@@ -198,11 +209,57 @@
         </div>
         <!-- About Start -->
     </div>
+    <button style="border-radius:30px; display: none;" type="button" id="test-start" data-bs-toggle="modal"
+        data-bs-target="#test-type" class="btn btn-outline-primary btn-lg">
+        <span class="indicator-label">Start Praticing</span>
+
+    </button>
+    <div class="modal fade" id="test-type" tabindex="-1" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-750px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <div class="card h-100 shadow-lg">
+
+
+                    <button type="reset" class="btn btn-primary me-3" data-bs-dismiss="modal"
+                        data-dismiss="test-type">Start Test</button>
+                </div>
+            </div>
+        </div>
+        <!--end::Modal content-->
+    </div>
+
     <!-- Testimonial End -->
 @endsection
 
 @section('script')
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('customAudio');
+            var volumeControl = document.getElementById('volume');
+
+            // Update volume based on the range input
+            volumeControl.addEventListener('input', function() {
+                audio.volume = volumeControl.value;
+            });
+
+            // Start playback on any click event on the page
+            document.body.addEventListener('click', function() {
+                audio.play().catch(function(error) {
+                    // Handle error, e.g., user interaction not detected
+                    console.error(error.message);
+                });
+            });
+        });
+    </script>
+    <script>
+        $('#test-type').on("hidden.bs.modal", function() {
+            console.log('ddd')
+
+        });
+
+        $('#test-start').click()
         $('#highlightButton').on('click', function() {
             var selectedText = getSelectedText();
             if (selectedText !== "") {
@@ -297,7 +354,7 @@
         });
         $.ajax({
             type: 'GET',
-            url: '{{ route('getlisteninglisteningcountdownValue') }}',
+            url: '{{ route('getlisteningCountdownValue') }}',
             success: function(response) {
                 if (response.listeningcountdownValue == null) {
                     listeningcountdownValue = 60 * 30;
