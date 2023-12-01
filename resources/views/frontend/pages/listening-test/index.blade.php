@@ -223,7 +223,7 @@
 
 
                     <button type="reset" class="btn btn-primary me-3" data-bs-dismiss="modal"
-                        data-dismiss="test-type">Start Test</button>
+                        data-dismiss="test-type">Enter in Test</button>
                 </div>
             </div>
         </div>
@@ -239,11 +239,35 @@
             var audio = document.getElementById('customAudio');
             var volumeControl = document.getElementById('volume');
 
+            // Check if there is a stored playback time
+            var storedTime = localStorage.getItem('audioPlaybackTime');
+            console.log('Stored Time:', storedTime);
+            console.log(storedTime)
+            if (storedTime) {
+                audio.currentTime = parseFloat(storedTime);
+            }
+
             // Update volume based on the range input
             volumeControl.addEventListener('input', function() {
                 audio.volume = volumeControl.value;
             });
 
+            // Save the playback time to localStorage on pause
+            audio.addEventListener('pause', function() {
+                localStorage.setItem('audioPlaybackTime', audio.currentTime);
+                console.log('Playback time saved:', audio.currentTime);
+            });
+
+            // Clear the stored playback time on ended (audio completed)
+            audio.addEventListener('ended', function() {
+                localStorage.removeItem('audioPlaybackTime');
+                console.log('Playback time cleared');
+            });
+            window.addEventListener('beforeunload', function() {
+                // Save the playback time before the page is reloaded
+                localStorage.setItem('audioPlaybackTime', audio.currentTime);
+                console.log('Playback time saved before reload:', audio.currentTime);
+            });
             // Start playback on any click event on the page
             document.body.addEventListener('click', function() {
                 audio.play().catch(function(error) {
