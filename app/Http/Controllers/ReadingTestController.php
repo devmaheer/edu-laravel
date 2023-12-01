@@ -18,10 +18,10 @@ class ReadingTestController extends Controller
       
         $test = Test::where('id', $id)->with('questions')->first();
         $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
-            $query->WhereNotNull('paragraph')->orderBy('paragraph', 'asc');
+            $query->where('type',1)->WhereNotNull('paragraph')->orderBy('paragraph', 'asc');
         })->orderBy('position', 'asc')->get();
 
-
+       
         $organizedData = [];
 
         // Separate questions by paragraph within their respective question groups
