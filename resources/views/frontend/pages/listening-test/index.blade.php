@@ -289,7 +289,7 @@
                 }
             }
         }
-        var countdownValue = 60 * 60;
+        var listeningcountdownValue = 60 * 30;
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -297,40 +297,40 @@
         });
         $.ajax({
             type: 'GET',
-            url: '{{ route('getCountdownValue') }}',
+            url: '{{ route('getlisteninglisteningcountdownValue') }}',
             success: function(response) {
-                if (response.countdownValue == null) {
-                    countdownValue = 60 * 60;
+                if (response.listeningcountdownValue == null) {
+                    listeningcountdownValue = 60 * 30;
                 } else {
-                    countdownValue = response.countdownValue;
+                    listeningcountdownValue = response.listeningcountdownValue;
                 }
             }
         });
         // Function to update the countdown display
         function updateCountdown() {
-            const minutes = Math.floor(countdownValue / 60);
-            const seconds = countdownValue % 60;
+            const minutes = Math.floor(listeningcountdownValue / 60);
+            const seconds = listeningcountdownValue % 60;
             document.getElementById('countdown').innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
         }
 
         // Function to be called every second
         function updateTimer() {
-            countdownValue--;
+            listeningcountdownValue--;
             // Update the countdown display
             updateCountdown();
 
             // Check if the countdown has reached zero
-            if (countdownValue === 0) {
+            if (listeningcountdownValue === 0) {
                 // Perform actions when the timer reaches zero
                 alert('Time is up!');
                 // You can add more actions here
 
                 // Reset the countdown for a new timer (here, it's set to 42 minutes)
-                countdownValue = 60 * 60;
+                listeningcountdownValue = 60 * 60;
             }
 
-            // Save the countdownValue to localStorage
-            localStorage.setItem('countdownValue', countdownValue);
+            // Save the listeningcountdownValue to localStorage
+            localStorage.setItem('listeningcountdownValue', listeningcountdownValue);
 
             // Call the function again after 1 second
 

@@ -40,24 +40,24 @@ class FinishedTestController extends Controller
     {
        
         // Get the current countdown value
-        $countdownValue = null;
+        $listeningcountdownValue = null;
        
-        if (Session::has('countdowntime')) {
+        if (Session::has('listeningcountdowntime')) {
             $initialCountdownTime = 60 * 30; // 60 minutes in seconds
-            $countdowntime = Carbon::parse(Session::get('countdowntime'));
+            $listeningcountdowntime = Carbon::parse(Session::get('listeningcountdowntime'));
             $currentTime = Carbon::now();
 
-            $elapsedTime = $currentTime->diffInSeconds($countdowntime);
+            $elapsedTime = $currentTime->diffInSeconds($listeningcountdowntime);
             $remainingTime = max(0, $initialCountdownTime - $elapsedTime);
-            $countdownValue = $remainingTime;
+            $listeningcountdownValue = $remainingTime;
         } else {
-            // Set countdowntime to current time
-            session()->forget('countdowntime');
-            $countdowntime = Carbon::now();
-            Session::put('countdowntime', $countdowntime);
+            // Set listeningcountdowntime to current time
+            session()->forget('listeningcountdowntime');
+            $listeningcountdowntime = Carbon::now();
+            Session::put('listeningcountdowntime', $listeningcountdowntime);
         }
 
-        return response()->json(['countdownValue' => $countdownValue]);
+        return response()->json(['listeningcountdownValue' => $listeningcountdownValue]);
     }
 
     public function score(Request $request, $id)

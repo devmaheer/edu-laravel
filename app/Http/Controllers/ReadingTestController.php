@@ -47,6 +47,7 @@ class ReadingTestController extends Controller
     public function finish(Request $request)
     {
         session()->forget('countdowntime');
+        session()->forget('listeningcountdowntime');
         $test = Test::findOrFail($request->test_id);
         $mcqsResult = [];
         if ($request->mcqs) {
