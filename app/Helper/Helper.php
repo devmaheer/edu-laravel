@@ -86,7 +86,7 @@ class Helper
 
                     return 9;
                 }
-                if ($score->total_score >= 37 && $score->total_score <= 39) {
+                if ($score->total_score >= 37 && $score->total_score <= 38) {
 
                     return 8.5;
                 }
@@ -137,6 +137,10 @@ class Helper
                 if ($score->total_score >= 4 && $score->total_score <= 5) {
 
                     return 2.5;
+                }
+                if ($score->total_score <= 4 ) {
+             
+                    return 2;
                 }
             } else {
                 if ($score->total_score == 40) {
@@ -195,12 +199,74 @@ class Helper
 
                     return 2.5;
                 }
-                if ($score->total_score >= 5 && $score->total_score <= 0) {
+                if ($score->total_score <= 5 && $score->total_score <= 0) {
 
                     return 2;
                 }
             }
         } else {
+           
+            if ($score->total_score >= 39 && $score->total_score <= 40) {
+
+                return 9;
+            }
+            if ($score->total_score >= 37 && $score->total_score <= 38) {
+
+                return 8.5;
+            }
+            if ($score->total_score >= 35 && $score->total_score <= 36) {
+
+                return 8;
+            }
+            if ($score->total_score >= 32 && $score->total_score <= 34) {
+
+                return 7.5;
+            }
+            if ($score->total_score >= 30 && $score->total_score <= 31) {
+
+                return 7;
+            }
+            if ($score->total_score >= 26 && $score->total_score <= 29) {
+
+                return 6.5;
+            }
+            if ($score->total_score >= 23 && $score->total_score <= 25) {
+
+                return 6;
+            }
+            if ($score->total_score >= 18 && $score->total_score <= 22) {
+
+                return 5.5;
+            }
+            if ($score->total_score >= 16 && $score->total_score <= 17) {
+
+                return 5;
+            }
+            if ($score->total_score >= 13  && $score->total_score <= 15) {
+
+                return 4.5;
+            }
+            if ($score->total_score >= 10 && $score->total_score <= 12) {
+
+                return 4;
+            }
+            if ($score->total_score >= 8 && $score->total_score <= 9) {
+
+                return 3.4;
+            }
+            if ($score->total_score >= 6 && $score->total_score <= 7) {
+
+                return 3;
+            }
+            if ($score->total_score >= 4 && $score->total_score <= 5) {
+
+                return 2.5;
+            }
+           
+            if ($score->total_score <= 4 ) {
+             
+                return 2;
+            }
         }
     }
 
@@ -325,87 +391,79 @@ class Helper
         if ($question->category == 2 && isset($json->fill)) {
             $data = FillInBlank::where('question_id', $id)->first();
             $fill = (array)$json->fill;
-            $fillResult= [];
-            if (array_key_exists($id,$fill)) {
+            $fillResult = [];
+            if (array_key_exists($id, $fill)) {
                 $currentValue = $fill[$id];
-                if(isset($currentValue[0])){
-                if (strtolower($data->ans_first_1) == strtolower($currentValue[0])) {
-                    array_push($fillResult,true);
+                if (isset($currentValue[0])) {
+                    if (strtolower($data->ans_first_1) == strtolower($currentValue[0])) {
+                        array_push($fillResult, true);
+                    } elseif (strtolower($data->ans_first_2) == strtolower($currentValue[0])) {
+                        array_push($fillResult, true);
+                    } elseif (strtolower($data->ans_first_3) == strtolower($currentValue[0])) {
+                        array_push($fillResult, true);
+                    } else {
+                        array_push($fillResult, false);
+                    }
                 }
-                elseif (strtolower($data->ans_first_2) == strtolower($currentValue[0])) {
-                    array_push($fillResult,true);
+                if (isset($currentValue[1])) {
+                    if (strtolower($data->ans_sec_1) == strtolower($currentValue[1])) {
+                        array_push($fillResult, true);
+                    } elseif (strtolower($data->ans_sec_2) == strtolower($currentValue[1])) {
+                        array_push($fillResult, true);
+                    } elseif (strtolower($data->ans_sec_3) == strtolower($currentValue[1])) {
+                        array_push($fillResult, true);
+                    } else {
+                        array_push($fillResult, false);
+                    }
                 }
-                elseif (strtolower($data->ans_first_3) == strtolower($currentValue[0])) {
-                    array_push($fillResult,true);
-                }else{
-                    array_push($fillResult,false);    
+                if (isset($currentValue[3])) {
+                    if (strtolower($data->ans_third_1) == strtolower($currentValue[3])) {
+                        array_push($fillResult, true);
+                    } elseif (strtolower($data->ans_third_2) == strtolower($currentValue[3])) {
+                        array_push($fillResult, true);
+                    } elseif (strtolower($data->ans_third_3) == strtolower($currentValue[3])) {
+                        array_push($fillResult, true);
+                    } else {
+                        array_push($fillResult, false);
+                    }
                 }
-            }
-                if(isset($currentValue[1])){
-                if (strtolower($data->ans_sec_1) == strtolower($currentValue[1])) {
-                    array_push($fillResult,true);
-                }
-                elseif (strtolower($data->ans_sec_2) == strtolower($currentValue[1])) {
-                    array_push($fillResult,true);
-                }
-                elseif (strtolower($data->ans_sec_3) == strtolower($currentValue[1])) {
-                    array_push($fillResult,true);
-                }else{
-                    array_push($fillResult,false);    
-                }
-            }
-            if(isset($currentValue[3])){
-                if (strtolower($data->ans_third_1) == strtolower($currentValue[3])) {
-                    array_push($fillResult,true);
-                }
-                elseif (strtolower($data->ans_third_2) == strtolower($currentValue[3])) {
-                    array_push($fillResult,true);
-                }
-                elseif (strtolower($data->ans_third_3) == strtolower($currentValue[3])) {
-                    array_push($fillResult,true);
-                }else{
-                    array_push($fillResult,false);    
-                }
-               
-            }
-         
-                if(count(array_unique($fillResult)) === 1)  {
+
+                if (count(array_unique($fillResult)) === 1) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             }
-           
         }
         if ($question->category == 3 && isset($json->fivechoice)) {
-            $fiveChoiceResult= [];
+            $fiveChoiceResult = [];
             foreach ($json->fivechoice as $key => $option) {
                 if (isset($option[0])) {
                     $ans = Option::where('id', $option[0])->first();
                     if ($ans->is_correct == 0) {
-                        array_push($fiveChoiceResult,false);    
+                        array_push($fiveChoiceResult, false);
                     } else {
-                        array_push($fiveChoiceResult,true);    
+                        array_push($fiveChoiceResult, true);
                     }
                 }
                 if (isset($option[1])) {
                     $ans = Option::where('id', $option[1])->first();
                     if ($ans->is_correct == 0) {
-                        array_push($fiveChoiceResult,false);    
+                        array_push($fiveChoiceResult, false);
                     } else {
-                        array_push($fiveChoiceResult,true);    
+                        array_push($fiveChoiceResult, true);
                     }
                 }
 
-              if($fiveChoiceResult[0] && $fiveChoiceResult[1] ){
-                return true;
-              }
-              if(!$fiveChoiceResult[0] && !$fiveChoiceResult[1] ){
-                return false;
-              }
-              if(!$fiveChoiceResult[0]|| !$fiveChoiceResult[1] ){
-                return 'one';
-              }
+                if ($fiveChoiceResult[0] && $fiveChoiceResult[1]) {
+                    return true;
+                }
+                if (!$fiveChoiceResult[0] && !$fiveChoiceResult[1]) {
+                    return false;
+                }
+                if (!$fiveChoiceResult[0] || !$fiveChoiceResult[1]) {
+                    return 'one';
+                }
             }
         }
     }

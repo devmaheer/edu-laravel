@@ -15,10 +15,10 @@ class FinishedTestController extends Controller
 
     public function getCountdownValue(Request $request)
     {
-       
+
         // Get the current countdown value
         $countdownValue = null;
-       
+
         if (Session::has('countdowntime')) {
             $initialCountdownTime = 60 * 60; // 60 minutes in seconds
             $countdowntime = Carbon::parse(Session::get('countdowntime'));
@@ -38,10 +38,10 @@ class FinishedTestController extends Controller
     }
     public function getlisteningCountdownValue(Request $request)
     {
-       
+
         // Get the current countdown value
         $listeningcountdownValue = null;
-       
+
         if (Session::has('listeningcountdowntime')) {
             $initialCountdownTime = 60 * 30; // 60 minutes in seconds
             $listeningcountdowntime = Carbon::parse(Session::get('listeningcountdowntime'));
@@ -62,6 +62,24 @@ class FinishedTestController extends Controller
 
     public function score(Request $request, $id)
     {
+        if ($request->type == '2') {
+            $finishtest = FinishedTest::where('id', $id)->first();
+            $test = $finishtest->tests;
+
+            $totalFiveChoice = Question::where('test_id', $test->id)->where('category', 3)->count();
+            $totalFills = Question::where('test_id', $test->id)->where('type', 2)->where('category', 2)->count();
+
+            $totalMcqs = Question::where('test_id', $test->id)->where('type', 2)->where('category', 1)->count();
+
+            $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
+
+            $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
+            $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
+            $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
+            $type = 2;
+           
+            return view('frontend.pages.score', compact('test', 'finishtest','type','toalPercentage', 'totalFiveChoice', 'totalFills', 'totalMcqs', 'fiveChoicePercentage', 'fillPercentage', 'mcqsPercentage'));
+        }
         $finishtest = FinishedTest::where('id', $id)->first();
         $test = $finishtest->tests;
 
@@ -75,7 +93,8 @@ class FinishedTestController extends Controller
         $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
         $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
         $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
-        return view('frontend.pages.score', compact('test', 'finishtest', 'toalPercentage', 'totalFiveChoice', 'totalFills', 'totalMcqs', 'fiveChoicePercentage', 'fillPercentage', 'mcqsPercentage'));
+        $type = 1;
+        return view('frontend.pages.score', compact('test','type', 'finishtest', 'toalPercentage', 'totalFiveChoice', 'totalFills', 'totalMcqs', 'fiveChoicePercentage', 'fillPercentage', 'mcqsPercentage'));
     }
     public function correctAnswers(Request $request, $id)
     {

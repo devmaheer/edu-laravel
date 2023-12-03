@@ -141,7 +141,7 @@
                 <input type="range" id="volume" name="volume" min="0" max="1" step="0.1"
                     value="1">
             </div>
-            <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
+            <form action="{{ route('listening.test.finish') }}" id="readingTest" method="post">
                 <input type="hidden" name="test_id" value="{{ $test->id }}">
                 <input type="hidden" name="type" value="reading">
                 <div class="container " style="max-width: 1500px;">
@@ -158,6 +158,23 @@
                                 <div class="card-body mb-5" style="padding : 0px; ">
 
                                     <div class="container mb-5">
+                                        <h2>
+                                    @if ($key == 1)
+                                        Part One
+                                    @endif
+                                    @if ($key == 2)
+                                        Part Two
+                                    @endif
+                                    @if ($key == 3)
+                                        Part Three
+                                    @endif
+                                    @if ($key == 4)
+                                        Part Four
+                                    @endif
+                                    @if ($key == 5)
+                                        Part Five
+                                    @endif
+                                </h2>
                                         @foreach ($group['questionGroups'] as $group)
                                             <div class="row mt-5 p-2" style="border: 2px solid #BFBDBD;">
                                                 {!! $group['questionGroup']->heading !!}

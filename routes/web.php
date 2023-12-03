@@ -34,7 +34,10 @@ Route::get('/ielts/practice-ielts-online', [FrontendController::class, 'onlineTe
 
 Route::get('/general-training/test', [GeneralTrainingTestController::class, 'getGeneralTrainingTests'])->name('general.training.test');
 Route::get('/Academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');
+////LISTENING
 Route::get('/listening/test/{id}', [ListeningTestController::class, 'index'])->name('listening.test');
+Route::post('/listening/test/finish', [ListeningTestController::class, 'finish'])->name('listening.test.finish');
+///READING TEST
 Route::get('/reading/test/{id}', [ReadingTestController::class, 'index'])->name('reading.test');
 Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->name('reading.test.finish');
 Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('test.score');

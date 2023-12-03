@@ -41,10 +41,10 @@
 
                 </div>
                 <div class="row">
-                    <center><h4>{{ App\Helper\Helper::calculateBand($test, 1, $finishtest) }}/9 Bands </h4></center>
+                    <center><h4>{{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}/9 Bands </h4></center>
                     <div class="progress" style="padding: 0" >
 
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ floor(App\Helper\Helper::calculateBand($test, 1, $finishtest)) }}0%" aria-valuenow=" {{ App\Helper\Helper::calculateBand($test, 1, $finishtest) }}" aria-valuemin="0" aria-valuemax="9"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ floor(App\Helper\Helper::calculateBand($test, $type, $finishtest)) }}0%" aria-valuenow=" {{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}" aria-valuemin="0" aria-valuemax="9"></div>
                       </div>
                    
                 </div>
