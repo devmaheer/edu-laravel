@@ -106,16 +106,16 @@
     </div>
     <!-- Spinner End -->
 
-    @if (!Request::routeIs('reading.test') && !Request::routeIs('listening.test'))
+    @if (!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test'))
         <!-- Navbar Start -->
         @include('layouts.partials.frontend-navbar')
         <!-- Navbar End -->
     @endif
     @yield('content')
     <!--end::Root-->
-
+    @if (!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test'))
     @include('layouts.partials.frontend-footer')
-
+     @endif
     @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')

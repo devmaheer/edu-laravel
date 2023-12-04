@@ -34,7 +34,7 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     @else
-                        <a class="menu-link" href="{{ route('home') }}">
+                        <a class="menu-link" href="{{ route('user.dashboard') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                 <span class="svg-icon svg-icon-2">
@@ -294,8 +294,13 @@
 
                         <div class="menu-sub menu-sub-accordion menu-active-bg">
                             <div class="menu-item">
-                                <a href="{{ route('registeration-request.index') }}" class="menu-link">
-                                    <span class="menu-title">All Test</span>
+                                <a href="{{ route('academic.tests') }}" class="menu-link">
+                                    <span class="menu-title">Academic Tests</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="{{ route('general-training.tests') }}" class="menu-link">
+                                    <span class="menu-title">General Training Tests</span>
                                 </a>
                             </div>
 

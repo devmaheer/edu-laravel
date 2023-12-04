@@ -63,7 +63,7 @@ Route::get('admin/dashboard', [
 ]);
 
 
-Route::get('user/dashboard', [HomeController::class,'userDashboard'])->name('user.dashboard');
+Route::get('user/dashboard', [HomeController::class, 'userDashboard'])->name('user.dashboard');
 
 
 
@@ -143,5 +143,13 @@ Route::get('listening/getCountdownValue', [FinishedTestController::class, 'getli
 /////LOGIN FOR TEST
 
 // Registration Routes...
-Route::get('user/login',[UserLoginController::class,'showLoginForm'])->name('show.loginForm');
+Route::get('user/login', [UserLoginController::class, 'showLoginForm'])->name('show.loginForm');
 Route::post('admin/register', 'Auth\RegisterController@register');
+
+///paid test
+
+
+Route::controller(TestController::class)->group(function () {
+    Route::get('user/academic/tests', 'academicTest')->name('academic.tests');
+    Route::get('user/general-training/tests', 'generalTest')->name('general-training.tests');
+});

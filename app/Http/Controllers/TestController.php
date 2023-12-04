@@ -110,4 +110,17 @@ class TestController extends Controller
    $test->save();
    return  redirect()->route('admin.question.index', ['id' => $test->id, 'listening' => 'true']);
   }
+
+  public function academicTest(Request $request){
+
+   $tests = Test::where('category',1)->get();
+
+   return view('user.test.academic-test',compact('tests'));
+  }
+  public function generalTest(Request $request){
+
+    $tests = Test::where('category',2)->get();
+ 
+    return view('user.test.general-training-test',compact('tests'));
+   }
 }
