@@ -16,9 +16,13 @@ trait AuthenticatesUsers {
 
     public function login(Request $request) {
         $this->validateLogin($request);
-       
+      
         if ($this->attemptLogin($request)) {
-         
+            
+            if($request->is_user == '1'){
+
+                return redirect()->route('user.dashboard');
+            }
             return $this->sendLoginResponse($request);
         }
      
@@ -64,7 +68,10 @@ trait AuthenticatesUsers {
         $this->guard()->logout();
 
         $request->session()->invalidate();
+         if($request->is_user == '1'){
 
+            return redirect()->route('show.loginForm');
+         } 
         return $request->wantsJson()
                 ? new JsonResponse([], 204)
                 : redirect('/admin/login');

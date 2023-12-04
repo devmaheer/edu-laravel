@@ -128,7 +128,7 @@ class Helper
                 }
                 if ($score->total_score >= 8 && $score->total_score <= 9) {
 
-                    return 3.4;
+                    return 3.5;
                 }
                 if ($score->total_score >= 6 && $score->total_score <= 7) {
 
@@ -252,7 +252,7 @@ class Helper
             }
             if ($score->total_score >= 8 && $score->total_score <= 9) {
 
-                return 3.4;
+                return 3.5;
             }
             if ($score->total_score >= 6 && $score->total_score <= 7) {
 

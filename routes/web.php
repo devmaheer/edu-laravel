@@ -43,6 +43,8 @@ Route::get('/reading/test/{id}', [ReadingTestController::class, 'index'])->name(
 Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->name('reading.test.finish');
 Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('test.score');
 Route::get('/test/correct/answer/{id}', [FinishedTestController::class, 'correctAnswers'])->name('test.correct.answer');
+Route::get('/test/correct/listening/answer/{id}', [FinishedTestController::class, 'correctListeningAnswers'])->name('test.correct.listening.answer');
+
 ///////////////////////////////////////////
 
 Route::get('/show/listening/test/{id}', [ListeningTestController::class, 'show'])->name('show.listening.test');
@@ -59,6 +61,10 @@ Route::get('admin/dashboard', [
     'as' => 'home',
     'uses' => 'HomeController@index'
 ]);
+
+
+Route::get('user/dashboard', [HomeController::class,'userDashboard'])->name('user.dashboard');
+
 
 
 // // Login Routes...

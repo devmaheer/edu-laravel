@@ -10,6 +10,6 @@ class UserLoginController extends Controller
     public function showLoginForm(Request $request)
     {
     
-        return view('frontend.pages.login.login-form')
+        return view('frontend.pages.login.login-form');
     }
 }

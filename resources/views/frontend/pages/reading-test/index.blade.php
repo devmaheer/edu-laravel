@@ -322,24 +322,7 @@
             }
         }
         var countdownValue = 60 * 60;
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: 'GET',
-            url: '{{ route('getCountdownValue') }}',
-            success: function(response) {
-                if (response.countdownValue == null) {
-                    countdownValue = 60 * 60;
-                } else if (response.countdownValue == 0) {
-                    $("#readingTest").submit();
-                } else {
-                    countdownValue = response.countdownValue;
-                }
-            }
-        });
+  
         // Function to update the countdown display
         function updateCountdown() {
             const minutes = Math.floor(countdownValue / 60);

@@ -258,12 +258,8 @@
             var volumeControl = document.getElementById('volume');
 
             // Check if there is a stored playback time
-            var storedTime = localStorage.getItem('audioPlaybackTime');
-            console.log('Stored Time:', storedTime);
-            console.log(storedTime)
-            if (storedTime) {
-                audio.currentTime = parseFloat(storedTime);
-            }
+           
+         
 
             // Update volume based on the range input
             volumeControl.addEventListener('input', function() {
@@ -272,20 +268,16 @@
 
             // Save the playback time to localStorage on pause
             audio.addEventListener('pause', function() {
-                localStorage.setItem('audioPlaybackTime', audio.currentTime);
+               
                 console.log('Playback time saved:', audio.currentTime);
             });
 
             // Clear the stored playback time on ended (audio completed)
             audio.addEventListener('ended', function() {
-                localStorage.removeItem('audioPlaybackTime');
+               
                 console.log('Playback time cleared');
             });
-            window.addEventListener('beforeunload', function() {
-                // Save the playback time before the page is reloaded
-                localStorage.setItem('audioPlaybackTime', audio.currentTime);
-                console.log('Playback time saved before reload:', audio.currentTime);
-            });
+     
             // Start playback on any click event on the page
             document.body.addEventListener('click', function() {
                 audio.play().catch(function(error) {
@@ -389,24 +381,7 @@
             }
         }
         var listeningcountdownValue = 60 * 30;
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: 'GET',
-            url: '{{ route('getlisteningCountdownValue') }}',
-            success: function(response) {
-                if (response.listeningcountdownValue == null) {
-                    listeningcountdownValue = 60 * 30;
-                } else if (response.listeningcountdownValue == 0) {
-                    $("#listeningTest").submit();
-                } else {
-                    listeningcountdownValue = response.listeningcountdownValue;
-                }
-            }
-        });
+ 
         // Function to update the countdown display
         function updateCountdown() {
             const minutes = Math.floor(listeningcountdownValue / 60);

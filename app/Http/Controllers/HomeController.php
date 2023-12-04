@@ -38,13 +38,14 @@ class HomeController extends Controller
         $test = Test::get();
         $userCount = User::count();
         $questionGroupCount = QuestionGroup::count();
+
         if (Auth::user()->hasRole('Admin')) {
             $partners = User::whereHas('roles', function ($query) {
                 $query->where('name', 'Partner');
             })->get();
 
-            return view('admin.index', compact('partners','userCount','questionGroupCount', 'questCount', 'test'));
-        }
+            return view('admin.index', compact('partners', 'userCount', 'questionGroupCount', 'questCount', 'test'));
+        } 
     }
 
     /**
@@ -52,6 +53,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function userDashboard(Request $request)
+    {
+
+        $questCount = Question::count();
+        $test = Test::get();
+        $userCount = User::count();
+        $questionGroupCount = QuestionGroup::count();
+
+
+
+        return view('user.index', compact('userCount', 'questionGroupCount', 'questCount', 'test'));
+    }
     public function create()
     {
         //

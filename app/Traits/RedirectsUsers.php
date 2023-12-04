@@ -9,7 +9,7 @@ trait RedirectsUsers {
             
             return $this->redirectTo();
         }
-
+       
         return property_exists($this, 'redirectTo') ? $this->redirectTo: '/admin/dashboard';
     }
 }

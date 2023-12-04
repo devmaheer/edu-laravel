@@ -119,7 +119,7 @@
     </div>
 @endsection
 @section('script')
-<script src="https://cdn.tiny.cloud/1/lwl2mq307v26mn2ysovc6dp0jaipaj8q019zzot9e60xlmh4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=k3ckbssahgf2jfj7oiqllrq56dymh0kqauq809sra5lp3xgw"></script>
 <script>
     tinymce.init({
       selector: 'textarea',

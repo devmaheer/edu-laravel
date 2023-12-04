@@ -41,18 +41,37 @@
 
                 </div>
                 <div class="row">
-                    <center><h4>{{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}/9 Bands </h4></center>
-                    <div class="progress" style="padding: 0" >
+                    <center>
+                        <h4>{{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}/9 Bands </h4>
+                    </center>
+                    <div class="progress" style="padding: 0">
 
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ floor(App\Helper\Helper::calculateBand($test, $type, $finishtest)) }}0%" aria-valuenow=" {{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}" aria-valuemin="0" aria-valuemax="9"></div>
-                      </div>
-                   
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                            style="width: {{ floor(App\Helper\Helper::calculateBand($test, $type, $finishtest)) }}0%"
+                            aria-valuenow=" {{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}"
+                            aria-valuemin="0" aria-valuemax="9"></div>
+                    </div>
+
                 </div>
-                <div class="row">
-                    <center><h4><a class="btn btn-primary" href="{{route('test.correct.answer',$finishtest->id)}}">View Correct Answers</a></center>
-                   
-                   
-                </div>
+                @if ($type == 1)
+                    <div class="row">
+                        <center>
+                            <h4><a class="btn btn-primary" href="{{ route('test.correct.answer', $finishtest->id) }}">View
+                                    Correct Answers</a>
+                        </center>
+
+
+                    </div>
+                @else
+                    <div class="row">
+                        <center>
+                            <h4><a class="btn btn-primary" href="{{ route('test.correct.listening.answer', $finishtest->id) }}">View
+                                    Correct Answers</a>
+                        </center>
+
+
+                    </div>
+                @endif
 
 
             </div>

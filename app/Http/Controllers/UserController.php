@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -9,9 +10,9 @@ class UserController extends Controller
 {
     public function create(Request $request)
     {
-      
+
         $countries = $this->getCountries();
-        return view('admin.users.create',compact('countries'));
+        return view('admin.users.create', compact('countries'));
     }
 
     public function store(Request $request)
@@ -21,51 +22,62 @@ class UserController extends Controller
             'email' =>  $request->email,
             'phone' =>  $request->phone,
             'password' =>  Hash::make($request->password), // Use bcrypt to hash the password
-            'country' =>  $request->country, 
-            'duration' =>  $request->duration, 
-            'status'=>$request->status
+            'country' =>  $request->country,
+            'duration' =>  $request->duration,
+            'status' => $request->status
         ]);
+        $role = "User";
+        if ($role) {
 
-       return redirect()->route('admin.user.index');
+            $user->assignRole($role);
+        }
+        return redirect()->route('admin.user.index');
     }
-   
+
     public function index()
     {
-       $users = User::get();
-        return view('admin.users.index',compact('users'));
+        $users = User::get();
+        return view('admin.users.index', compact('users'));
     }
     public function update(Request $request)
     {
-        $user = User::where('id',$request->user_id)->update([
+        $user = User::where('id', $request->user_id)->update([
             'name' => $request->name,
             'email' =>  $request->email,
             'phone' =>  $request->phone,
             'password' =>  Hash::make($request->password), // Use bcrypt to hash the password
-            'country' =>  $request->country, 
-            'duration' =>  $request->duration, 
-            'status'=>$request->status
+            'country' =>  $request->country,
+            'duration' =>  $request->duration,
+            'status' => $request->status
         ]);
+      
+        $role = "User";
+        if ($role) {
+            $user = User::findOrFail($request->user_id);
+            $user->assignRole($role);
+        }
 
-       return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index');
     }
     public function edit($id)
     {
-      
+
         $countries = $this->getCountries();
         $user = User::findOrFail($id);
-        return view('admin.users.edit',compact('countries', 'user'));
+        return view('admin.users.edit', compact('countries', 'user'));
     }
     public function delete($id)
     {
-        $user = User::findOrFail($id);          
+        $user = User::findOrFail($id);
         $user->delete();
-       return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index');
     }
-    public function getCountries(){
+    public function getCountries()
+    {
 
 
 
-       return [
+        return [
             "Afghanistan",
             "Albania",
             "Algeria",
@@ -307,8 +319,8 @@ class UserController extends Controller
             "Zimbabwe"
             // Add more countries as needed
         ];
-        
+
         // You can now use the `countriesArray` in your JavaScript code.
-        
+
     }
 }

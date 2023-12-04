@@ -17,7 +17,7 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['name' => 'Admin', 'guard_name' => 'web', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ['name' => 'Admin', 'name' => 'User',  'guard_name' => 'web', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
         ];
 
         Role:: insert($data);

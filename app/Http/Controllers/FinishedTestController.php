@@ -127,4 +127,36 @@ class FinishedTestController extends Controller
         $data =  $organizedData;
         return view('frontend.pages.correct-answer', compact('test', 'data', 'userTest'));
     }
+
+    public function correctListeningAnswers(Request $request, $id)
+    {
+        $test = FinishedTest::findOrFail($id);
+        $userTest = json_decode($test->test);
+
+        $test = Test::where('id', $test->tests->id)->with('questions')->first();
+        $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
+            $query->WhereNotNull('part')->orderBy('part', 'asc');
+        })->orderBy('position', 'asc')->get();
+
+
+        $organizedData = [];
+
+        // Separate questions by paragraph within their respective question groups
+        $questionsGroup->each(function ($questionGroup) use (&$organizedData) {
+            $partId = $questionGroup->questions->first()->part;
+
+            // Initialize the arrays if not set
+            $organizedData[$partId]['questionGroups'] ??= collect();
+            $organizedData[$partId]['part'] = $partId;
+
+            // Add the question group to the corresponding collection based on paragraph ID
+            $organizedData[$partId]['questionGroups']->push([
+                'questionGroup' => $questionGroup,
+                'questions' => $questionGroup->questions,
+            ]);
+        });
+
+        $data =  $organizedData;
+        return view('frontend.pages.correct-listening-answer', compact('test', 'data', 'userTest'));
+    }
 }
