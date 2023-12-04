@@ -118,3 +118,21 @@
         </div>
     </div>
 @endsection
+@section('script')
+<script src="https://cdn.tiny.cloud/1/lwl2mq307v26mn2ysovc6dp0jaipaj8q019zzot9e60xlmh4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      toolbar: "undo redo | bold italic strikethrough | bullist numlist | styleselect | link unlink | insertfile | image | alignleft aligncenter alignright alignjustify | fullscreen | code",
+      plugins: "advlist autolink link image lists code fullscreen charmap wordcount tinydrive ",
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+    });
+  </script>
+  
+@endsection
+

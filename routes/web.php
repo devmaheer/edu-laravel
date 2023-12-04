@@ -12,6 +12,7 @@ use App\Http\Controllers\ReadingTestController;
 use App\Http\Controllers\RegisterationRequestController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserLoginController;
 use App\Models\FinishedTest;
 use Illuminate\Support\Facades\Route;
 
@@ -131,3 +132,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::post('/startTimer', [FinishedTestController::class, 'startTimer'])->name('startTimer');
 Route::get('/getCountdownValue', [FinishedTestController::class, 'getCountdownValue'])->name('getCountdownValue');
 Route::get('listening/getCountdownValue', [FinishedTestController::class, 'getlisteningCountdownValue'])->name('getlisteningCountdownValue');
+
+
+/////LOGIN FOR TEST
+
+// Registration Routes...
+Route::get('user/login',[UserLoginController::class,'showLoginForm'])->name('show.loginForm');
+Route::post('admin/register', 'Auth\RegisterController@register');
