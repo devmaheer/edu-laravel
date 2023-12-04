@@ -143,7 +143,7 @@ class ReadingTestController extends Controller
         ]);
 
 
-        return redirect()->route('test.score', $test->id);
+        return redirect()->route('test.score',[ $test->id,'type'=>'1']);
     }
     public function fiveChoiceScore($data)
     {

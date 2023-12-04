@@ -96,6 +96,11 @@
                                     <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 </button>
+
+                                <a  href="{{ route('registeration-request-front-end.create', ['type' => '3', 'plan' => 'paid']) }}" id="kt_sign_in_submit" class="btn  btn-primary w-100 mb-5">
+                                    <span class="indicator-label text-uppercase">Get Access</span>
+                           
+                                </a>
                                 <!--end::Submit button-->
                             </div>
                             <!--end::Actions-->

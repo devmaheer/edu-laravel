@@ -543,7 +543,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create', ['type' => '3', 'plan' => 'paid']) }}"
+                                    href="{{ route('show.loginForm') }}"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>

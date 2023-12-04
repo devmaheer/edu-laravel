@@ -70,9 +70,9 @@ class FinishedTestController extends Controller
             $totalFills = Question::where('test_id', $test->id)->where('type', 2)->where('category', 2)->count();
 
             $totalMcqs = Question::where('test_id', $test->id)->where('type', 2)->where('category', 1)->count();
-
+          
             $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
-
+           
             $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
             $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
             $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
@@ -89,7 +89,7 @@ class FinishedTestController extends Controller
         $totalMcqs = Question::where('test_id', $test->id)->where('type', 1)->where('category', 1)->count();
 
         $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
-
+ 
         $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
         $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
         $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);

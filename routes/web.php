@@ -43,7 +43,7 @@ Route::get('/reading/test/{id}', [ReadingTestController::class, 'index'])->name(
 Route::post('/reading/test/finish', [ReadingTestController::class, 'finish'])->name('reading.test.finish');
 Route::get('/test/score/{id}', [FinishedTestController::class, 'score'])->name('test.score');
 Route::get('/test/correct/answer/{id}', [FinishedTestController::class, 'correctAnswers'])->name('test.correct.answer');
-Route::get('/test/correct/listening/answer/{id}', [FinishedTestController::class, 'correctListeningAnswers'])->name('we');
+Route::get('/test/correct/listening/answer/{id}', [FinishedTestController::class, 'correctListeningAnswers'])->name('test.correct.listening.answer');
 
 ///////////////////////////////////////////
 
