@@ -31,6 +31,7 @@
             box-shadow: none !important;
             /* Remove the box shadow */
         }
+        
     </style>
 @endsection
 @section('content')
@@ -150,9 +151,10 @@
                         $iteration = 1;
                     @endphp
                     @foreach ($data as $key => $group)
+                  
                         <div class="row">
-
-                            <div class="col-md-12 mt-5"
+                           <div class="col-md-2"></div>
+                            <div class="col-md-8 mt-5"
                                 style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
 
                                 <div class="card-body mb-5" style="padding : 0px; ">
@@ -176,7 +178,7 @@
                                     @endif
                                 </h2>
                                         @foreach ($group['questionGroups'] as $group)
-                                            <div class="row mt-5 p-2" style="border: 2px solid #BFBDBD;">
+                                            <div class=" mt-5 p-2" style="border: 2px solid #BFBDBD;">
                                                 {!! $group['questionGroup']->heading !!}
                                                 {!! $group['questionGroup']->description !!}
                                                 @foreach ($group['questions'] as $question)
@@ -210,7 +212,9 @@
 
 
                             </div>
+                          
                         </div>
+                    
                     @endforeach
 
                     <div class="card-body text-center">
