@@ -16,7 +16,7 @@ class ListeningTestController extends Controller
 
         $test = Test::where('id', $id)->with('questions')->first();
         $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {
-            $query->WhereNotNull('part')->orderBy('part', 'asc');
+            $query->where('type',2)->WhereNotNull('part')->orderBy('part', 'asc');
         })->orderBy('position', 'asc')->get();
 
 
