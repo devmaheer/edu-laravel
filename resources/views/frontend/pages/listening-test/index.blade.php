@@ -31,7 +31,6 @@
             box-shadow: none !important;
             /* Remove the box shadow */
         }
-        
     </style>
 @endsection
 @section('content')
@@ -52,7 +51,7 @@
                         @endphp
                         @foreach ($data as $key => $group)
                             <div class="col-md-2">
-                                {{-- <h6>
+                                <h6>
                                     @if ($key == 1)
                                         Part One
                                     @endif
@@ -68,7 +67,7 @@
                                     @if ($key == 5)
                                         Part Five
                                     @endif
-                                </h6> --}}
+                                </h6>
 
                                 <div>
                                     @foreach ($group['questionGroups'] as $group)
@@ -142,7 +141,7 @@
                 <input type="range" id="volume" name="volume" min="0" max="1" step="0.1"
                     value="1">
             </div>
-            <form action="{{ route('listening.test.finish') }}" id="readingTest" method="post">
+            <form action="{{ route('listening.test.finish') }}" id="listeningTest" method="post">
                 <input type="hidden" name="test_id" value="{{ $test->id }}">
                 <input type="hidden" name="type" value="reading">
                 <div class="container " style="max-width: 1500px;">
@@ -151,9 +150,8 @@
                         $iteration = 1;
                     @endphp
                     @foreach ($data as $key => $group)
-                  
                         <div class="row">
-                           <div class="col-md-2"></div>
+                            <div class="col-md-2"></div>
                             <div class="col-md-8 mt-5"
                                 style="padding : 0px;max-height: 700px; overflow-y:auto; border: 2px solid #BFBDBD;">
 
@@ -161,22 +159,22 @@
 
                                     <div class="container mb-5">
                                         <h2>
-                                    @if ($key == 1)
-                                        Part One
-                                    @endif
-                                    @if ($key == 2)
-                                        Part Two
-                                    @endif
-                                    @if ($key == 3)
-                                        Part Three
-                                    @endif
-                                    @if ($key == 4)
-                                        Part Four
-                                    @endif
-                                    @if ($key == 5)
-                                        Part Five
-                                    @endif
-                                </h2>
+                                            @if ($key == 1)
+                                                Part One
+                                            @endif
+                                            @if ($key == 2)
+                                                Part Two
+                                            @endif
+                                            @if ($key == 3)
+                                                Part Three
+                                            @endif
+                                            @if ($key == 4)
+                                                Part Four
+                                            @endif
+                                            @if ($key == 5)
+                                                Part Five
+                                            @endif
+                                        </h2>
                                         @foreach ($group['questionGroups'] as $group)
                                             <div class=" mt-5 p-2" style="border: 2px solid #BFBDBD;">
                                                 {!! $group['questionGroup']->heading !!}
@@ -212,9 +210,8 @@
 
 
                             </div>
-                          
+
                         </div>
-                    
                     @endforeach
 
                     <div class="card-body text-center">
@@ -403,6 +400,8 @@
             success: function(response) {
                 if (response.listeningcountdownValue == null) {
                     listeningcountdownValue = 60 * 30;
+                } else if (response.listeningcountdownValue == 0) {
+                    $("#listeningTest").submit();
                 } else {
                     listeningcountdownValue = response.listeningcountdownValue;
                 }
@@ -424,7 +423,7 @@
             // Check if the countdown has reached zero
             if (listeningcountdownValue === 0) {
                 // Perform actions when the timer reaches zero
-                alert('Time is up!');
+                $("#listeningTest").submit();
                 // You can add more actions here
 
                 // Reset the countdown for a new timer (here, it's set to 42 minutes)
