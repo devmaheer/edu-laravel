@@ -64,26 +64,8 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-3">
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-around">
-                                <span>Total Question G</span>
-                                <span>{{ $questionGroupCount }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3">
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-around">
-                                <span>Total Users</span>
-                                <span>{{ $userCount }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+           
+             
             </div>
 
 

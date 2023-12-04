@@ -58,12 +58,8 @@ class HomeController extends Controller
 
         $questCount = Question::count();
         $test = Test::get();
-        $userCount = User::count();
-        $questionGroupCount = QuestionGroup::count();
 
-
-
-        return view('user.index', compact('userCount', 'questionGroupCount', 'questCount', 'test'));
+        return view('user.index', compact('questCount', 'test'));
     }
     public function create()
     {
