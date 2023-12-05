@@ -9,18 +9,27 @@ class FrontendController extends Controller
     //
     public function index()
     {
- 
+
         return view('frontend.index');
-       
     }
-    public function preprationCourses(){
+    public function preprationCourses()
+    {
 
 
-    return view('frontend.pages.prepration-courses');
+        return view('frontend.pages.prepration-courses');
     }
-    public function practiceMarterial(){
+    public function practiceMarterial()
+    {
 
 
         return view('frontend.pages.practice-marterial');
-        }
+    }
+
+
+    public function privacyPolicy()
+    {
+
+
+        return view('frontend.pages.privacy-policy');
+    }
 }

@@ -17,7 +17,8 @@ class AuthenticateMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
+        
+        if (auth()->user()){
         if (Auth::user()->hasRole('Admin')) {
 
             return redirect()->route('home');
@@ -26,6 +27,8 @@ class AuthenticateMiddleware
 
             return redirect()->route('user.dashboard');
         }
+    }
+ 
         return $next($request);
     }
 }

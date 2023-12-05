@@ -32,6 +32,7 @@ Route::get('/ielts/prepration-courses', [FrontendController::class, 'preprationC
 Route::get('/ielts/practice-marterial', [FrontendController::class, 'practiceMarterial'])->name('frontend.ielts.practice-marterial');
 Route::get('/ielts/practice-ielts-online', [FrontendController::class, 'onlineTest'])->name('frontend.ielts.practice-ielts-online');
 ///
+Route::get('/ielts/privacy/policy', [FrontendController::class, 'privacyPolicy'])->name('frontend.privacy-policy');
 
 Route::get('/general-training/test', [GeneralTrainingTestController::class, 'getGeneralTrainingTests'])->name('general.training.test');
 Route::get('/Academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');
@@ -144,9 +145,9 @@ Route::get('listening/getCountdownValue', [FinishedTestController::class, 'getli
 
 // Registration Routes...
 
-Route::group(['middleware' => 'auth'], function () {
+
 Route::get('user/login', [UserLoginController::class, 'showLoginForm'])->name('show.loginForm')->middleware(['auth-role']);
-});
+
 Route::post('admin/register', 'Auth\RegisterController@register');
 
 ///paid test
