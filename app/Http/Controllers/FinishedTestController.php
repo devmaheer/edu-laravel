@@ -65,13 +65,17 @@ class FinishedTestController extends Controller
         if ($request->type == '2') {
             $finishtest = FinishedTest::where('id', $id)->first();
             $test = $finishtest->tests;
-
+            
             $totalFiveChoice = Question::where('test_id', $test->id)->where('category', 3)->count();
             $totalFills = Question::where('test_id', $test->id)->where('type', 2)->where('category', 2)->count();
 
             $totalMcqs = Question::where('test_id', $test->id)->where('type', 2)->where('category', 1)->count();
-          
-            $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
+            if($totalFiveChoice){
+                $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
+            }else{
+                $fiveChoicePercentage= 0;
+            }
+           
            
             $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
             $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
@@ -82,13 +86,17 @@ class FinishedTestController extends Controller
         }
         $finishtest = FinishedTest::where('id', $id)->first();
         $test = $finishtest->tests;
-
+           
         $totalFiveChoice = Question::where('test_id', $test->id)->where('category', 3)->count();
         $totalFills = Question::where('test_id', $test->id)->where('type', 1)->where('category', 2)->count();
-
+     
         $totalMcqs = Question::where('test_id', $test->id)->where('type', 1)->where('category', 1)->count();
-
-        $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
+       
+        if($totalFiveChoice){
+            $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
+        }else{
+            $fiveChoicePercentage= 0;
+        }
  
         $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
         $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
