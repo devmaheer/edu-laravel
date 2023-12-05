@@ -389,11 +389,15 @@ class Helper
             }
         }
         if ($question->category == 2 && isset($json->fill)) {
+           
             $data = FillInBlank::where('question_id', $id)->first();
+          
             $fill = (array)$json->fill;
             $fillResult = [];
             if (array_key_exists($id, $fill)) {
+              
                 $currentValue = $fill[$id];
+              
                 if (isset($currentValue[0])) {
                     if (strtolower($data->ans_first_1) == strtolower($currentValue[0])) {
                         array_push($fillResult, true);
@@ -405,6 +409,7 @@ class Helper
                         array_push($fillResult, false);
                     }
                 }
+               
                 if (isset($currentValue[1])) {
                     if (strtolower($data->ans_sec_1) == strtolower($currentValue[1])) {
                         array_push($fillResult, true);
@@ -427,11 +432,11 @@ class Helper
                         array_push($fillResult, false);
                     }
                 }
-
-                if (count(array_unique($fillResult)) === 1) {
-                    return true;
-                } else {
+               
+                if (in_array(false, $fillResult)) {
                     return false;
+                } else {
+                    return true;
                 }
             }
         }
