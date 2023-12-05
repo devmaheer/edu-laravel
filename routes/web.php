@@ -68,7 +68,7 @@ Route::get('user/dashboard', [HomeController::class, 'userDashboard'])->name('us
 
 
 // // Login Routes...
-Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login.get');
+Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login.get')->middleware(['auth-role']);
 Route::post('admin/login', 'Auth\LoginController@login')->name('login.post');
 
 
@@ -143,7 +143,10 @@ Route::get('listening/getCountdownValue', [FinishedTestController::class, 'getli
 /////LOGIN FOR TEST
 
 // Registration Routes...
-Route::get('user/login', [UserLoginController::class, 'showLoginForm'])->name('show.loginForm');
+
+Route::group(['middleware' => 'auth'], function () {
+Route::get('user/login', [UserLoginController::class, 'showLoginForm'])->name('show.loginForm')->middleware(['auth-role']);
+});
 Route::post('admin/register', 'Auth\RegisterController@register');
 
 ///paid test
