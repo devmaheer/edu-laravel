@@ -46,6 +46,12 @@ class HomeController extends Controller
 
             return view('admin.index', compact('partners', 'userCount', 'questionGroupCount', 'questCount', 'test'));
         } 
+        if (Auth::user()->hasRole('User')) {
+            $questCount = Question::count();
+            $test = Test::get();
+    
+            return view('user.index', compact('questCount', 'test'));
+        } 
     }
 
     /**
