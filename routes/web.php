@@ -31,6 +31,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
 Route::get('/ielts/prepration-courses', [FrontendController::class, 'preprationCourses'])->name('frontend.ielts.prepration-courses');
 Route::get('/ielts/practice-marterial', [FrontendController::class, 'practiceMarterial'])->name('frontend.ielts.practice-marterial');
 Route::get('/ielts/practice-ielts-online', [FrontendController::class, 'onlineTest'])->name('frontend.ielts.practice-ielts-online');
+Route::get('/ielts/faqs', [FrontendController::class, 'faqs'])->name('frontend.faqs');
 ///
 Route::get('/ielts/privacy/policy', [FrontendController::class, 'privacyPolicy'])->name('frontend.privacy-policy');
 

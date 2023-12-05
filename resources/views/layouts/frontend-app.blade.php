@@ -119,7 +119,7 @@
     @include('layouts.partials.models.test-types')
     @include('layouts.partials.frontend-script')
     @yield('script')
-
+   
     <script>
         var queryParams = new URLSearchParams(window.location.search);
         const param = queryParams.get('success');

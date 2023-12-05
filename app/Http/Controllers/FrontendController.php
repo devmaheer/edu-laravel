@@ -32,4 +32,11 @@ class FrontendController extends Controller
 
         return view('frontend.pages.privacy-policy');
     }
+
+    public function faqs()
+    {
+
+
+        return view('frontend.pages.faqs');
+    }
 }
