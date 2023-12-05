@@ -124,11 +124,7 @@
             <div class="wrapper bg-white rounded shadow">
                 <div class="h2 text-center fw-bold">Ieltsprepandpractice</div>
                 <div class="h3 text-primary text-center">How can we help you?</div>
-                <div class="d-flex justify-content-center">
-                    <div class="search w-75 d-flex align-items-center"> <span class="fas fa-search text-dark"></span> <input
-                            type="text" class="form-control" placeholder="Describe your issue">
-                    </div>
-                </div>
+              
                 <div class="accordion accordion-flush border-top border-start border-end" id="myAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
