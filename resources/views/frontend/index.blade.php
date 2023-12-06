@@ -569,6 +569,7 @@
                         (object) ['id' => 6, 'name' => 'Hafsa', 'score' => '7.0 bands', 'image' => 't6.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 7, 'name' => 'Shahbaz', 'score' => '7.0 bands', 'image' => 't7.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 8, 'name' => 'Lamisa', 'score' => '7.5 bands', 'image' => 't8.jpg', 'country' => 'Bangladesh'],
+                        (object) ['id' => 9, 'name' => 'Kanza', 'score' => '7.5 bands', 'image' => 't9.jpg', 'country' => 'Pakistan'],
                         // Add more testimonials as needed
                     ];
                 @endphp
