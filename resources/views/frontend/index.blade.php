@@ -41,7 +41,7 @@
 
     <!-- Service Start -->
     <div class="container-xxxl ">
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center"  id="prepration-courses">
 
             <div class="container p-5">
                 <div class="row">
@@ -292,7 +292,7 @@
         </div>
         <!-- Service End -->
 
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center"  id="prepration-material">
 
             <div class="container p-5">
                 <div class="row">
@@ -440,7 +440,7 @@
             </div>
         </div>
 
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center"  id="prepration-online">
 
             <div class="container p-5">
                 <div class="row">
@@ -554,7 +554,7 @@
  
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl py-5 wow fadeInUp" id="prepration-testimonial" data-wow-delay="0.1s">
             <div class="container">
                 <div class="text-center">
                     <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
