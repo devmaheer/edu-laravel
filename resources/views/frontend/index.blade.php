@@ -41,7 +41,7 @@
 
     <!-- Service Start -->
     <div class="container-xxxl ">
-        <div class="row g-4 justify-content-center"  id="prepration-courses">
+        <div class="row g-4 justify-content-center" id="prepration-courses">
 
             <div class="container p-5">
                 <div class="row">
@@ -292,7 +292,7 @@
         </div>
         <!-- Service End -->
 
-        <div class="row g-4 justify-content-center"  id="prepration-material">
+        <div class="row g-4 justify-content-center" id="prepration-material">
 
             <div class="container p-5">
                 <div class="row">
@@ -440,7 +440,7 @@
             </div>
         </div>
 
-        <div class="row g-4 justify-content-center"  id="prepration-online">
+        <div class="row g-4 justify-content-center" id="prepration-online">
 
             <div class="container p-5">
                 <div class="row">
@@ -542,8 +542,7 @@
                                 </li>
                             </ul>
                             <div class="card-body text-center">
-                                <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('show.loginForm') }}"
+                                <a class="btn btn-outline-primary btn-lg" href="{{ route('show.loginForm') }}"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>
@@ -551,87 +550,54 @@
                 </div>
             </div>
         </div>
- 
+
 
         <!-- Testimonial Start -->
         <div class="container-xxl py-5 wow fadeInUp" id="prepration-testimonial" data-wow-delay="0.1s">
             <div class="container">
                 <div class="text-center">
                     <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                   
+
                 </div>
+                @php
+                    $testimonials = [
+                        (object) ['id' => 1, 'name' => 'Saba', 'score' => '7.0 bands', 'image' => 't1.jpg', 'country' => 'Pakistan'],
+                        (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
+                        (object) ['id' => 3, 'name' => 'Musassir', 'score' => '6.5 bands', 'image' => 't3.jpg', 'country' => 'Pakistan'],
+                        (object) ['id' => 4, 'name' => 'Majd Faris', 'score' => '6.5 bands', 'image' => 't4.jpg', 'country' => 'Jordan'],
+                        (object) ['id' => 5, 'name' => 'Abdullah', 'score' => '6.5 bands', 'image' => 't5.jpg', 'country' => 'Bahrain'],
+                        (object) ['id' => 6, 'name' => 'Hafsa', 'score' => '7.0 bands', 'image' => 't6.jpg', 'country' => 'Pakistan'],
+                        (object) ['id' => 7, 'name' => 'Shahbaz', 'score' => '7.0 bands', 'image' => 't7.jpg', 'country' => 'Pakistan'],
+                        (object) ['id' => 8, 'name' => 'Lamisa', 'score' => '7.5 bands', 'image' => 't8.jpg', 'country' => 'Bangladesh'],
+                        // Add more testimonials as needed
+                    ];
+                @endphp
                 <div class="owl-carousel testimonial-carousel position-relative">
+                    @foreach ($testimonials as $testimonial)
                     <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t1.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Saba Irfan</h5>
-                        <p>7.0 bands</p>
-                        <p>Pakistan</p>
-                     
-                       
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t2.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Nour el huda</h5>
-                        <p>5.5 bands</p>
-                        <p>Jordan</p>
+                        <button class="mb-1" type="button" data-bs-toggle="modal"
+                            data-bs-target="#testimonial-image-{{$testimonial->id}}">
+                            <img class="border  p-2 mx-auto mb-3" src="{{ asset('frontend/testimonial/' . $testimonial->image) }}"
+                                style="width: 150px; height: 200px;" />
+                        </button>
+
+                        <h5 class="mb-0">{{$testimonial->name}}</h5>
+                        <p>{{$testimonial->score}}</p>
+                        <p>{{$testimonial->country}}</p>
+
                       
                     </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t3.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Musassir</h5>
-                        <p>6.5 bands</p>
-                        <p>Pakistan</p>
-                       
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t4.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Majd Faris Ahmad</h5>
-                        <p>6.5 bands</p>
-                        <p>Jordan</p>
-                      
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t5.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Izzah</h5>
-                        <p>6.0 bands</p>
-                        <p>Pakistan</p>
-                       
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t6.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Hafsa</h5>
-                        <p>7.0 bands</p>
-                        <p>Pakistan</p>
-                      
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t7.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Shahbaz</h5>
-                        <p>7.0 bands</p>
-                        <p>Pakistan</p>
-                       
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="border  p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/testimonial/t8.jpg') }}" style="width: 150px; height: 200px;" />
-                        <h5 class="mb-0">Lamisa Quaiyam
-                        </h5>
-                        <p>7.5 bands</p>
-                        <p>Bangladesh</p>
-                      
-                    </div>
-                 
-                 
+        
+                    @endforeach
+               
+
+
                 </div>
             </div>
         </div>
+        @foreach ($testimonials as $testimonial)
+        @include('layouts.partials.models.testimonial-image')
+        @endforeach
         <!-- Testimonial End -->
     @endsection
 
