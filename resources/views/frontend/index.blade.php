@@ -562,33 +562,73 @@
                 </div>
                 <div class="owl-carousel testimonial-carousel position-relative">
                     <div class="testimonial-item text-center">
-                        <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
-                        <h5 class="mb-0">Client Name</h5>
-                        <p>Profession</p>
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t1.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Saba Irfan</h5>
+                        <p>7.0 bands</p>
+                        <p>Pakistan</p>
+                     
                        
                     </div>
                     <div class="testimonial-item text-center">
-                        <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/img/testimonial-2.jpg') }}" style="width: 80px; height: 80px;">
-                        <h5 class="mb-0">Client Name</h5>
-                        <p>Profession</p>
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t2.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Nour el huda</h5>
+                        <p>5.5 bands</p>
+                        <p>Jordan</p>
                       
                     </div>
                     <div class="testimonial-item text-center">
-                        <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/img/testimonial-3.jpg') }}" style="width: 80px; height: 80px;">
-                        <h5 class="mb-0">Client Name</h5>
-                        <p>Profession</p>
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t3.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Musassir</h5>
+                        <p>6.5 bands</p>
+                        <p>Pakistan</p>
                        
                     </div>
                     <div class="testimonial-item text-center">
-                        <img class="border rounded-circle p-2 mx-auto mb-3"
-                            src="{{ asset('frontend/img/testimonial-4.jpg') }}" style="width: 80px; height: 80px;">
-                        <h5 class="mb-0">Client Name</h5>
-                        <p>Profession</p>
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t4.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Majd Faris Ahmad</h5>
+                        <p>6.5 bands</p>
+                        <p>Jordan</p>
+                      
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t5.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Izzah</h5>
+                        <p>6.0 bands</p>
+                        <p>Pakistan</p>
                        
                     </div>
+                    <div class="testimonial-item text-center">
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t6.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Hafsa</h5>
+                        <p>7.0 bands</p>
+                        <p>Pakistan</p>
+                      
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t7.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Shahbaz</h5>
+                        <p>7.0 bands</p>
+                        <p>Pakistan</p>
+                       
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="border  p-2 mx-auto mb-3"
+                            src="{{ asset('frontend/testimonial/t8.jpg') }}" style="width: 200px; height: 200px;" />
+                        <h5 class="mb-0">Lamisa Quaiyam
+                        </h5>
+                        <p>7.5 bands</p>
+                        <p>Bangladesh</p>
+                      
+                    </div>
+                 
+                 
                 </div>
             </div>
         </div>
