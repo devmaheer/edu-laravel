@@ -361,6 +361,18 @@
                 $(this).css('font-size', selectedFontSize + 'px');
             });
         });
+        function changeColorCodefill(value, ele, fivechoice) {
+            if (value) {
+                let className = '.' + ele;
+                $(className).css("background-color", "#06BBCC");
+
+            } else {
+                let className = '.' + ele;
+                $(className).css("background-color", "#c7cfcf");
+            }
+
+
+        }
 
         function changeColorCode(ele, fivechoice) {
             let className = '.' + ele;

@@ -11,16 +11,16 @@
             @endif
             <p class="fw-bold">
                 @if ($question->fillInBlank->fill_1)
-                    {!! $question->fillInBlank->fill_1 !!} {{ $iteration }} <input type="text" style="width:100px"
-                        onkeyup="changeColorCode('question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
+                    {!! $question->fillInBlank->fill_1 !!} {{ $iteration }} <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="width:100px"
+                        onkeyup="changeColorCodefill(this.value,'question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
                         id="fill_{{ $question->fillInBlank->id }}">
                 @endif
 
                 @if ($question->fillInBlank->fill_2)
                     {!! $question->fillInBlank->fill_2 !!} 
                     @if ($question->fillInBlank->ans_sec_1 || $question->fillInBlank->ans_sec_2 || $question->fillInBlank->ans_sec_3)
-                    {{ $iteration }}  <input type="text" style="width:100px"
-                            onkeyup="changeColorCode('question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
+                    {{ $iteration }}  <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="width:100px"
+                            onkeyup="changeColorCodefill(this.value,'question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
                             id="fill_{{ $question->fillInBlank->id }}">
                     @endif
                 @endif
@@ -29,15 +29,15 @@
 
                     {!! $question->fillInBlank->fill_3 !!}
                     @if ($question->fillInBlank->ans_third_1 || $question->fillInBlank->ans_third_2 || $question->fillInBlank->ans_third_3)
-                        {{ $iteration }} <input type="text" style="width:100px"
-                            onkeyup="changeColorCode('question_{{ $question->id }}')"
+                        {{ $iteration }} <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="width:100px"
+                            onkeyup="changeColorCodefill(this.value,'question_{{ $question->id }}')"
                             name="fill[{{ $question->id }}][]" id="fill_{{ $question->fillInBlank->id }}">
                     @endif
                 @endif
 
                 @if ($question->fillInBlank->fill_4)
-                    {!! $question->fillInBlank->fill_4 !!} {{ $iteration }} <input type="text" style="width:100px"
-                        onkeyup="changeColorCode('question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
+                    {!! $question->fillInBlank->fill_4 !!} {{ $iteration }} <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="width:100px"
+                        onkeyup="changeColorCodefill(this.value,'question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
                         id="fill_{{ $question->fillInBlank->id }}">
                 @endif
 

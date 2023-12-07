@@ -74,22 +74,7 @@
                             <img id="blah" src="{{$question->image_url}}" height="100" width="150" alt="your image" />
                             <!--end::Input-->
                         </div>
-                        <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Question Group</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select  name="question_group" class="form-control form-control-solid required" >
-                                <option value="">Select </option>
-                                 @foreach( App\Helper\Helper::questionGroup(null,2) as $key => $group )
-                                 <option value="{{$key}}" {{$key ==$question->question_group ? 'selected' : ''}} >{{$group}}</option>
-                                 @endforeach
-                                <!-- Add more options as needed -->
-                            </select>
-                            <!--end::Input-->
-                        </div>
+                  
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">

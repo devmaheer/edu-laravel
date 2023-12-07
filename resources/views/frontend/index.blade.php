@@ -563,41 +563,42 @@
                     $testimonials = [
                         (object) ['id' => 1, 'name' => 'Saba', 'score' => '7.0 bands', 'image' => 't1.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
-                        (object) ['id' => 3, 'name' => 'Musassir', 'score' => '6.5 bands', 'image' => 't3.jpg', 'country' => 'Pakistan'],
+                        (object) ['id' => 3, 'name' => 'Mudassir', 'score' => '6.5 bands', 'image' => 't3.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 4, 'name' => 'Majd Faris', 'score' => '6.5 bands', 'image' => 't4.jpg', 'country' => 'Jordan'],
                         (object) ['id' => 5, 'name' => 'Abdullah', 'score' => '6.5 bands', 'image' => 't5.jpg', 'country' => 'Bahrain'],
                         (object) ['id' => 6, 'name' => 'Hafsa', 'score' => '7.0 bands', 'image' => 't6.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 7, 'name' => 'Shahbaz', 'score' => '7.0 bands', 'image' => 't7.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 8, 'name' => 'Lamisa', 'score' => '7.5 bands', 'image' => 't8.jpg', 'country' => 'Bangladesh'],
                         (object) ['id' => 9, 'name' => 'Kanza', 'score' => '7.5 bands', 'image' => 't9.jpg', 'country' => 'Pakistan'],
-                        // Add more testimonials as needed
+                        (object) ['id' => 10, 'name' => 'Ramya', 'score' => '7 bands', 'image' => 't10.jpg', 'country' => 'India'],
+                       
                     ];
                 @endphp
                 <div class="owl-carousel testimonial-carousel position-relative">
                     @foreach ($testimonials as $testimonial)
-                    <div class="testimonial-item text-center">
-                        <button class="mb-1" type="button" data-bs-toggle="modal"
-                            data-bs-target="#testimonial-image-{{$testimonial->id}}">
-                            <img class="border  p-2 mx-auto mb-3" src="{{ asset('frontend/testimonial/' . $testimonial->image) }}"
-                                style="width: 150px; height: 200px;" />
-                        </button>
+                        <div class="testimonial-item text-center">
+                            <button class="mb-1" type="button" data-bs-toggle="modal"
+                                data-bs-target="#testimonial-image-{{ $testimonial->id }}">
+                                <img class="border  p-2 mx-auto mb-3"
+                                    src="{{ asset('frontend/testimonial/' . $testimonial->image) }}"
+                                    style="width: 150px; height: 200px;" />
+                            </button>
 
-                        <h5 class="mb-0">{{$testimonial->name}}</h5>
-                        <p>{{$testimonial->score}}</p>
-                        <p>{{$testimonial->country}}</p>
+                            <h5 class="mb-0">{{ $testimonial->name }}</h5>
+                            <p>{{ $testimonial->score }}</p>
+                            <p>{{ $testimonial->country }}</p>
 
-                      
-                    </div>
-        
+
+                        </div>
                     @endforeach
-               
+
 
 
                 </div>
             </div>
         </div>
         @foreach ($testimonials as $testimonial)
-        @include('layouts.partials.models.testimonial-image')
+            @include('layouts.partials.models.testimonial-image')
         @endforeach
         <!-- Testimonial End -->
     @endsection

@@ -303,6 +303,19 @@
             });
         });
 
+        function changeColorCodefill(value, ele, fivechoice) {
+            if (value) {
+                let className = '.' + ele;
+                $(className).css("background-color", "#06BBCC");
+
+            } else {
+                let className = '.' + ele;
+                $(className).css("background-color", "#c7cfcf");
+            }
+
+
+        }
+
         function changeColorCode(ele, fivechoice) {
             let className = '.' + ele;
             $(className).css("background-color", "#06BBCC");
@@ -322,7 +335,7 @@
             }
         }
         var countdownValue = 60 * 60;
-  
+
         // Function to update the countdown display
         function updateCountdown() {
             const minutes = Math.floor(countdownValue / 60);
