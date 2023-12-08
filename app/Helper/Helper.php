@@ -436,6 +436,7 @@ class Helper
                 if (in_array(false, $fillResult)) {
                     return false;
                 }
+                
                 if(in_array(true, $fillResult)){
                     return true;
                 }else{
