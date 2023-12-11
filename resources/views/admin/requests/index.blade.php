@@ -49,6 +49,7 @@
                             <th>Country</th>
                             <th>Type</th>
                             <th>Plan</th>
+                            <th>Date</th>
 
                         </tr>
                     </thead>
@@ -84,7 +85,7 @@
 
 
 
-
+                            <td>    {{ $request->created_at }}</td>
 
 
 
@@ -122,6 +123,10 @@
                     "orderable": true,
 
                 }, {
+                    "orderable": true,
+
+                },
+                {
                     "orderable": true,
 
                 },
