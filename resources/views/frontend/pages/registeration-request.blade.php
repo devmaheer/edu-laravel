@@ -138,11 +138,11 @@
                                 href="{{ asset('frontend/img-payment/p11.jpg') }}" data-lightbox="photos"><img
                                     class="img-fluid" src="{{ asset('frontend/img-payment/p11.jpg') }}"></a></div>
                                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a
-                                        href="{{ asset('frontend/img-payment/google.jpg') }}" data-lightbox="photos"><img
-                                            class="img-fluid" src="{{ asset('frontend/img-payment/google.jpg') }}"></a></div>
+                                        href="{{ asset('frontend/img-payment/google.png') }}" data-lightbox="photos"><img
+                                            class="img-fluid" src="{{ asset('frontend/img-payment/google.png') }}"></a></div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item"><a
-                                                href="{{ asset('frontend/img-payment/apple.jpg') }}" data-lightbox="photos"><img
-                                                    class="img-fluid" src="{{ asset('frontend/img-payment/apple.jpg') }}" height="100" width="300"></a></div>
+                                                href="{{ asset('frontend/img-payment/apple.png') }}" data-lightbox="photos"><img
+                                                    class="img-fluid" src="{{ asset('frontend/img-payment/apple.png') }}" height="100" width="300"></a></div>
                 
         
         
