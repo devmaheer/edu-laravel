@@ -27,8 +27,8 @@
                                     IELTS preparation courses and much more.</p>
                                 {{-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read
                                     More</a> --}}
-                                <a href="{{ route('registeration-request-front-end.create') }}"
-                                    class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                {{-- <a href="{{ route('registeration-request-front-end.create') }}"
+                                    class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> --}}
                             </div>
                         </div>
                     </div>
