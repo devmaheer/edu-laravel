@@ -1,12 +1,12 @@
-@extends('layouts.frontend-app')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
 
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{ asset('frontend/img/image.jpg') }}" alt="">
+                <img class="img-fluid" src="<?php echo e(asset('frontend/img/image.jpg')); ?>" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                     style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
@@ -25,9 +25,9 @@
                                     perfect band score, we've got you covered. Explore our website
                                     to discover a treasure trove of IELTS resources, practice tests,
                                     IELTS preparation courses and much more.</p>
-                                {{-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read
-                                    More</a> --}}
-                                <a href="{{ route('registeration-request-front-end.create') }}"
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read
+                                    More</a>
+                                <a href="<?php echo e(route('registeration-request-front-end.create')); ?>"
                                     class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'basic']) }}"
+                                    href="<?php echo e(route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'basic'])); ?>"
                                     style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'standard']) }}"
+                                    href="<?php echo e(route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'standard'])); ?>"
                                     style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'premium']) }}"
+                                    href="<?php echo e(route('registeration-request-front-end.create', ['type' => '1', 'plan' => 'premium'])); ?>"
                                     style="border-radius:30px">Join Now</a>
                             </div>
                         </div>
@@ -431,7 +431,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
-                                    href="{{ route('registeration-request-front-end.create', ['type' => '2', 'plan' => 'paid']) }}"
+                                    href="<?php echo e(route('registeration-request-front-end.create', ['type' => '2', 'plan' => 'paid'])); ?>"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>
@@ -542,7 +542,7 @@
                                 </li>
                             </ul>
                             <div class="card-body text-center">
-                                <a class="btn btn-outline-primary btn-lg" href="{{ route('show.loginForm') }}"
+                                <a class="btn btn-outline-primary btn-lg" href="<?php echo e(route('show.loginForm')); ?>"
                                     style="border-radius:30px">Get Access</a>
                             </div>
                         </div>
@@ -559,7 +559,7 @@
                     <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
 
                 </div>
-                @php
+                <?php
                     $testimonials = [
                         (object) ['id' => 1, 'name' => 'Saba', 'score' => '7.0 bands', 'image' => 't1.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
@@ -575,35 +575,37 @@
                         (object) ['id' => 12, 'name' => 'Renise', 'score' => '6.5 bands', 'image' => 't12.jpg', 'country' => 'Cameroon'],
                        
                     ];
-                @endphp
+                ?>
                 <div class="owl-carousel testimonial-carousel position-relative">
-                    @foreach ($testimonials as $testimonial)
+                    <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="testimonial-item text-center">
                             <button class="mb-1" type="button" data-bs-toggle="modal"
-                                data-bs-target="#testimonial-image-{{ $testimonial->id }}">
+                                data-bs-target="#testimonial-image-<?php echo e($testimonial->id); ?>">
                                 <img class="border  p-2 mx-auto mb-3"
-                                    src="{{ asset('frontend/testimonial/' . $testimonial->image) }}"
+                                    src="<?php echo e(asset('frontend/testimonial/' . $testimonial->image)); ?>"
                                     style="width: 150px; height: 200px;" />
                             </button>
 
-                            <h5 class="mb-0">{{ $testimonial->name }}</h5>
-                            <span>{{ $testimonial->score }}</span>
-                            <p>{{ $testimonial->country }}</p>
+                            <h5 class="mb-0"><?php echo e($testimonial->name); ?></h5>
+                            <span><?php echo e($testimonial->score); ?></span>
+                            <p><?php echo e($testimonial->country); ?></p>
 
 
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
                 </div>
             </div>
         </div>
-        @foreach ($testimonials as $testimonial)
-            @include('layouts.partials.models.testimonial-image')
-        @endforeach
+        <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php echo $__env->make('layouts.partials.models.testimonial-image', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <!-- Testimonial End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
 
-    @section('script')
-    @endsection
+    <?php $__env->startSection('script'); ?>
+    <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.frontend-app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/frontend/index.blade.php ENDPATH**/ ?>
