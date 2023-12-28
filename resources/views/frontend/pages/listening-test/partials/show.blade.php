@@ -36,7 +36,7 @@
                         style="border-radius:30px"> Start Test </a>
 
 
-                </div>git
+                </div>
             </div>
         </div>
         <!-- About Start -->
