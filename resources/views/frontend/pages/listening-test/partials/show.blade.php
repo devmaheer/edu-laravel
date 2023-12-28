@@ -24,7 +24,7 @@
                                 class="fas fa-trash-alt"></i> to remove selected words or text and <i
                                 class="fas fa-times-circle"></i> to
                                 clear all the highlighted text.</li>
-                        <li>In the actual IELTS test you should write all answers in capital leƩers as sometimes the
+                        <li>In the actual IELTS test you should write all answers in capital letters as sometimes the
                             answers can be proper nouns which should be written with the first letter as capital but
                             here it will not be considered. 
                             </li>
@@ -36,7 +36,7 @@
                         style="border-radius:30px"> Start Test </a>
 
 
-                </div>
+                </div>git
             </div>
         </div>
         <!-- About Start -->

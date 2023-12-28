@@ -17,7 +17,7 @@
 			
 					<div class="col-lg-4 col-md-6">
 						<h4 class="text-white mb-3">Quick Link</h4>
-						<a class="btn btn-link" href="{{route('frontend.index')}}">About Us</a>
+						{{-- <a class="btn btn-link" href="{{route('frontend.index')}}">About Us</a> --}}
 						<a class="btn btn-link" href="{{route('frontend.privacy-policy')}}">Privacy Policy</a>
 						<a class="btn btn-link" href="{{route('frontend.faqs')}}">FAQs & Help</a>
 					</div>

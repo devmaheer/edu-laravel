@@ -316,8 +316,7 @@
                                 <ul class="list-unstyled m-0">
                                     <li>
                                         <p>
-                                            Our courses, including Crash Course (15 days) and Full Preparation Course (1
-                                            month), provide
+                                            Our courses, including Crash Course compelete and Full Preparation Course and Itensive Prep Course, provide
                                             structured lessons, mock speaking tests, writing task evaluations, practice
                                             materials, and expert
                                             guidance to prepare you for the IELTS exam. In each course, live classes are
@@ -428,8 +427,7 @@
                                     <li>
                                         <p>
                                             If you have further inquiries or need support, please contact our customer
-                                            service team at [your
-                                            contact information], and we'll be happy to assist you.
+                                            service team at info@ieltsprepandpractice.com, and we'll be happy to assist you.
                                         </p>
                                     </li>
 

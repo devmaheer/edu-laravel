@@ -3,9 +3,13 @@
     <div class="modal-dialog modal-dialog-centered mw-750px">
         <!--begin::Modal content-->
         <div class="modal-content">
+            
             <div class="card h-100 shadow-lg">
-             
-               
+                <div class="modal-header">
+                    <h5 class="modal-title"><p>Choose the Type of Test which you would like to take.</p>
+                   
+                  </div>
+                
                 <div class="card-body text-center">
                     <a class="btn btn-outline-primary btn-lg"
                         href="{{ route('academic.training.test', ['type' => '1']) }}"
@@ -20,5 +24,5 @@
         </div>
         <!--end::Modal content-->
     </div>
-    <!--end::Modal dialog--
+  
 </div>

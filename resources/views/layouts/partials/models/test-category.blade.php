@@ -4,7 +4,10 @@
         <!--begin::Modal content-->
         <div class="modal-content">
             <div class="card h-100 shadow-lg">
-
+                <div class="modal-header">
+                    <h5 class="modal-title"><p>Choose the Module which you would like to practice.</p>
+                   
+                  </div>
 
                 <div class="card-body text-center">
                     <a class="btn btn-outline-primary btn-lg"

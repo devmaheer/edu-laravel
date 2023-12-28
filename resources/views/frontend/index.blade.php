@@ -46,7 +46,7 @@
             <div class="container p-5">
                 <div class="row">
                     <h1 class="mb-4">IELTS Preparation Courses</h1>
-                    <p class="mb-4">Unlock IELTS Success with Our Preparation Courses. Join our 1 on 1 IELTS preparation
+                    <p class="mb-4">Unlock IELTS Success with Our Preparation Courses. Join our 1 : 1 and group IELTS preparation
                         courses and
                         empower yourself for success. Our expertly designed programs provide the guidance, resources, and
                         support you need to excel in the IELTS exam. Prepare with confidence and achieve your desired band
@@ -58,8 +58,8 @@
                                     <h5 class="card-title">Basic</h5>
                                     <small>IELTS Crash Course </small>
                                     <br><br>
-                                    <span class="h2"><del class="mr-2"
-                                            style="font-size: 15px; margin-right:8px">$50</del>$20</span>
+                                    <span class="h4"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$50</del>$20 USD</span>
                                     <br><br>
                                 </div>
                                 <p class="card-text">Join our IELTS Crash Course, a focused 15-day program designed to
@@ -132,8 +132,8 @@
                                     <h5 class="card-title">Standard</h5>
                                     <small> IELTS Complete Prep Course</small>
                                     <br><br>
-                                    <span class="h2"><del class="mr-2"
-                                            style="font-size: 15px; margin-right:8px">$70</del>$40</span>
+                                    <span class="h4"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$70</del>$40 USD</span>
                                     <br><br>
                                 </div>
                                 <p class="card-text">Embark on a comprehensive IELTS Complete Preparation Course spanning
@@ -208,8 +208,8 @@
                                     <h5 class="card-title">Premium</h5>
                                     <small> IELTS Intensive Prep Course</small>
                                     <br><br>
-                                    <span class="h2"><del class="mr-2"
-                                            style="font-size: 15px; margin-right:8px">$150</del>$120</span>
+                                    <span class="h4"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$150</del>$120 USD</span>
                                     <br><br>
                                 </div>
                                 <p class="card-text">Dive deep into success with our 45 Sessions Intensive IELTS
@@ -318,12 +318,12 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> Cambridge IELTS Books </li>
+                                    </svg>IELTS Practice Books </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Book for Writing & Speaking
+                                    height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
+                                </svg>Book for Writing & Speaking
                                 </li>
 
 
@@ -332,7 +332,7 @@
                                         <path
                                             d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
                                     </svg>
-                                    Custom Study Plan
+                                    Customized Study Plan
                                 </li>
 
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -387,7 +387,7 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> Cambridge IELTS Books </li>
+                                    </svg>IELTS Practice  Books</li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
@@ -399,7 +399,7 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Custom Study Plan
+                                    </svg>Customized Study Plan
                                 </li>
 
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -423,8 +423,8 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> <span class="h2"><del class="mr-2"
-                                            style="font-size: 15px; margin-right:8px">$30 USD</del>$10 USD</span>
+                                    </svg> <span class="h4"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$30 USD</del>$10 USD USD</span>
 
 
                                 </li>
@@ -445,8 +445,8 @@
             <div class="container p-5">
                 <div class="row">
                     <h1 class="mb-4">Practice IELTS Online</h1>
-                    <p class="mb-4">Experience IELTS Like Never Before with Computer-Based Testing Get a taste of the
-                        real IELTS Computer Based Test (CBT) environment right here. Our online plaƞorm mirrors the actual
+                    <p class="mb-4">Experience IELTS Like Never Before with Computer-Based Testing. Get a taste of the
+                        real IELTS Computer Based Test (CBT) environment right here. Our online platform mirrors the actual
                         IELTS CBT, ensuring
                         you're fully prepared for the exam day experience. Familiarize yourself with the digital format,
                         timer, and
@@ -535,8 +535,8 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> <span class="h2"><del class="mr-2"
-                                            style="font-size: 15px; margin-right:8px">$50 USD</del>$30 USD</span>
+                                    </svg> <span class="h4"><del class="mr-2"
+                                            style="font-size: 15px; margin-right:8px">$30 USD</del>$15 USD USD</span>
 
 
                                 </li>
@@ -571,6 +571,8 @@
                         (object) ['id' => 8, 'name' => 'Lamisa', 'score' => '7.5 bands', 'image' => 't8.jpg', 'country' => 'Bangladesh'],
                         (object) ['id' => 9, 'name' => 'Kanza', 'score' => '7.5 bands', 'image' => 't9.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 10, 'name' => 'Ramya', 'score' => '7 bands', 'image' => 't10.jpg', 'country' => 'India'],
+                        (object) ['id' => 11, 'name' => 'Maryeni', 'score' => '7.5 bands', 'image' => 't11.jpg', 'country' => 'Ghana'],
+                        (object) ['id' => 12, 'name' => 'Renise', 'score' => '6.5 bands', 'image' => 't12.jpg', 'country' => 'Cameroon'],
                        
                     ];
                 @endphp
@@ -585,7 +587,7 @@
                             </button>
 
                             <h5 class="mb-0">{{ $testimonial->name }}</h5>
-                            <p>{{ $testimonial->score }}</p>
+                            <span>{{ $testimonial->score }}</span>
                             <p>{{ $testimonial->country }}</p>
 
 
