@@ -238,7 +238,10 @@
             <!--begin::Modal content-->
             <div class="modal-content">
                 <div class="card h-100 shadow-lg">
-
+                    <div class="modal-header">
+                        <h5 class="modal-title"><p style="text-align: center;">Press the button to Start the recording</p>
+                       
+                      </div>
 
                     <button type="reset" class="btn btn-primary me-3" data-bs-dismiss="modal"
                         data-dismiss="test-type">Enter in Test</button>
