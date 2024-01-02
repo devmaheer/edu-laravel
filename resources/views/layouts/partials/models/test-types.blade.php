@@ -11,14 +11,14 @@
                   </div>
                 
                   <div class="row">
-                    <div class="col-md-6 mt-2 ms-5">
+                    <div class="col-md-6 mt-2">
                     <a class="btn btn-outline-primary btn-lg"
                         href="{{ route('academic.training.test', ['type' => '1']) }}"
                         style="border-radius:30px">Academic Test  </a>
                 </div>
                
                     <div class="col-md-6 mt-2">
-                    <a class="btn btn-outline-primary btn-lg ms-5"
+                    <a class="btn btn-outline-primary btn-lg"
                         href="{{ route('general.training.test', ['type' => '1']) }}"
                         style="border-radius:30px"> General Training Test                  </a>
                 </div>
