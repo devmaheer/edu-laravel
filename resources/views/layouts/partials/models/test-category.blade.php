@@ -5,13 +5,13 @@
         <div class="modal-content">
             <div class="card h-100 shadow-lg">
                 <div class="modal-header">
-                    <h5 class="modal-title"><p>Choose the Module which you would like to practice.</p>
+                    <h5 class="modal-title" style="text-align: center;"><p>Choose the Module which you would like to practice.</p>
                    
                   </div>
 
                      <div class="row">
                         <div class="col-md-6 mt-2">
-                            <a class="btn btn-outline-primary btn-lg"
+                            <a class="btn btn-outline-primary btn-lg ms-5"
                             href="{{ route('show.listening.test', ['id' => $test->id]) }}"
                             style="border-radius:30px">Listening Test</a>
                   
@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="col-md-6  mt-2">
-                            <a class="btn btn-outline-primary btn-lg"
+                            <a class="btn btn-outline-primary btn-lg ms-5"
                             href="{{ route('show.reading.test', ['id' => $test->id]) }}" style="border-radius:30px">
                             Reading Test </a>
                         </div>

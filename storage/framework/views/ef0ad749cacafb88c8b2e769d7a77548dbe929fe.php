@@ -6,12 +6,12 @@
             
             <div class="card h-100 shadow-lg">
                 <div class="modal-header">
-                    <h5 class="modal-title"><p>Choose the Type of Test which you would like to take.</p>
+                    <h5 class="modal-title"><p style="text-align: center;">Choose the Type of Test which you would like to take.</p>
                    
                   </div>
                 
                   <div class="row">
-                    <div class="col-md-6 mt-2">
+                    <div class="col-md-6 mt-2 ms-5">
                     <a class="btn btn-outline-primary btn-lg"
                         href="<?php echo e(route('academic.training.test', ['type' => '1'])); ?>"
                         style="border-radius:30px">Academic Test  </a>
