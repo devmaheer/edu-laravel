@@ -1,5 +1,5 @@
 <div class="col-12 mt-3 ">
-    <p class="fw-bold">{{ $iteration }}: {!! $question->name !!}</p>
+    <p class="fw-bold"> {!! $question->name !!}</p>
     <div>
         @foreach ($question->options as $key => $option)
             <div>

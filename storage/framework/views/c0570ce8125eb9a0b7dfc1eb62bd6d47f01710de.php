@@ -1,4 +1,4 @@
-<div class="modal fade" id="test-category-{{ $test->id }}" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="test-category-<?php echo e($test->id); ?>" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-750px"  style="max-width:600px;">
         <!--begin::Modal content-->
@@ -12,7 +12,7 @@
                      <div class="row">
                         <div class="col-md-6 mt-2">
                             <a class="btn btn-outline-primary btn-lg"
-                            href="{{ route('show.listening.test', ['id' => $test->id]) }}"
+                            href="<?php echo e(route('show.listening.test', ['id' => $test->id])); ?>"
                             style="border-radius:30px">Listening Test</a>
                   
                   
@@ -20,7 +20,7 @@
 
                         <div class="col-md-6  mt-2">
                             <a class="btn btn-outline-primary btn-lg"
-                            href="{{ route('show.reading.test', ['id' => $test->id]) }}" style="border-radius:30px">
+                            href="<?php echo e(route('show.reading.test', ['id' => $test->id])); ?>" style="border-radius:30px">
                             Reading Test </a>
                         </div>
                      </div>
@@ -33,3 +33,4 @@
     </div>
 
 </div>
+<?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/layouts/partials/models/test-category.blade.php ENDPATH**/ ?>

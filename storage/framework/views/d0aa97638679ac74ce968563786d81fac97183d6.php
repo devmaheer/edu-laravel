@@ -1,6 +1,6 @@
-@extends('layouts.frontend-app')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- Service Start -->
     <div class="container-xxl py-5">
 
@@ -9,7 +9,7 @@
             <div class="container p-5">
                 <div class="row">
                     <h1 class="mb-4">Reading Tests Instruction</h1>
-                    @if ($test->category == 1)
+                    <?php if($test->category == 1): ?>
                         <p>
                             <b>You have chosen to take an IELTS Academic Reading Test.</b></br>
                             It will take 60 minutes to solve the test.</br></br>
@@ -31,7 +31,7 @@
                         <b> Follow the instructions given with each question.</b>
 
                         </p>
-                    @else
+                    <?php else: ?>
                         <p>
                             <b>You have chosen to take an IELTS General Training Reading Test</b></br>
                             It will take 60 minutes to solve the test.</br></br>
@@ -53,8 +53,8 @@
 
                             </ul>
                             <b> Follow the instructions given with each question.</b>    </p>
-                    @endif
-                    <a class="btn btn-outline-primary btn-lg" href="{{ route('reading.test', ['id' => $test->id]) }}"
+                    <?php endif; ?>
+                    <a class="btn btn-outline-primary btn-lg" href="<?php echo e(route('reading.test', ['id' => $test->id])); ?>"
                         style="border-radius:30px"> Start Test </a>
 
 
@@ -64,7 +64,9 @@
         <!-- About Start -->
     </div>
     <!-- Testimonial End -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
-@endsection
+<?php $__env->startSection('script'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.frontend-app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/frontend/pages/reading-test/partials/show.blade.php ENDPATH**/ ?>

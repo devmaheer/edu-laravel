@@ -1,6 +1,6 @@
 <div class="modal fade" id="test-type" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-750px">
+    <div class="modal-dialog modal-dialog-centered mw-750px" style="max-width:600px;">
         <!--begin::Modal content-->
         <div class="modal-content">
             
@@ -10,12 +10,14 @@
                    
                   </div>
                 
-                <div class="card-body text-center">
+                  <div class="row">
+                    <div class="col-md-6 mt-2">
                     <a class="btn btn-outline-primary btn-lg"
                         href="<?php echo e(route('academic.training.test', ['type' => '1'])); ?>"
                         style="border-radius:30px">Academic Test  </a>
                 </div>
-                <div class="card-body text-center">
+               
+                    <div class="col-md-6 mt-2">
                     <a class="btn btn-outline-primary btn-lg"
                         href="<?php echo e(route('general.training.test', ['type' => '1'])); ?>"
                         style="border-radius:30px"> General Training Test                  </a>
