@@ -244,7 +244,8 @@
                       </div>
 
                     <button type="reset" class="btn btn-primary me-3" data-bs-dismiss="modal"
-                        data-dismiss="test-type">Enter in Test</button>
+                        data-dismiss="test-type">Enter in Test
+                    </button>
                 </div>
             </div>
         </div>
