@@ -9,7 +9,7 @@
                 {{-- </button> --}}
                 </br>
             @endif
-            <p class="fw-bold">
+            <p >
                 @if ($question->fillInBlank->fill_1)
                     {!! $question->fillInBlank->fill_1 !!}  <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="width:100px"
                         onkeyup="changeColorCodefill(this.value,'question_{{ $question->id }}')" name="fill[{{ $question->id }}][]"
