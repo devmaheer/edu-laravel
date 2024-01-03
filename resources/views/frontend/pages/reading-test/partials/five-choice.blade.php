@@ -1,5 +1,5 @@
 <div class="col-12 mt-3 ">
-    <p class="fw-bold">{!! $question->name !!}</p>
+    <p >{!! $question->name !!}</p>
     <div>
         @foreach ($question->options as $key => $option)
             <div>
@@ -18,7 +18,7 @@
                 <label for="option-{{ $option->id }}" class="box first">
                     <div class="course"> <span style="border-radius:17%;" class="circle"></span> <span class="subject">
 
-                            {{ $option->name }}
+                            {!! $option->name !!}
                         </span> </div>
                 </label>
             </div>
