@@ -104,7 +104,7 @@
                                     autocomplete="off" />
                             </div>
                             <div class="">
-                                <input class="form-control" placeholder="Enter option Three" name="ans_first_2" value="{{$question->fillInBlank->ans_first_2}}"  id="mcqs"
+                                <input class="form-control" placeholder="Enter option Three" name="ans_first_3" value="{{$question->fillInBlank->ans_first_3}}"  id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
