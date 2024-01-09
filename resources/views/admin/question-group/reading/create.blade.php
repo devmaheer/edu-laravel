@@ -60,7 +60,7 @@
 
                                     <th>Name</th>
                                     <th>Type</th>
-                                    <th>Paragraph</th>
+                                    <th>Passage</th>
                                     <th>Category</th>
                                     <th>Actions</th>
                                 </tr>

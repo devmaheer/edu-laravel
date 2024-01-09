@@ -1,6 +1,6 @@
-@extends('layouts.app')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!--begin::Toolbar-->
     <div class="toolbar mb-5 mb-lg-7" id="kt_toolbar">
         <!--begin::Page title-->
@@ -26,19 +26,19 @@
         <div class="card-body pt-9 pb-9">
             <h1 class="text-dark fw-bolder mt-1 mb-10 fs-3">Edit Question </h1>
             <div class="row">
-                <h3> Test Name : {{ $question->test->name }} <br /><br />
-                    Test Category : @if ($question->test->category == '1')
+                <h3> Test Name : <?php echo e($question->test->name); ?> <br /><br />
+                    Test Category : <?php if($question->test->category == '1'): ?>
                         Acadamic
-                    @else
+                    <?php else: ?>
                         General Training
-                    @endif <br /></h3>
+                    <?php endif; ?> <br /></h3>
             </div><br />
-            <form action="{{ route('admin.question.update') }}" method="post" enctype="multipart/form-data" >
-                @csrf
+            <form action="<?php echo e(route('admin.question.update')); ?>" method="post" enctype="multipart/form-data" >
+                <?php echo csrf_field(); ?>
                 <input type="hidden" name="question_type" value="reading">
                 <input type="hidden" name="filling_blanks" value="1">
-                <input type="hidden" name="testId" value="{{ $question->test->id }}">
-                <input type="hidden" name="questionId" value="{{ $question->id }}">
+                <input type="hidden" name="testId" value="<?php echo e($question->test->id); ?>">
+                <input type="hidden" name="questionId" value="<?php echo e($question->id); ?>">
                 <div class="row g-9 mb-8">
 
                     <div class="d-flex flex-column me-n7 pe-7">
@@ -46,19 +46,19 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Passage</span>
+                                <span class="required">Select Paragraph</span>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
                             <select  name="paragraph" class="form-control form-control-solid required" >
                                 <option value="">Select </option>
-                                <option value="1" {{ $question->paragraph == 1 ? 'selected' : '' }}>One</option>
-                                <option value="2" {{ $question->paragraph == 2 ? 'selected' : '' }}>Two</option>
-                                <option value="3" {{ $question->paragraph == 3 ? 'selected' : '' }}>Three</option>
-                                @if($question->test->category == '2')
-                                <option value="4" {{ $question->paragraph == 4 ? 'selected' : '' }}>Four</option>
-                                <option value="5" {{ $question->paragraph == 5 ? 'selected' : '' }}>Five</option>
-                                 @endif
+                                <option value="1" <?php echo e($question->paragraph == 1 ? 'selected' : ''); ?>>One</option>
+                                <option value="2" <?php echo e($question->paragraph == 2 ? 'selected' : ''); ?>>Two</option>
+                                <option value="3" <?php echo e($question->paragraph == 3 ? 'selected' : ''); ?>>Three</option>
+                                <?php if($question->test->category == '2'): ?>
+                                <option value="4" <?php echo e($question->paragraph == 4 ? 'selected' : ''); ?>>Four</option>
+                                <option value="5" <?php echo e($question->paragraph == 5 ? 'selected' : ''); ?>>Five</option>
+                                 <?php endif; ?>
                                 <!-- Add more options as needed -->
                             </select>
                             <!--end::Input-->
@@ -71,8 +71,8 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <input accept="image/*" type='file' name="image" id="imgInp" />
-                            <input type="hidden" name="old_image" value="{{$question->image_url}}" >
-                            <img id="blah"  src="{{$question->image_url}}" height="100" width="150" alt="your image" />
+                            <input type="hidden" name="old_image" value="<?php echo e($question->image_url); ?>" >
+                            <img id="blah"  src="<?php echo e($question->image_url); ?>" height="100" width="150" alt="your image" />
                             <!--end::Input-->
                         </div>
                   
@@ -84,7 +84,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_1}}"  name="fill_1" id="mcqs"
+                                <input class="form-control" placeholder="Enter " value="<?php echo e($question->fillInBlank->fill_1); ?>"  name="fill_1" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -97,15 +97,15 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter option one "  name="ans_first_1" value="{{$question->fillInBlank->ans_first_1}}"  id="mcqs"
+                                <input class="form-control" placeholder="Enter option one "  name="ans_first_1" value="<?php echo e($question->fillInBlank->ans_first_1); ?>"  id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <div class="">
-                                <input class="form-control" placeholder="Enter option Two" name="ans_first_2"  value="{{$question->fillInBlank->ans_first_2}}" id="mcqs"
+                                <input class="form-control" placeholder="Enter option Two" name="ans_first_2"  value="<?php echo e($question->fillInBlank->ans_first_2); ?>" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <div class="">
-                                <input class="form-control" placeholder="Enter option Three" name="ans_first_3" value="{{$question->fillInBlank->ans_first_3}}"  id="mcqs"
+                                <input class="form-control" placeholder="Enter option Three" name="ans_first_3" value="<?php echo e($question->fillInBlank->ans_first_3); ?>"  id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -118,7 +118,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_2}}" name="fill_2" id="mcqs"
+                                <input class="form-control" placeholder="Enter " value="<?php echo e($question->fillInBlank->fill_2); ?>" name="fill_2" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -131,15 +131,15 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter option one " name="ans_sec_1"  value="{{$question->fillInBlank->ans_sec_1}}" id="mcqs"
+                                <input class="form-control" placeholder="Enter option one " name="ans_sec_1"  value="<?php echo e($question->fillInBlank->ans_sec_1); ?>" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <div class="">
-                                <input class="form-control" placeholder="Enter option Two " name="ans_sec_2"  value="{{$question->fillInBlank->ans_sec_2}}" id="mcqs"
+                                <input class="form-control" placeholder="Enter option Two " name="ans_sec_2"  value="<?php echo e($question->fillInBlank->ans_sec_2); ?>" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <div class="">
-                                <input class="form-control" placeholder="Enter option Three " name="ans_sec_3"  value="{{$question->fillInBlank->ans_sec_3}}" id="mcqs"
+                                <input class="form-control" placeholder="Enter option Three " name="ans_sec_3"  value="<?php echo e($question->fillInBlank->ans_sec_3); ?>" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -152,7 +152,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_3}}" name="fill_3" id="mcqs"
+                                <input class="form-control" placeholder="Enter " value="<?php echo e($question->fillInBlank->fill_3); ?>" name="fill_3" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -166,15 +166,15 @@
                             <!--begin::Input-->
                             <div class="">
                                 <div class="">
-                                    <input class="form-control" placeholder="Enter option One" name="ans_third_1"  value="{{$question->fillInBlank->ans_third_1}}"  id="mcqs"
+                                    <input class="form-control" placeholder="Enter option One" name="ans_third_1"  value="<?php echo e($question->fillInBlank->ans_third_1); ?>"  id="mcqs"
                                         autocomplete="off" />
                                 </div>
                                 <div class="">
-                                    <input class="form-control" placeholder="Enter option Two" name="ans_third_2"  value="{{$question->fillInBlank->ans_third_2}}"  id="mcqs"
+                                    <input class="form-control" placeholder="Enter option Two" name="ans_third_2"  value="<?php echo e($question->fillInBlank->ans_third_2); ?>"  id="mcqs"
                                         autocomplete="off" />
                                 </div>
                                 <div class="">
-                                    <input class="form-control" placeholder="Enter option Three" name="ans_third_3"  value="{{$question->fillInBlank->ans_third_3}}"  id="mcqs"
+                                    <input class="form-control" placeholder="Enter option Three" name="ans_third_3"  value="<?php echo e($question->fillInBlank->ans_third_3); ?>"  id="mcqs"
                                         autocomplete="off" />
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="">
-                                <input class="form-control" placeholder="Enter " value="{{$question->fillInBlank->fill_4}}" name="fill_4" id="mcqs"
+                                <input class="form-control" placeholder="Enter " value="<?php echo e($question->fillInBlank->fill_4); ?>" name="fill_4" id="mcqs"
                                     autocomplete="off" />
                             </div>
                             <!--end::Input-->
@@ -227,10 +227,10 @@
             </form>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
 
-@section('script')
+<?php $__env->startSection('script'); ?>
     <script>
         function addOptions(e) {
             const numOptions = parseInt($(e).val());
@@ -271,4 +271,6 @@
         }
         }
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/admin/question/reading/edit-fillinblanks.blade.php ENDPATH**/ ?>

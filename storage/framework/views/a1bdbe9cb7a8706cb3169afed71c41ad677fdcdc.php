@@ -1,5 +1,5 @@
-@extends('layouts.frontend-app')
-@section('css')
+
+<?php $__env->startSection('css'); ?>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
@@ -316,8 +316,8 @@
             list-style: none;
         }
     </style>
-@endsection
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -325,27 +325,27 @@
                 <ul class="nav nav-tabs justify-content-center" role="tablist">
                     <li role="presentation" class="active">
                         <a class="active show" href="#paragraph-1" aria-controls="paragraph-1" role="tab"
-                            data-toggle="tab" aria-selected="true">Passage One</a>
+                            data-toggle="tab" aria-selected="true">Paragraph One</a>
                     </li>
                     <li role="presentation"><a href="#paragraph-2" aria-controls="paragraph-2" role="tab"
-                            data-toggle="tab" class aria-selected="false">Passage Two</a></li>
+                            data-toggle="tab" class aria-selected="false">Paragraph Two</a></li>
                     <li role="presentation"><a href="#paragraph-3" aria-controls="paragraph-3" role="tab"
-                            data-toggle="tab" class aria-selected="false">Passage Three</a></li>
-                    @if (array_key_exists('4', $data))
+                            data-toggle="tab" class aria-selected="false">Paragraph Three</a></li>
+                    <?php if(array_key_exists('4', $data)): ?>
                         <li role="presentation"><a href="#paragraph-4" aria-controls="paragraph-4" role="tab"
-                                data-toggle="tab" class aria-selected="false">Passage Four</a></li>
+                                data-toggle="tab" class aria-selected="false">Paragraph Four</a></li>
                         <li role="presentation"><a href="#paragraph-5" aria-controls="paragraph-5" role="tab"
-                                data-toggle="tab" class aria-selected="false">Passage Five</a></li>
-                    @endif
+                                data-toggle="tab" class aria-selected="false">Paragraph Five</a></li>
+                    <?php endif; ?>
                 </ul>
                 <div class="tab-content text-left">
 
-                    @php
+                    <?php
                         $itera = 1;
-                    @endphp
-                    @foreach ($data as $key => $group)
-                        <div role="tabpanel" class="tab-pane fade {{ $key == 1 ? 'active show' : ' ' }}"
-                            id="paragraph-{{ $key }}">
+                    ?>
+                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div role="tabpanel" class="tab-pane fade <?php echo e($key == 1 ? 'active show' : ' '); ?>"
+                            id="paragraph-<?php echo e($key); ?>">
                             <div class="row">
                                 <table class="table">
                                     <thead>
@@ -357,136 +357,80 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach ($group['questionGroups'] as $group)
-                                            @foreach ($group['questions'] as $question)
-                                                @if ($question->category == 3)
+                                        <?php $__currentLoopData = $group['questionGroups']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php $__currentLoopData = $group['questions']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $question): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($question->category == 3): ?>
                                               
                                                     <tr>
-                                                        <td>{{ $itera }}</td>
-                                                        <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
+                                                        <td><?php echo e($itera); ?></td>
+                                                        <td><?php echo App\Helper\Helper::correctAnswer($question->id); ?></td>
                                                         <td>
-                                                            @if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 1)
+                                                            <?php if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 1): ?>
                                                            
                                                                 <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
-                                                            @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 0)
+                                                            <?php elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 0): ?>
                                                                 <i class="bi bi-x" style="color:red"></i>
-                                                            @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 'one')
+                                                            <?php elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 'one'): ?>
                                                                 <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
                                                                 <i class="bi bi-x" style="color:red"></i>
-                                                            @endif
-                                                            {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}
+                                                            <?php endif; ?>
+                                                            <?php echo App\Helper\Helper::userAnswer($userTest, $question->id); ?>
+
                                                         </td>
                                                     </tr>
-                                                    @php
+                                                    <?php
                                                         $itera++;
-                                                    @endphp
-                                                @endif
+                                                    ?>
+                                                <?php endif; ?>
 
 
 
                                                 <tr>
-                                                    <td>{{ $itera }}</td>
-                                                    <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
+                                                    <td><?php echo e($itera); ?></td>
+                                                    <td><?php echo App\Helper\Helper::correctAnswer($question->id); ?></td>
                                                     <td>
-                                                        @if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 1)
+                                                        <?php if(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 1): ?>
                                                             <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
-                                                        @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 0)
+                                                        <?php elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 0): ?>
                                                             <i class="bi bi-x" style="color:red"></i>
-                                                        @elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 'one')
+                                                        <?php elseif(App\Helper\Helper::checkCorrectOrNot($userTest, $question->id) == 'one'): ?>
                                                             <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
                                                             <i class="bi bi-x" style="color:red"></i>
-                                                        @endif
-                                                        {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}
+                                                        <?php endif; ?>
+                                                        <?php echo App\Helper\Helper::userAnswer($userTest, $question->id); ?>
+
                                                     </td>
                                                 </tr>
 
 
 
-                                                @php
+                                                <?php
                                                     $itera++;
-                                                @endphp
-                                            @endforeach
-                                        @endforeach
+                                                ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 </div>
             </div>
         </div>
-        {{-- <div class="container"> --}}
+        
 
-        {{-- <div class="card-body pt-9 pb-9">
-                <h1 class="text-dark fw-bolder mt-1 mb-10 fs-3">Correct Answer</h1>
-                <div class="row">
+        
 
-                    @php
-                        $itera = 1;
-                    @endphp
-                    @foreach ($data as $key => $group)
-                        <div class="col-md-4">
-                         
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Correct</th>
-                                                <th>Your Answer</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            @foreach ($group['questionGroups'] as $group)
-                                                @foreach ($group['questions'] as $question)
-                                                    @if ($question->category == 3)
-                                                        <tr>
-                                                            <td>{{ $itera }}</td>
-                                                            <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
-                                                            <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
-
-
-                                                            @php
-                                                                $itera++;
-                                                            @endphp
-                                                    @endif
-
-
-
-                                                    <tr>
-                                                        <td>{{ $itera }}</td>
-                                                        <td>{!! App\Helper\Helper::correctAnswer($question->id) !!}</td>
-                                                        <td>{!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}</td>
-                                                    </tr>
-
-
-
-                                                    @php
-                                                        $itera++;
-                                                    @endphp
-                                                @endforeach
-                                            @endforeach
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                               
-                            </div>
-                    @endforeach
-
-
-                </div>
-
-
-            </div> --}}
-
-        {{-- </div> --}}
+        
     </div>
     <!-- Service End -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
+<?php $__env->startSection('script'); ?>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.frontend-app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/frontend/pages/correct-answer.blade.php ENDPATH**/ ?>

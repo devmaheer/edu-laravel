@@ -29,9 +29,9 @@
                 <!--end::Modal title-->
 
                 <!--begin::Form-->
-                <form action="{{ route('admin.question.store') }}" enctype="multipart/form-data"  method="post">
+                <form action="<?php echo e(route('admin.question.store')); ?>" enctype="multipart/form-data"  method="post">
                     <!--begin::Scroll-->
-                    <input type="hidden" name="testId" value="{{ $test->id }}">
+                    <input type="hidden" name="testId" value="<?php echo e($test->id); ?>">
                     <input type="hidden" name="question_type" value="reading">
                     <input type="hidden" name="filling_blanks" value="1">
                     <div class="d-flex flex-column me-n7 pe-7">
@@ -39,7 +39,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Passage</span>
+                                <span class="required">Select Paragraph</span>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
@@ -48,10 +48,10 @@
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
-                                @if($test->category == '2')
+                                <?php if($test->category == '2'): ?>
                                 <option value="4">Four</option>
                                 <option value="5">Five</option>
-                                 @endif
+                                 <?php endif; ?>
                                 <!-- Add more options as needed -->
                             </select>
                             <!--end::Input-->
@@ -212,3 +212,4 @@
     </div>
     <!--end::Modal dialog-->
 </div>
+<?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/admin/question/reading/partials/filling-blank-modal.blade.php ENDPATH**/ ?>

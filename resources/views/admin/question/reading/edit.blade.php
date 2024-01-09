@@ -56,7 +56,7 @@
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
                             <label class="fs-5 fw-bolder form-label mb-2">
-                                <span class="required">Select Paragraph</span>
+                                <span class="required">Select Passage</span>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->

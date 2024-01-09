@@ -1,5 +1,5 @@
 <div class="col-12 mt-3 ">
-    <p class="fw-bold"><?php echo e($iteration); ?>: <?php echo $question->name; ?></p>
+    <p > <?php echo $question->name; ?></p>
     <div>
         <?php $__currentLoopData = $question->options; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $option): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div>
@@ -19,7 +19,7 @@
                 <label for="option-<?php echo e($option->id); ?>" class="box first">
                     <div class="course"> <span class="circle"></span> <span class="subject">
 
-                            <?php echo e($option->name); ?>
+                            <?php echo $option->name; ?>
 
                         </span> </div>
                 </label>

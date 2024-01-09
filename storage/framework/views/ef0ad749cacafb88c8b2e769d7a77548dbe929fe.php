@@ -11,7 +11,7 @@
                   </div>
                 
                   <div class="row">
-                    <div class="col-md-6 mt-2 ms-5">
+                    <div class="col-md-6 mt-2">
                     <a class="btn btn-outline-primary btn-lg"
                         href="<?php echo e(route('academic.training.test', ['type' => '1'])); ?>"
                         style="border-radius:30px">Academic Test  </a>

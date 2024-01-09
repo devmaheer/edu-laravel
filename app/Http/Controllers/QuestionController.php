@@ -148,7 +148,7 @@ class QuestionController extends Controller
    {
     
       if ($request->question_type == "reading") {
-
+          
          if ($request->filling_blanks == '1') {
             $question =  $this->updateFillInBlank($request, 1);
             return  redirect()->route('admin.question.index', ['id' => $question->test->id]);
@@ -197,6 +197,7 @@ class QuestionController extends Controller
    public function updateFillInBlank($request, $type)
    {
       $imageUrl = null;
+     
       if ($request->has('image')) {
 
          $image = $request->file('image');
@@ -204,7 +205,8 @@ class QuestionController extends Controller
          $image->move(public_path() . '/storage', $filename);
          $imageUrl = asset('storage/' . $filename);
          // You can also generate a public URL for the stored image
-
+      }else{
+         $imageUrl =  $request->old_image;
 
       }
 

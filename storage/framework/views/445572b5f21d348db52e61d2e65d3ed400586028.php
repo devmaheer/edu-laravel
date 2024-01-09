@@ -1,5 +1,5 @@
-@extends('layouts.frontend-app')
-@section('css')
+
+<?php $__env->startSection('css'); ?>
     <style>
         .number-box {
             width: 13px;
@@ -32,8 +32,8 @@
             /* Remove the box shadow */
         }
     </style>
-@endsection
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <!-- Service Start -->
     <div class="container-xxl py-5" style="max-width: 1500px;">
         <nav class="navbar navbar-expand-lg bg-white  navbar-light shadow sticky-top p-0">
@@ -41,62 +41,62 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav p-2">
-                    {{-- @php
-                    $iteration = 1;
-                @endphp --}}
+                    
 
                     <div class="row">
-                        @php
+                        <?php
                             $itera = 1;
-                        @endphp
-                        @foreach ($data as $key => $group)
+                        ?>
+                        <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-md-2">
                                 <h6>
-                                    @if ($key == 1)
-                                        Passage One
-                                    @endif
-                                    @if ($key == 2)
-                                        Passage Two
-                                    @endif
-                                    @if ($key == 3)
-                                        Passage Three
-                                    @endif
-                                    @if ($key == 4)
-                                        Passage Four
-                                    @endif
-                                    @if ($key == 5)
-                                        Passage Five
-                                    @endif
+                                    <?php if($key == 1): ?>
+                                        Paragraph One
+                                    <?php endif; ?>
+                                    <?php if($key == 2): ?>
+                                        Paragraph Two
+                                    <?php endif; ?>
+                                    <?php if($key == 3): ?>
+                                        Paragraph Three
+                                    <?php endif; ?>
+                                    <?php if($key == 4): ?>
+                                        Paragraph Four
+                                    <?php endif; ?>
+                                    <?php if($key == 5): ?>
+                                        Paragraph Five
+                                    <?php endif; ?>
                                 </h6>
 
                                 <div>
-                                    @foreach ($group['questionGroups'] as $group)
-                                        @foreach ($group['questions'] as $question)
-                                            @if ($question->category == 3)
-                                                <div class="number-box question_{{ $question->id }}">
+                                    <?php $__currentLoopData = $group['questionGroups']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php $__currentLoopData = $group['questions']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $question): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php if($question->category == 3): ?>
+                                                <div class="number-box question_<?php echo e($question->id); ?>">
 
-                                                    {{ $itera }}
+                                                    <?php echo e($itera); ?>
 
-                                                    @php
+
+                                                    <?php
                                                         $itera++;
-                                                    @endphp
+                                                    ?>
                                                 </div>
-                                            @endif
-                                            <div class="number-box question_{{ $question->id }}">
+                                            <?php endif; ?>
+                                            <div class="number-box question_<?php echo e($question->id); ?>">
 
-                                                {{ $itera }}
+                                                <?php echo e($itera); ?>
 
-                                                @php
+
+                                                <?php
                                                     $itera++;
-                                                @endphp
+                                                ?>
                                             </div>
-                                        @endforeach
-                                    @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
                             </div>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-md-2">
-                            <h4 class="mb-4">{{ $test->name }}</h4>
+                            <h4 class="mb-4"><?php echo e($test->name); ?></h4>
                             <h4 id="timer"><i class="far fa-clock"></i> <span id="countdown">2520</span>sec</h4>
                         </div>
 
@@ -130,15 +130,15 @@
             </div>
         </nav>
         <div class="row g-4 justify-content-center" id="changeFontSize">
-            <form action="{{ route('reading.test.finish') }}" id="readingTest" method="post">
-                <input type="hidden" name="test_id" value="{{ $test->id }}">
+            <form action="<?php echo e(route('reading.test.finish')); ?>" id="readingTest" method="post">
+                <input type="hidden" name="test_id" value="<?php echo e($test->id); ?>">
                 <input type="hidden" name="type" value="reading">
                 <div class="container " style="max-width: 1500px;">
 
-                    @php
+                    <?php
                         $iteration = 1;
-                    @endphp
-                    @foreach ($data as $key => $group)
+                    ?>
+                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="row">
 
                             <div class="col-md-6">
@@ -146,21 +146,26 @@
                                     <div class="card  shadow-lg"
                                         style="padding : 0px; max-height: 700px; overflow-y:auto;  border: 2px solid #BFBDBD;">
                                         <div class="card-body highlightme ">
-                                            @if ($key == 1)
-                                                {!! $test->paragraph1 !!}
-                                            @endif
-                                            @if ($key == 2)
-                                                {!! $test->paragraph2 !!}
-                                            @endif
-                                            @if ($key == 3)
-                                                {!! $test->paragraph3 !!}
-                                            @endif
-                                            @if ($key == 4)
-                                                {!! $test->paragraph4 !!}
-                                            @endif
-                                            @if ($key == 5)
-                                                {!! $test->paragraph5 !!}
-                                            @endif
+                                            <?php if($key == 1): ?>
+                                                <?php echo $test->paragraph1; ?>
+
+                                            <?php endif; ?>
+                                            <?php if($key == 2): ?>
+                                                <?php echo $test->paragraph2; ?>
+
+                                            <?php endif; ?>
+                                            <?php if($key == 3): ?>
+                                                <?php echo $test->paragraph3; ?>
+
+                                            <?php endif; ?>
+                                            <?php if($key == 4): ?>
+                                                <?php echo $test->paragraph4; ?>
+
+                                            <?php endif; ?>
+                                            <?php if($key == 5): ?>
+                                                <?php echo $test->paragraph5; ?>
+
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -172,35 +177,37 @@
                                 <div class="card-body mb-5" style="padding : 0px; ">
 
                                     <div class="container mb-5">
-                                        @foreach ($group['questionGroups'] as $group)
+                                        <?php $__currentLoopData = $group['questionGroups']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <div class="row mt-5 p-2" style="border: 2px solid #BFBDBD;">
-                                                {!! $group['questionGroup']->heading !!}
-                                                {!! $group['questionGroup']->description !!}
-                                                @foreach ($group['questions'] as $question)
-                                                    {{-- @include('layouts.partials.models.question-image') --}}
-                                                    @if ($question->category == 1)
-                                                        @include('frontend.pages.reading-test.partials.mcqs')
-                                                        @php
+                                                <?php echo $group['questionGroup']->heading; ?>
+
+                                                <?php echo $group['questionGroup']->description; ?>
+
+                                                <?php $__currentLoopData = $group['questions']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $question): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                    <?php if($question->category == 1): ?>
+                                                        <?php echo $__env->make('frontend.pages.reading-test.partials.mcqs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                                        <?php
                                                             $iteration++;
-                                                        @endphp
-                                                    @endif
-                                                    @if ($question->category == 2)
-                                                        @include('frontend.pages.reading-test.partials.fill-in-blank')
-                                                        @php
+                                                        ?>
+                                                    <?php endif; ?>
+                                                    <?php if($question->category == 2): ?>
+                                                        <?php echo $__env->make('frontend.pages.reading-test.partials.fill-in-blank', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                                        <?php
                                                             $iteration++;
-                                                        @endphp
-                                                    @endif
-                                                    @if ($question->category == 3)
-                                                        @include('frontend.pages.reading-test.partials.five-choice')
-                                                        @php
+                                                        ?>
+                                                    <?php endif; ?>
+                                                    <?php if($question->category == 3): ?>
+                                                        <?php echo $__env->make('frontend.pages.reading-test.partials.five-choice', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                                        <?php
                                                             $iteration++;
-                                                        @endphp
-                                                    @endif
-                                                @endforeach
+                                                        ?>
+                                                    <?php endif; ?>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
                                             </div>
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                     </div>
                                 </div>
@@ -208,7 +215,7 @@
 
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     <div class="card-body text-center">
                         <button style="border-radius:30px" type="submit" class="btn btn-outline-primary btn-lg">
@@ -224,9 +231,9 @@
         <!-- About Start -->
     </div>
     <!-- Testimonial End -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
+<?php $__env->startSection('script'); ?>
     <script>
         document.addEventListener('keydown', function(event) {
             if (event.ctrlKey && (event.key === 'f' || event.key === 'F')) {
@@ -377,4 +384,6 @@
         // Start the timer when the page loads
         updateTimer();
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.frontend-app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/frontend/pages/reading-test/index.blade.php ENDPATH**/ ?>

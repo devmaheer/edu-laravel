@@ -1,6 +1,6 @@
-@extends('layouts.app')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!--begin::Toolbar-->
     <div class="toolbar mb-5 mb-lg-7" id="kt_toolbar">
         <!--begin::Page title-->
@@ -36,10 +36,10 @@
 
             </button>
 
-            <a href="{{ route('admin.question.group.index', ['id' => $test->id, 'type' => 'reading']) }}"
+            <a href="<?php echo e(route('admin.question.group.index', ['id' => $test->id, 'type' => 'reading'])); ?>"
                 class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Question Group</a>
-            <a href="{{ route('admin.test.paragraph.create', ['type' => 'reading', 'id' => $test->id]) }}"
-                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Passage</a>
+            <a href="<?php echo e(route('admin.test.paragraph.create', ['type' => 'reading', 'id' => $test->id])); ?>"
+                class="btn btn-dark fw-bolder ms-5" id="kt_toolbar_primary_button">Add Paragraph</a>
 
             <!--end::Button-->
         </div>
@@ -51,41 +51,41 @@
             <!--begin::Compact form-->
             <div class="row d-flex align-items-center">
                 <div class="col-md-2">
-                    <h5 class="mr-5"> Test Name </h5> <span>{{ $test->name }}</span>
+                    <h5 class="mr-5"> Test Name </h5> <span><?php echo e($test->name); ?></span>
 
                 </div>
 
                 <div class="col-md-2">
 
-                    <h5 class="mr-5">Passage One Q</h5> <span>{{ $paraCount1 }}</span>
+                    <h5 class="mr-5">Paragraph One Q</h5> <span><?php echo e($paraCount1); ?></span>
 
                 </div>
 
                 <div class="col-md-2">
-                    <h5 class="mr-5">Passage Two Q</h5> <span>{{ $paraCount2 }}</span>
+                    <h5 class="mr-5">Paragraph Two Q</h5> <span><?php echo e($paraCount2); ?></span>
 
                 </div>
                 <div class="col-md-2">
 
-                    <h5 class="mr-5">Passage Three Q</h5> <span>{{ $paraCount3 }}</span>
+                    <h5 class="mr-5">Paragraph Three Q</h5> <span><?php echo e($paraCount3); ?></span>
 
                 </div>
-                @if ($test->category == '2')
+                <?php if($test->category == '2'): ?>
                     <div class="col-md-2">
-                        <h5 class="mr-5">Passage Four Q</h5> <span>{{ $paraCount4 }}</span>
+                        <h5 class="mr-5">Paragraph Four Q</h5> <span><?php echo e($paraCount4); ?></span>
 
                     </div>
                     <div class="col-md-2">
-                        <h5 class="mr-5">Passage Five Q</h5> <span>{{ $paraCount5 }}</span>
+                        <h5 class="mr-5">Paragraph Five Q</h5> <span><?php echo e($paraCount5); ?></span>
 
                     </div>
-                @endif
+                <?php endif; ?>
 
             </div>
 
             <!--end::Compact form-->
             <!--begin::Advance form-->
-            {{-- class="collapse" --}}
+            
 
             <!--end::Row-->
 
@@ -98,7 +98,7 @@
     <div class="d-flex flex-wrap flex-stack pb-7">
         <!--begin::Title-->
         <div class="d-flex flex-wrap align-items-center my-1">
-            <h3 class="fw-bolder me-5 my-1" id="carCount">{{ count($questions) }} Question(s) Found
+            <h3 class="fw-bolder me-5 my-1" id="carCount"><?php echo e(count($questions)); ?> Question(s) Found
         </div>
         <!--end::Title-->
     </div>
@@ -115,44 +115,44 @@
                             <th>Name</th>
                             <th>Type</th>
                             <th>Category</th>
-                            <th>Passage</th>
+                            <th>Paragraph</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <!--end::Table head-->
                     <!--begin::Table body-->
                     <tbody>
-                        @foreach ($questions as $question)
+                        <?php $__currentLoopData = $questions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $question): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <td>{{ $question->name }}</td>
+                                <td><?php echo e($question->name); ?></td>
 
-                                <td>{{ $question->type == 1 ? 'Reading' : 'Listening' }}</td>
+                                <td><?php echo e($question->type == 1 ? 'Reading' : 'Listening'); ?></td>
                                 <td>
 
-                                    @if ($question->category == 1)
+                                    <?php if($question->category == 1): ?>
                                         MCQS
-                                    @elseif($question->category == 2)
+                                    <?php elseif($question->category == 2): ?>
                                         Filling Blanks
-                                    @elseif($question->category == 3)
+                                    <?php elseif($question->category == 3): ?>
                                         5 Options
-                                    @endif
+                                    <?php endif; ?>
                                 </td>
                                 <td>
-                                    @if ($question->paragraph == '1')
+                                    <?php if($question->paragraph == '1'): ?>
                                         One
-                                    @elseif($question->paragraph == '2')
+                                    <?php elseif($question->paragraph == '2'): ?>
                                         Two
-                                    @elseif($question->paragraph == '3')
+                                    <?php elseif($question->paragraph == '3'): ?>
                                         Three
-                                    @elseif($question->paragraph == '4')
+                                    <?php elseif($question->paragraph == '4'): ?>
                                         Four
-                                    @elseif($question->paragraph == '5')
+                                    <?php elseif($question->paragraph == '5'): ?>
                                         Five
-                                    @endif
+                                    <?php endif; ?>
                                 </td>
                                 <td>
-                                    @if ($question->category == '2')
-                                        <a href="{{ route('admin.question.fillinblanks.edit', [$question->id]) }}"
+                                    <?php if($question->category == '2'): ?>
+                                        <a href="<?php echo e(route('admin.question.fillinblanks.edit', [$question->id])); ?>"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
@@ -168,8 +168,8 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                    @elseif($question->category == '1')
-                                        <a href="{{ route('admin.question.edit', [$question->id]) }}"
+                                    <?php elseif($question->category == '1'): ?>
+                                        <a href="<?php echo e(route('admin.question.edit', [$question->id])); ?>"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
@@ -186,8 +186,8 @@
                                             <!--end::Svg Icon-->
                                         </a>
                                    
-                                   @elseif($question->category == 3)
-                                    <a href="{{ route('admin.five-options.edit', [$question->id,'type'=>'reading']) }}"
+                                   <?php elseif($question->category == 3): ?>
+                                    <a href="<?php echo e(route('admin.five-options.edit', [$question->id,'type'=>'reading'])); ?>"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -203,8 +203,8 @@
                                         </span>
                                         <!--end::Svg Icon-->
                                     </a>
-                                @endif
-                                    <a href="{{ route('admin.question.delete', [$question->id, 'type' => 'reading']) }}"
+                                <?php endif; ?>
+                                    <a href="<?php echo e(route('admin.question.delete', [$question->id, 'type' => 'reading'])); ?>"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -225,7 +225,7 @@
                                     </a>
                                 </td>
                             </tr>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                     <!--end::Table body-->
                 </table>
@@ -238,10 +238,10 @@
     <!--begin::Modal - New Target-->
 
     <!--end::Modal - New Target-->
-    @include('admin.question.reading.partials.mcqs-modal')
-    @include('admin.question.reading.partials.filling-blank-modal')
-@endsection
-@section('script')
+    <?php echo $__env->make('admin.question.reading.partials.mcqs-modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('admin.question.reading.partials.filling-blank-modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
     <script>
         function addOptions(e) {
             const numOptions = parseInt($(e).val());
@@ -380,4 +380,6 @@
             }
         }
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/admin/question/reading/index.blade.php ENDPATH**/ ?>
