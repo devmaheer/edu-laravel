@@ -81,7 +81,9 @@ class Helper
     public static function calculateBand($test, $type, $score)
     {
         if ($type == 1) {
+          
             if ($test->category == 1) {
+              
                 if ($score->total_score >= 39 && $score->total_score <= 40) {
 
                     return 9;
@@ -130,19 +132,23 @@ class Helper
 
                     return 3.5;
                 }
+                
                 if ($score->total_score >= 6 && $score->total_score <= 7) {
 
                     return 3;
                 }
+               
                 if ($score->total_score >= 4 && $score->total_score <= 5) {
-
+                  
                     return 2.5;
                 }
-                if ($score->total_score <= 4 ) {
+                if ($score->total_score  <= 4 && $score->total_score  >= 0) {
              
                     return 2;
                 }
+               
             } else {
+               
                 if ($score->total_score == 40) {
 
                     return 9;
@@ -195,17 +201,14 @@ class Helper
 
                     return 3;
                 }
-                if ($score->total_score >= 6 && $score->total_score <= 8) {
-
+              
+                if ($score->total_score <= 8 && $score->total_score  >= 0) {
+                  
                     return 2.5;
-                }
-                if ($score->total_score <= 5 && $score->total_score <= 0) {
-
-                    return 2;
                 }
             }
         } else {
-           
+        
             if ($score->total_score >= 39 && $score->total_score <= 40) {
 
                 return 9;
@@ -246,27 +249,18 @@ class Helper
 
                 return 4.5;
             }
-            if ($score->total_score >= 10 && $score->total_score <= 12) {
+            if ($score->total_score >= 11 && $score->total_score <= 12) {
 
                 return 4;
             }
-            if ($score->total_score >= 8 && $score->total_score <= 9) {
+          
+            if ($score->total_score  <= 10 && $score->total_score >= 0) {
 
                 return 3.5;
             }
-            if ($score->total_score >= 6 && $score->total_score <= 7) {
-
-                return 3;
-            }
-            if ($score->total_score >= 4 && $score->total_score <= 5) {
-
-                return 2.5;
-            }
            
-            if ($score->total_score <= 4 ) {
-             
-                return 2;
-            }
+           
+        
         }
     }
 

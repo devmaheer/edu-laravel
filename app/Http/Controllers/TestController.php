@@ -113,13 +113,13 @@ class TestController extends Controller
 
   public function academicTest(Request $request){
 
-   $tests = Test::where('category',1)->get();
+   $tests = Test::where('category',1)->where('type',2)->get();
 
    return view('user.test.academic-test',compact('tests'));
   }
   public function generalTest(Request $request){
 
-    $tests = Test::where('category',2)->get();
+    $tests = Test::where('category',2)->where('type',2)->get();
  
     return view('user.test.general-training-test',compact('tests'));
    }

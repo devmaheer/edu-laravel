@@ -42,6 +42,7 @@
                 </div>
                 <div class="row">
                     <center>
+                       
                         <h4>{{ App\Helper\Helper::calculateBand($test, $type, $finishtest) }}/9 Bands </h4>
                     </center>
                     <div class="progress" style="padding: 0">

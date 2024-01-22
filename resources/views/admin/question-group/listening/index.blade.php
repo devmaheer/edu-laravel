@@ -96,7 +96,7 @@
                                
                             
                        
-                                <a href="{{ route('admin.question.group.delete', ['id'=>$group->id,'type'=>'reading']) }}"
+                                <a href="{{ route('admin.question.group.delete', ['id'=>$group->id]) }}"
                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                     <span class="svg-icon svg-icon-3">

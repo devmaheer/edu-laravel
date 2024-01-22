@@ -20,6 +20,7 @@ class QuestionGroupController extends Controller
             $test = Test::findOrFail($id);
             return view('admin.question-group.reading.index', compact('test', 'questionGroup'));
         } else {
+           
             $questionGroup = QuestionGroup::where('type',2)->where('test_id', $id)->get();
             $test = Test::findOrFail($id);
             return view('admin.question-group.listening.index', compact('test', 'questionGroup'));
@@ -88,6 +89,7 @@ class QuestionGroupController extends Controller
 
     public function delete(Request $request,$id)
     {
+    
         $group = QuestionGroup::findOrFail($id);
         $group->delete();
         $question = Question::where('question_group_id', $id)->update([
@@ -99,7 +101,7 @@ class QuestionGroupController extends Controller
         if ($request->type == "reading") {
             return redirect()->route('admin.question.group.index',['id' => $group->test_id,'type' => 'reading']);
         } else {
-            return redirect()->route('admin.question.group.index',['id' => $id,'type' => 'listening']);
+            return redirect()->route('admin.question.group.index',['id' => $group->test_id,'type' => 'listening']);
         }
        
     }

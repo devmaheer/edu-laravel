@@ -402,7 +402,7 @@
                 }
             }
         }
-        var listeningcountdownValue = 60 * 30;
+        var listeningcountdownValue = 60 * 32;
  
         // Function to update the countdown display
         function updateCountdown() {
