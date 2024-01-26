@@ -103,11 +103,11 @@
     <div class="row mb-5 mb-lg-7">
         <div class="col-sm-12 col-md-12">
             <div class="card">
-       
+
                 <div class="card-body">
                     <!-- Appountment View - List -->
                     <div id="appointmentListView" class="table-responsive">
-               
+
 
                         <table id="test_table" class="table table-rounded table-row-bordered gy-5">
                             <thead>
@@ -186,7 +186,7 @@
                                                     </span>
                                                     <!--end::Svg Icon-->
                                                 </a>
-                                                <a href="{{ route('admin.test.delete', [$test->id]) }}"
+                                                <a href="#" onclick="deleteTest({{ $test->id }});"
                                                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                     <span class="svg-icon svg-icon-3">
@@ -222,34 +222,51 @@
 @endsection
 @section('script')
     <script>
-              $('#test_table').DataTable({
-                        
-                        // "responsivePriority": 1,
-                        // "dom": "<'table-responsive'tr>",
-                        searching: true,
-                        "order": [
-                            [2, "asc"]
-                        ],
-                        info: !1,
-                        columns: [{
-                                "orderable": true,
-                              
-                            }, {
-                                "orderable": true,
-                                
-                            }, {
-                                "orderable": true,
-                               
-                            },
-                            {
-                                "orderable": true,
-                               
-                            },
-                            {
-                                "orderable": false,
-                               
-                            }
-                        ]
-                });
+        function deleteTest(id) {
+            // Display a confirmation dialog
+            var isConfirmed = window.confirm('Are you sure you want to delete this test?');
+
+            // Check if the user clicked 'OK'
+            if (isConfirmed) {
+                // Assuming you are using Laravel's route() function to generate URLs
+                var deleteUrl = "{{ route('admin.test.delete', ['id' => ':id']) }}";
+
+                // Replace ':id' with the actual ID
+                deleteUrl = deleteUrl.replace(':id', id);
+
+                // Redirect to the delete route
+                window.location.href = deleteUrl;
+            }
+        }
+
+        $('#test_table').DataTable({
+
+            // "responsivePriority": 1,
+            // "dom": "<'table-responsive'tr>",
+            searching: true,
+            "order": [
+                [2, "asc"]
+            ],
+            info: !1,
+            columns: [{
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": false,
+
+                }
+            ]
+        });
     </script>
 @endsection
