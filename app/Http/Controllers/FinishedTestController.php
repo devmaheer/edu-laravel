@@ -77,8 +77,8 @@ class FinishedTestController extends Controller
             }
            
            
-            $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
-            $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
+            $fillPercentage =   $totalFills == 0 ? 0 : floor(((int)$finishtest->fill_score / $totalFills) * 100);
+            $mcqsPercentage =  $totalMcqs == 0 ? 0 : floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
             $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
             $type = 2;
            
@@ -98,8 +98,8 @@ class FinishedTestController extends Controller
             $fiveChoicePercentage= 0;
         }
  
-        $fillPercentage = floor(((int)$finishtest->fill_score / $totalFills) * 100);
-        $mcqsPercentage = floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
+        $fillPercentage =   $totalFills == 0 ? 0 : floor(((int)$finishtest->fill_score / $totalFills) * 100);
+        $mcqsPercentage =  $totalMcqs == 0 ? 0 : floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
         $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
         $type = 1;
         return view('frontend.pages.score', compact('test','type', 'finishtest', 'toalPercentage', 'totalFiveChoice', 'totalFills', 'totalMcqs', 'fiveChoicePercentage', 'fillPercentage', 'mcqsPercentage'));
