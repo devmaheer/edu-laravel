@@ -1,9 +1,7 @@
 <meta charset="utf-8">
 <title>IPP - IELTS Prep and Practice</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="" name="keywords">
-<meta content="" name="description">
-
+<meta name="description" content="Ielts Prep and Practice offers comprehensive resources and tips to help you excel in the IELTS exam. Get expert guidance and practice materials here.">
 <!-- Favicon -->
 <link href="{{ asset('frontend/logo/fv.png')}}" rel="icon">
 

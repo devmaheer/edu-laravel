@@ -29,7 +29,7 @@
 				<div class="copyright">
 					<div class="row">
 						<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-							&copy; <a class="border-bottom" href="#">ieltsprepandpractice.com</a>, All Right Reserved.
+							&copy; <a class="border-bottom" href="#">IPP:Ielts Prep and practice</a>, All Right Reserved.
 	
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 		
