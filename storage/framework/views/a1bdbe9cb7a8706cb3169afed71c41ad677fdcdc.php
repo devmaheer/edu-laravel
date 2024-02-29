@@ -325,17 +325,17 @@
                 <ul class="nav nav-tabs justify-content-center" role="tablist">
                     <li role="presentation" class="active">
                         <a class="active show" href="#paragraph-1" aria-controls="paragraph-1" role="tab"
-                            data-toggle="tab" aria-selected="true">Paragraph One</a>
+                            data-toggle="tab" aria-selected="true">Passage One</a>
                     </li>
                     <li role="presentation"><a href="#paragraph-2" aria-controls="paragraph-2" role="tab"
-                            data-toggle="tab" class aria-selected="false">Paragraph Two</a></li>
+                            data-toggle="tab" class aria-selected="false">Passage Two</a></li>
                     <li role="presentation"><a href="#paragraph-3" aria-controls="paragraph-3" role="tab"
-                            data-toggle="tab" class aria-selected="false">Paragraph Three</a></li>
+                            data-toggle="tab" class aria-selected="false">Passage Three</a></li>
                     <?php if(array_key_exists('4', $data)): ?>
                         <li role="presentation"><a href="#paragraph-4" aria-controls="paragraph-4" role="tab"
-                                data-toggle="tab" class aria-selected="false">Paragraph Four</a></li>
+                                data-toggle="tab" class aria-selected="false">Passage Four</a></li>
                         <li role="presentation"><a href="#paragraph-5" aria-controls="paragraph-5" role="tab"
-                                data-toggle="tab" class aria-selected="false">Paragraph Five</a></li>
+                                data-toggle="tab" class aria-selected="false">Passage Five</a></li>
                     <?php endif; ?>
                 </ul>
                 <div class="tab-content text-left">

@@ -80,11 +80,9 @@
 
                                     <td>
                                         <?php if($test->type == '2'): ?>
-                                            <span
-                                                class="badge badge-primary">Paid</span>
+                                            <span class="badge badge-primary">Paid</span>
                                         <?php elseif($test->type == '1'): ?>
-                                            <span
-                                                class="badge badge-warning">Mock</span>
+                                            <span class="badge badge-warning">Mock</span>
                                         <?php endif; ?>
                                     </td>
                                     <td>
@@ -98,14 +96,14 @@
                                         <a href="<?php echo e(route('admin.question.index', [$test->id])); ?>"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
-                                           
+
                                             <i class="fa-brands fa-readme"></i>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="<?php echo e(route('admin.question.index', [$test->id,'listening'=>'true'])); ?>"
+                                        <a href="<?php echo e(route('admin.question.index', [$test->id, 'listening' => 'true'])); ?>"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
-                                           
+
                                             <i class="fa-solid fa-music"></i>
                                             <!--end::Svg Icon-->
                                         </a>
@@ -125,7 +123,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="<?php echo e(route('admin.test.delete', [$test->id])); ?>"
+                                        <a href="#" onclick="deleteTest(<?php echo e($test->id); ?>);"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
@@ -163,35 +161,52 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
     <script>
-              $('#test_table').DataTable({
-                        
-                        // "responsivePriority": 1,
-                        // "dom": "<'table-responsive'tr>",
-                        searching: true,
-                        "order": [
-                            [2, "asc"]
-                        ],
-                        info: !1,
-                        columns: [{
-                                "orderable": true,
-                              
-                            }, {
-                                "orderable": true,
-                                
-                            }, {
-                                "orderable": true,
-                               
-                            },
-                            {
-                                "orderable": true,
-                               
-                            },
-                            {
-                                "orderable": false,
-                               
-                            }
-                        ]
-                });
+        function deleteTest(id) {
+            // Display a confirmation dialog
+            var isConfirmed = window.confirm('Are you sure you want to delete this test?');
+
+            // Check if the user clicked 'OK'
+            if (isConfirmed) {
+                // Assuming you are using Laravel's route() function to generate URLs
+                var deleteUrl = "<?php echo e(route('admin.test.delete', ['id' => ':id'])); ?>";
+
+                // Replace ':id' with the actual ID
+                deleteUrl = deleteUrl.replace(':id', id);
+
+                // Redirect to the delete route
+                window.location.href = deleteUrl;
+            }
+        }
+
+        $('#test_table').DataTable({
+
+            // "responsivePriority": 1,
+            // "dom": "<'table-responsive'tr>",
+            searching: true,
+            "order": [
+                [2, "asc"]
+            ],
+            info: !1,
+            columns: [{
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                }, {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": true,
+
+                },
+                {
+                    "orderable": false,
+
+                }
+            ]
+        });
     </script>
 <?php $__env->stopSection(); ?>
 
