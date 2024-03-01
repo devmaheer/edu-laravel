@@ -51,11 +51,11 @@ class UserController extends Controller
             'status' => $request->status
         ]);
       
-        $role = "User";
-        if ($role) {
-            $user = User::findOrFail($request->user_id);
-            $user->assignRole($role);
-        }
+        // $role = "User";
+        // if ($role) {
+        //     $user = User::findOrFail($request->user_id);
+        //     $user->assignRole($role);
+        // }
 
         return redirect()->route('admin.user.index');
     }
