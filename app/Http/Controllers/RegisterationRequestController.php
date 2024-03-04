@@ -23,7 +23,7 @@ class RegisterationRequestController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'country' => $request->country,
-            'type' => $request->type == '2' ? '2' : '1',
+            'type' => $request->type ?? 'nothing is selected by the user',
             'plan' => $request->plan ?  $request->plan : null,
         ]);
 
