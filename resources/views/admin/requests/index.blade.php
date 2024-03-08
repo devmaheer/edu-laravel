@@ -78,6 +78,8 @@
                                             IELTS Preparation Courses
                                         @elseif($request->type == '2')
                                             IELTS Preparation Material
+                                            @elseif($request->type == '3')
+                                            IELTS Practice Online
                                         @endif
                                     </td>
 

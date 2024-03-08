@@ -28,6 +28,8 @@
                             answers can be proper nouns which should be written with the first letter as capital but
                             here it will not be considered. 
                             </li>
+                            <li>To solve the test it is recommended to do it on desktop or laptop.</li>    
+
                     </ul>
                     <b> Follow the instructions given with each question.</b>
 
