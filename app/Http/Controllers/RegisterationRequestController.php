@@ -33,7 +33,7 @@ class RegisterationRequestController extends Controller
     public function index()
     {
 
-        $requests = RegisterationRequest::orderBy('asc','created_at')->get();
+        $requests = RegisterationRequest::orderBy('created_at','asc')->get();
         return view('admin.requests.index', compact('requests'));
     }
     public function getCountries()
