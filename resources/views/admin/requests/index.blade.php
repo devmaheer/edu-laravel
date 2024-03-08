@@ -115,7 +115,7 @@
             // "dom": "<'table-responsive'tr>",
             searching: true,
             "order": [
-                [2, "asc"]
+                [6, "desc"]
             ],
             info: !1,
             columns: [{
