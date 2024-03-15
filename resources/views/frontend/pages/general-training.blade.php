@@ -15,7 +15,7 @@
                             <div class="card  shadow-lg">
                                 <div class="card-body">
                                     <div class="text-center p-3">
-                                        <h5 class="card-title">{{ $test->name }}</h5>
+                                        <h5 style="font-size:17px;" class="card-title">{{ $test->name }}</h5>
 
                                     </div>
 

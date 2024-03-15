@@ -36,7 +36,7 @@ Route::get('/ielts/faqs', [FrontendController::class, 'faqs'])->name('frontend.f
 Route::get('/ielts/privacy/policy', [FrontendController::class, 'privacyPolicy'])->name('frontend.privacy-policy');
 
 Route::get('/general-training/test', [GeneralTrainingTestController::class, 'getGeneralTrainingTests'])->name('general.training.test');
-Route::get('/Academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');
+Route::get('/academic/test', [AcademicTestController::class, 'getAcademicTest'])->name('academic.training.test');
 ////LISTENING
 Route::get('/listening/test/{id}', [ListeningTestController::class, 'index'])->name('listening.test');
 Route::post('/listening/test/finish', [ListeningTestController::class, 'finish'])->name('listening.test.finish');

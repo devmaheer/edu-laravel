@@ -366,6 +366,7 @@
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
+                                target="_blank"
                                     href="https://drive.google.com/drive/folders/1a9-l7xNPM4oX14sN78UsSqgEpJrjXulS?usp=sharing"
                                     style="border-radius:30px">Get Access</a>
                             </div>

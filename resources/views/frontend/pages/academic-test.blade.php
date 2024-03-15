@@ -15,14 +15,14 @@
                             <div class="card  shadow-lg">
                                 <div class="card-body">
                                     <div class="text-center p-3">
-                                        <h5 class="card-title">{{ $test->name }}</h5>
+                                        <h5 class="card-title" style="font-size:17px;">{{ $test->name }}</h5>
 
                                     </div>
 
                                 </div>
 
                                 <div class="card-body text-center">
-                                    <button style="border-radius:30px" type="button" data-bs-toggle="modal"
+                                    <button style="border-radius:30px;" type="button" data-bs-toggle="modal"
                                         data-bs-target="#test-category-{{ $test->id }}"
                                         class="btn btn-outline-primary btn-lg">
                                         <span class="indicator-label">Start Test</span>
