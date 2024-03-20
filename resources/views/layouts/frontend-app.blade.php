@@ -5,6 +5,15 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofP+NM6P1d5Eegx6A7Yq4MK5S+76E4uBxj" crossorigin="anonymous">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ0H8BREG0"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TZ0H8BREG0');
+            </script>
 
     @include('layouts.partials.frontend-head')
     <style>
