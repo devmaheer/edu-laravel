@@ -11,6 +11,7 @@
     <script src="{{ asset('frontend/js/main.js')}}"></script>
     <!-- Meta Pixel Code -->
     <script>
+ @if(!Route::is('listening.test') ||!Route::is('reading.test')  )
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -36,3 +37,4 @@
   
     gtag('config', 'G-TZ0H8BREG0');
   </script>
+  @endif
