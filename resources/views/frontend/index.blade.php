@@ -437,7 +437,7 @@
                 @php
                     $testimonials = [
                         (object) ['id' => 1, 'name' => 'Saba', 'score' => '7.0 bands', 'image' => 't1.jpg', 'country' => 'Pakistan'],
-                        (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
+                        // (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
                         (object) ['id' => 3, 'name' => 'Mudassir', 'score' => '6.5 bands', 'image' => 't3.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 4, 'name' => 'Majd Faris', 'score' => '6.5 bands', 'image' => 't4.jpg', 'country' => 'Jordan'],
                         (object) ['id' => 5, 'name' => 'Abdullah', 'score' => '6.5 bands', 'image' => 't5.jpg', 'country' => 'Bahrain'],
