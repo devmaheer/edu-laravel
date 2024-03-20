@@ -98,12 +98,12 @@
 <body>
     <!--begin::Root-->
     <!-- Spinner Start -->
-    <div id="spinner"
+    {{-- <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
-    </div>
+    </div> --}}
     <!-- Spinner End -->
 
     @if (!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test'))
