@@ -10,8 +10,8 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{ route('frontend.index') }}" class="nav-item nav-link active">Home</a>
             <a href="{{ route('frontend.index') }}#prepration-courses" class="nav-item nav-link"> IELTS Prepration Courses</a>
-            <a href="{{ route('frontend.index') }}#prepration-material" class="nav-item nav-link"> IELTS Practice Material</a>
-            <a href="{{ route('frontend.index') }}#prepration-online" class="nav-item nav-link"> Practice IELTS Online</a>
+            <a href="{{ route('frontend.index') }}#prepration-material" class="nav-item nav-link"> IELTS Prepration Material</a>
+            <a href="{{ route('frontend.index') }}#ielts-mock-test" class="nav-item nav-link"> IELTS Mock Test</a>
             <a href="{{ route('frontend.index') }}#prepration-testimonial" class="nav-item nav-link">Testimonial</a>
             <a href="{{route('frontend.faqs')}}" class="nav-item nav-link">Faqs</a>
         </div>

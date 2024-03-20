@@ -325,7 +325,7 @@
             </div>
         </div>
 
-        <div class="row g-4 justify-content-center" id="prepration-online">
+        <div class="row g-4 justify-content-center" id="ielts-mock-test">
 
             <div class="container p-5">
                 <div class="row">
