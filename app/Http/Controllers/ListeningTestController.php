@@ -129,6 +129,7 @@ class ListeningTestController extends Controller
         $fiveScoreResult = $this->fiveChoiceScore($fiveChoice);
         $fillResult = $this->fillScore($fillResult);
         $mcqsResult =  $this->mcqsScore($mcqsResult);
+
         $test =   FinishedTest::create([
             'test_id' => $request->test_id,
             'fill_score' => $fillResult,
@@ -139,7 +140,7 @@ class ListeningTestController extends Controller
             'user_id' => isset(auth()->user()->id) ? auth()->user()->id : null,
         ]);
 
-
+          
         return redirect()->route('test.score', [$test->id,'type'=>'2']);
     }
     public function fiveChoiceScore($data)
@@ -147,10 +148,13 @@ class ListeningTestController extends Controller
         $score = 0;
         // Iterate through the outer array
         foreach ($data as $questionId => $innerArray) {
-            // Check if any value in the inner array is true
-            if (in_array(true, $innerArray, true)) {
-                // Increment the score
-                $score++;
+            // Iterate through the inner array
+            foreach ($innerArray as $value) {
+                // Check if the value is true
+                if ($value === true) {
+                    // Increment the score
+                    $score++;
+                }
             }
         }
         return $score;

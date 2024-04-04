@@ -71,7 +71,7 @@ class FinishedTestController extends Controller
 
             $totalMcqs = Question::where('test_id', $test->id)->where('type', 2)->where('category', 1)->count();
             if($totalFiveChoice){
-                $fiveChoicePercentage = floor((($finishtest->five_choice_score + $finishtest->five_choice_score) / ($totalFiveChoice + $totalFiveChoice)) * 100);
+                $fiveChoicePercentage = floor(($finishtest->five_choice_score / ($totalFiveChoice + $totalFiveChoice)) * 100);
             }else{
                 $fiveChoicePercentage= 0;
             }
@@ -81,7 +81,7 @@ class FinishedTestController extends Controller
             $mcqsPercentage =  $totalMcqs == 0 ? 0 : floor(((int)$finishtest->mcqs_score / $totalMcqs) * 100);
             $toalPercentage = floor(((int)$finishtest->total_score / 40) * 100);
             $type = 2;
-          
+            
             return view('frontend.pages.score', compact('test', 'finishtest','type','toalPercentage', 'totalFiveChoice', 'totalFills', 'totalMcqs', 'fiveChoicePercentage', 'fillPercentage', 'mcqsPercentage'));
         }
         $finishtest = FinishedTest::where('id', $id)->first();
@@ -140,6 +140,7 @@ class FinishedTestController extends Controller
     {
         $test = FinishedTest::findOrFail($id);
         $userTest = json_decode($test->test);
+       
 
         $test = Test::where('id', $test->tests->id)->with('questions')->first();
         $questionsGroup = QuestionGroup::where('test_id', $test->id)->with('questions')->wherehas('questions', function ($query) {

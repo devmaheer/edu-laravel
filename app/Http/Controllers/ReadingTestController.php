@@ -150,10 +150,13 @@ class ReadingTestController extends Controller
         $score = 0;
         // Iterate through the outer array
         foreach ($data as $questionId => $innerArray) {
-            // Check if any value in the inner array is true
-            if (in_array(true, $innerArray, true)) {
-                // Increment the score
-                $score++;
+            // Iterate through the inner array
+            foreach ($innerArray as $value) {
+                // Check if the value is true
+                if ($value === true) {
+                    // Increment the score
+                    $score++;
+                }
             }
         }
         return $score;

@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <p>Total Five Choice {{ $finishtest->five_choice_score + $finishtest->five_choice_score }}/{{ $totalFiveChoice + $totalFiveChoice }}
+                        <p>Total Five Choice {{ $finishtest->five_choice_score }}/{{ $totalFiveChoice + $totalFiveChoice }}
                         </p>
                         <div class="" id="chart2">
 
