@@ -355,16 +355,19 @@ class Helper
             return implode(' / ', $answerParts);
         } elseif ($question->category == 3 && isset($json->fivechoice)) {
             $text = '';
-            foreach ($json->fivechoice as $key => $option) {
-                if (isset($option[0])) {
-                    $ans = Option::where('id', $option[0])->first();
+         
+            // foreach ($json->fivechoice as $key => $option) {
+                if (isset($json->fivechoice->$id)) {
+                    $ans = Option::where('id', $json->fivechoice->$id[0])->first();
                     $text =  $ans->name;
                 }
-                if (isset($option[1])) {
-                    $ans = Option::where('id', $option[1])->first();
+                if (isset($json->fivechoice->$id)) {
+                    $ans = Option::where('id',$json->fivechoice->$id[1])->first();
                     $text =   $text . '/' . $ans->name;
                 }
-            }
+              
+            // }
+            // dd($text);
             return $text;
         }
     }

@@ -373,6 +373,7 @@
                                                                 <i class="bi bi-check" style="color:rgb(91, 255, 91)"></i>
                                                                 <i class="bi bi-x" style="color:red"></i>
                                                             @endif
+                                                            
                                                             {!! App\Helper\Helper::userAnswer($userTest, $question->id) !!}
                                                         </td>
                                                     </tr>

@@ -6,4 +6,6 @@
 <script src="<?php echo e(asset('/js/plugins/formrepeater.bundle.js')); ?>"></script>
 
 <script src="<?php echo e(asset('/js/scripts.bundle.js')); ?>"></script>
-<!--end::Global Javascript Bundle--><?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/layouts/partials/script.blade.php ENDPATH**/ ?>
+<!--end::Global Javascript Bundle-->
+    <!-- Meta Pixel Code -->
+<?php /**PATH D:\System\laragon\www\edu-laravel\resources\views/layouts/partials/script.blade.php ENDPATH**/ ?>

@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <p>Total Five Choice <?php echo e($finishtest->five_choice_score); ?>/<?php echo e($totalFiveChoice + $totalFiveChoice); ?>
+                        <p>Total Five Choice <?php echo e($finishtest->five_choice_score + $finishtest->five_choice_score); ?>/<?php echo e($totalFiveChoice + $totalFiveChoice); ?>
 
                         </p>
                         <div class="" id="chart2">
@@ -43,6 +43,7 @@
                 </div>
                 <div class="row">
                     <center>
+                       
                         <h4><?php echo e(App\Helper\Helper::calculateBand($test, $type, $finishtest)); ?>/9 Bands </h4>
                     </center>
                     <div class="progress" style="padding: 0">

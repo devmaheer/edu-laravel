@@ -14,17 +14,10 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
                                 <h1 class="display-3 text-white animated slideInDown">IELTS PREP
-                                    AND
+                                    AND 
                                     PRACTICE</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Welcome to "IELTS PREP & PRACTICE" – Your Ultimate
-                                    IELTS
-                                    Companion. Are you ready to embark on your IELTS journey
-                                    towards success? Look no further! "IELTS PREP & PRACTICE" is
-                                    your one-stop destination for comprehensive IELTS
-                                    preparation. Whether you're a beginner or aiming for that
-                                    perfect band score, we've got you covered. Explore our website
-                                    to discover a treasure trove of IELTS resources, practice tests,
-                                    IELTS preparation courses and much more.</p>
+                                <p class="fs-5 text-white mb-4 pb-2">Your Ultimate IELTS Companion where you can get IELTS Preparation Books, Study Plans, and
+                                    Solve IELTS Mock Tests Online without any cost.</p>
                                 
                                 
                             </div>
@@ -44,11 +37,9 @@
             <div class="container p-5">
                 <div class="row">
                     <h1 class="mb-4">IELTS Preparation Courses</h1>
-                    <p class="mb-4">Unlock IELTS Success with Our Preparation Courses. Join our 1 : 1 and group IELTS preparation
-                        courses and
-                        empower yourself for success. Our expertly designed programs provide the guidance, resources, and
-                        support you need to excel in the IELTS exam. Prepare with confidence and achieve your desired band
-                        score with us.</p>
+                    <p class="mb-4">IELTS Preparation is made easy with our IELTS Courses. Join our 1 : 1 Online IELTS Courses and
+                        empower yourself for success. 
+                        </p>
                     <div class="col-lg-4 col-md-12 mb-4">
                         <div class="card h-100 shadow-lg">
                             <div class="card-body">
@@ -60,34 +51,31 @@
                                             style="font-size: 15px; margin-right:8px">$50</del>$20 USD</span>
                                     <br><br>
                                 </div>
-                                <p class="card-text">Join our IELTS Crash Course, a focused 15-day program designed to
-                                    accelerate your exam preparation. Gain expert insights, practice strategically, and
-                                    boost your confidence for success in the IELTS test.</p>
+                                <p class="card-text">Join our IELTS Crash Course, a focused 15-day program designed to accelerate your exam
+                                    preparation. 
+                                    </p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> 12 Live Sessions</li>
+                                    </svg>Live sessions of 12 Hours</li>
+                              
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>1 Hour Session
+                                    </svg>Guidance for All Modules
                                 </li>
+                              
+                            
+                                
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Personalized 1:1 Guidance
-                                </li>
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Listening and Reading Section Tips & Tricks
+                                    </svg>IELTS Preparation Resources
 
                                 </li>
                                 </li>
@@ -95,25 +83,10 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Mock Speaking Tests
+                                    </svg>1 Month Access to Practice IELTS Online
 
                                 </li>
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Writing Tasks Evaluation
-
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Resources for Practice
-
-
-                                </li>
+                             
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
@@ -134,37 +107,27 @@
                                             style="font-size: 15px; margin-right:8px">$50</del>$30 USD</span>
                                     <br><br>
                                 </div>
-                                <p class="card-text">Embark on a comprehensive IELTS Complete Preparation Course spanning
-                                    one month.To make sure each student is provided Individual feedback, so we keep our
-                                    groups of max 5 students. </p>
+                                <p class="card-text">Embark on a comprehensive IELTS Complete Preparation Course spanning one month. </p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> 25 Live Sessions
+                                    </svg> Live sessions of 25 Hours
                                 </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>1.5 Hour Session
+                                    </svg>Guidance for All Modules 
 
                                 </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Group Sessions
-
-                                </li>
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Listening and Reading Section Tips & Tricks
+                                    </svg>IELTS Preparation Resources 
 
                                 </li>
                                 </li>
@@ -172,25 +135,13 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Mock Speaking Tests
+                                    </svg>2 Months Access to Practice IELTS Online 
 
                                 </li>
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Writing Tasks Evaluation
-
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>1 Month Access To Practice IELTS Online
-
-
-                                </li>
+                               
+                              
+                              
+                             
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
@@ -210,73 +161,50 @@
                                             style="font-size: 15px; margin-right:8px">$150</del>$120 USD</span>
                                     <br><br>
                                 </div>
-                                <p class="card-text">Dive deep into success with our 45 Sessions Intensive IELTS
-                                    Preparation Course, meticulously covering IELTS strategies, English grammar, and
-                                    vocabulary. </p>
+                                <p class="card-text">Our Intensive IELTS Preparation Course, meticulously covers IELTS strategies, English grammar,
+                                    and vocabulary.  </p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>45 Live Sessions
+                                    </svg>Live sessions of 45 Hours 
                                 </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Personalized 1:1 Guidance
+                                    </svg> Improvement in English Level 
 
+                                </li>
+                               
+                               
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                    </svg>Guidance for All Modules 
+
+
+                           
                                 </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Improvement in English Grammar and Vocabulary
-
-                                </li>
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Customized Study Plan and Resources
-
-
-                                </li>
+                                    </svg>IELTS Preparation Resources
+                              
                                 </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Listening and Reading Section Tips & Tricks
-                                </li>
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Mock Speaking Tests
-
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Writing Tasks Evaluation
-
+                                    </svg>Unlimited Access to Practice IELTS Online 
 
 
                                 </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Unlimited Access To Practice IELTS Online
-
-
-
-                                </li>
+                           
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
@@ -295,11 +223,8 @@
             <div class="container p-5">
                 <div class="row">
                     <h1 class="mb-4">IELTS Preparation Material</h1>
-                    <p class="mb-4">Unleash Your IELTS Potential with Our Comprehensive Resources. Explore a wealth of
-                        study guides,
-                        practice tests, and valuable tips crafted by experts in the field. You'll find everything you need
-                        to prepare
-                        for the IELTS exam effectively.</p>
+                    <p class="mb-4">Access free IELTS resources including IELTS Books, Books to develop Vocabulary, and Grammar
+                        notes to start your IELTS preparation. </p>
 
                     <div class="col-lg-6 col-md-12 mb-4">
                         <div class="card  shadow-lg">
@@ -316,54 +241,29 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>IELTS Practice Books </li>
+                                    </svg>IELTS Practice Books 
+                                </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                     height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                                     <path
                                         d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
-                                </svg>Book for Writing & Speaking
+                                </svg>Grammar & Vocabulary books
                                 </li>
 
 
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path
-                                            d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                    Customized Study Plan
-                                </li>
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path
-                                            d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                    List
-                                </li>
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path
-                                            d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
-                                    </svg>
-                                    Grammar Notes
-                                </li>
-
-
-
-
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Free of Cost
-
+                                    height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z" />
+                                </svg>
+                                    Free of cost 
 
                                 </li>
+
                             </ul>
                             <div class="card-body text-center">
                                 <a class="btn btn-outline-primary btn-lg"
+                                target="_blank"
                                     href="https://drive.google.com/drive/folders/1a9-l7xNPM4oX14sN78UsSqgEpJrjXulS?usp=sharing"
                                     style="border-radius:30px">Get Access</a>
                             </div>
@@ -385,45 +285,26 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>IELTS Practice  Books</li>
+                                    </svg>IELTS Practice Books </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Book for Writing & Speaking
+                                    </svg>Book for Speaking & Writing 
                                 </li>
 
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Customized Study Plan
+                                    </svg>Grammar & Vocabulary books
                                 </li>
 
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Vocabulary List
-                                </li>
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Grammar Notes
-                                </li>
-
-
-
-
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg> <span class="h4">$5 USD</span>
-
-
+                                    </svg> IELTS Study Plan $5
                                 </li>
                             </ul>
                             <div class="card-body text-center">
@@ -437,17 +318,13 @@
             </div>
         </div>
 
-        <div class="row g-4 justify-content-center" id="prepration-online">
+        <div class="row g-4 justify-content-center" id="ielts-mock-test">
 
             <div class="container p-5">
                 <div class="row">
-                    <h1 class="mb-4">Practice IELTS Online</h1>
-                    <p class="mb-4">Experience IELTS Like Never Before with Computer-Based Testing. Get a taste of the
-                        real IELTS Computer Based Test (CBT) environment right here. Our online platform mirrors the actual
-                        IELTS CBT, ensuring
-                        you're fully prepared for the exam day experience. Familiarize yourself with the digital format,
-                        timer, and
-                        question types to ace the CBT with confidence.</p>
+                    <h1 class="mb-4"> IELTS Mock Test </h1>
+                    <p class="mb-4">Prepare for IELTS Online by doing free IELTS Mock Tests. Through our interface, you can use all
+                        the features that are available in IELTS Computer-Based Test.</p>
 
                     <div class="col-lg-6 col-md-12 mb-4">
                         <div class="card  shadow-lg">
@@ -463,26 +340,21 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Unlimited </li>
+                                    </svg>Access for Unlimited Time 
+                                </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>2 Listening & Reading Tests</li>
+                                    </svg>8 Listening and Reading Mock Tests </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Expert Feedback for Improvement
-                                </li>
-                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Free of Cost
-
+                                    </svg>Free of cost 
 
                                 </li>
+                              
                             </ul>
                             <div class="card-body text-center">
                                 <button style="border-radius:30px" type="button" data-bs-toggle="modal"
@@ -510,19 +382,19 @@
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>1 Month</li>
+                                    </svg>Access for 2 Months </li>
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>24 Listening & Reading Tests
+                                    </svg>28 Listening and Reading Mock Test
                                 </li>
 
                                 <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                         height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                                         <path
                                             d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                    </svg>Expert Feedback for Improvement
+                                    </svg>Expert Feedback for both Modules 
                                 </li>
 
 
@@ -558,11 +430,11 @@
                 <?php
                     $testimonials = [
                         (object) ['id' => 1, 'name' => 'Saba', 'score' => '7.0 bands', 'image' => 't1.jpg', 'country' => 'Pakistan'],
-                        (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
+                        // (object) ['id' => 2, 'name' => 'Nour el huda', 'score' => '6.5 bands', 'image' => 't2.jpg', 'country' => 'Jordan'],
                         (object) ['id' => 3, 'name' => 'Mudassir', 'score' => '6.5 bands', 'image' => 't3.jpg', 'country' => 'Pakistan'],
-                        (object) ['id' => 4, 'name' => 'Majd Faris', 'score' => '6.5 bands', 'image' => 't4.jpg', 'country' => 'Jordan'],
-                        (object) ['id' => 5, 'name' => 'Abdullah', 'score' => '6.5 bands', 'image' => 't5.jpg', 'country' => 'Bahrain'],
-                        (object) ['id' => 6, 'name' => 'Hafsa', 'score' => '7.0 bands', 'image' => 't6.jpg', 'country' => 'Pakistan'],
+                        // (object) ['id' => 4, 'name' => 'Majd Faris', 'score' => '6.5 bands', 'image' => 't4.jpg', 'country' => 'Jordan'],
+                        // (object) ['id' => 5, 'name' => 'Abdullah', 'score' => '6.5 bands', 'image' => 't5.jpg', 'country' => 'Bahrain'],
+                        // (object) ['id' => 6, 'name' => 'Hafsa', 'score' => '7.0 bands', 'image' => 't6.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 7, 'name' => 'Shahbaz', 'score' => '7.0 bands', 'image' => 't7.jpg', 'country' => 'Pakistan'],
                         (object) ['id' => 8, 'name' => 'Lamisa', 'score' => '7.5 bands', 'image' => 't8.jpg', 'country' => 'Bangladesh'],
                         (object) ['id' => 9, 'name' => 'Kanza', 'score' => '7.5 bands', 'image' => 't9.jpg', 'country' => 'Pakistan'],

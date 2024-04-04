@@ -1,9 +1,7 @@
 <meta charset="utf-8">
 <title>IPP - IELTS Prep and Practice</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="" name="keywords">
-<meta content="" name="description">
-
+<meta name="description" content=": Your Ultimate IELTS Companion where you can get IELTS Preparation Books, Study Plans, and Solve IELTS Mock Tests Online without any cost.">
 <!-- Favicon -->
 <link href="<?php echo e(asset('frontend/logo/fv.png')); ?>" rel="icon">
 
