@@ -307,7 +307,6 @@
                                 data-bs-target="#flush-collapseEight" aria-expanded="false"
                                 aria-controls="flush-collapseEight">
                                 How do your courses work?
-
                             </button>
                         </h2>
                         <div id="flush-collapseEight" class="accordion-collapse collapse border-0"
