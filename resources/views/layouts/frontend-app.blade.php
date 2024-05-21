@@ -144,7 +144,24 @@
             let baseUrl = url.split('?')[0];
             window.history.replaceState(null, null, baseUrl);
         }
+
+
     </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "IELTS Prep And Practice - IPP",
+          "url": "https://ieltsprepandpractice.com/",
+          "logo": "https://ieltsprepandpractice.com/frontend/logo/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61552949018684",
+            "https://www.instagram.com/ielts_with_ipp/",
+            "https://www.linkedin.com/company/ielts-with-ipp/",
+            "https://www.pinterest.com/ieltsprepandpractice/"
+          ]
+        }
+     </script>
 </body>
 
 </html>
