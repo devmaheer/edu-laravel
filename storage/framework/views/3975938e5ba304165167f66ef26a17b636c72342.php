@@ -4,14 +4,16 @@
 				<div class="row g-5">
 					<div class="col-lg-4 col-md-6">
 						<h4 class="text-white mb-3">Contact</h4>
-						<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pakistan</p>
-						<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+92 0315 4315382</p>
+						<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>United States</p>
 						<p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ieltsprepandpractice.com</p>
 						<div class="d-flex pt-2">
 							<a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=6
 							1552949018684"><i class="fab fa-facebook-f"></i></a>
-							<a class="btn btn-outline-light btn-social" href="https://www.instagram.com/infoipp/"><i class="fab fa-instagram"></i></a>
-						
+							<a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ielts_with_ipp/"><i class="fab fa-instagram"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@ielts_with_ipp?lang=en"><i class="bi bi-tiktok"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/ielts-with-ipp/"><i class="bi bi-linkedin"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://wa.me/923154315382"><i class="bi bi-whatsapp"></i></a>
+
 						</div>
 					</div>
 			
@@ -29,7 +31,7 @@
 				<div class="copyright">
 					<div class="row">
 						<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-							&copy; <a class="border-bottom" href="#">ieltsprepandpractice.com</a>, All Right Reserved.
+							&copy; <a class="border-bottom" href="#">IPP:Ielts Prep and practice</a>, All Right Reserved.
 	
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 		

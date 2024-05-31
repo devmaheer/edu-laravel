@@ -5,6 +5,15 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofP+NM6P1d5Eegx6A7Yq4MK5S+76E4uBxj" crossorigin="anonymous">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ0H8BREG0"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TZ0H8BREG0');
+            </script>
 
     <?php echo $__env->make('layouts.partials.frontend-head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <style>
@@ -98,12 +107,7 @@
 <body>
     <!--begin::Root-->
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
+    
     <!-- Spinner End -->
 
     <?php if(!Request::routeIs('test.score') && !Request::routeIs('test.correct.answer') && !Request::routeIs('reading.test.finish') && !Request::routeIs('test.correct.listening.answer') &&!Request::routeIs('reading.test') && !Request::routeIs('listening.test')  && !Request::routeIs('show.listening.test') && !Request::routeIs('show.reading.test')): ?>
@@ -135,7 +139,24 @@
             let baseUrl = url.split('?')[0];
             window.history.replaceState(null, null, baseUrl);
         }
+
+
     </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "IELTS Prep And Practice - IPP",
+          "url": "https://ieltsprepandpractice.com/",
+          "logo": "https://ieltsprepandpractice.com/frontend/logo/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61552949018684",
+            "https://www.instagram.com/ielts_with_ipp/",
+            "https://www.linkedin.com/company/ielts-with-ipp/",
+            "https://www.pinterest.com/ieltsprepandpractice/"
+          ]
+        }
+     </script>
 </body>
 
 </html>
