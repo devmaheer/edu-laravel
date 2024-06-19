@@ -12,9 +12,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h1 class="display-3 text-white animated slideInDown"> British Council IELTS 
-                                    Practice Test </h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Practice authentic IELTS Listening and Reading Tests provided by British Council and  
+                                <h1 class="display-3 text-white animated slideInDown"> Cambridge IELTS 
+                                    FREE Mock Test </h1>
+                                <p class="fs-5 text-white mb-4 pb-2"> Practice authentic IELTS Listening and Reading Tests provided by  
                                  Cambridge for FREE to achieve success in your IELTS exam. Get expert-desgined, reliable and comprehensive IELTS resources.  
                                 </p>
                                 {{-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read
@@ -330,7 +330,7 @@
             <div class="container p-5">
                 <div class="row">
                     <h4 class="mb-4"> IELTS Mock Test </h4>
-                    <p class="mb-4">Practice British Council and Cambridge IELTS Listening & Reading Tests for FREE. Through our interface, you can learn all
+                    <p class="mb-4">Practice Cambridge IELTS Listening & Reading Tests for FREE. Through our interface, you can learn all
                         the features of Computer-Based IELTS Test. </p>
 
                     <div class="col-lg-6 col-md-12 mb-4">

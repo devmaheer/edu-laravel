@@ -10,7 +10,7 @@
 							<a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=6
 							1552949018684"><i class="fab fa-facebook-f"></i></a>
 							<a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ielts_with_ipp/"><i class="fab fa-instagram"></i></a>
-							<a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@ielts_with_ipp?lang=en"><i class="bi bi-tiktok"></i></a>
+							<a class="btn btn-outline-light btn-social" href="https://pin.it/2YIvCjjwA"><i class="bi bi-pinterest"></i></a>
 							<a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/ielts-with-ipp/"><i class="bi bi-linkedin"></i></a>
 							<a class="btn btn-outline-light btn-social" href="https://wa.me/923154315382"><i class="bi bi-whatsapp"></i></a>
 

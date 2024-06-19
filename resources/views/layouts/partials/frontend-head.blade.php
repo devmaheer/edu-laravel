@@ -1,7 +1,7 @@
 <meta charset="utf-8">
-<title>IPP - British Council IELTS Practice Tests </title>
+<title>IPP - IELTS Computer Based Test </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta name="description" content=": Prepare for the IELTS exam with British Council practice tests. Get authentic, and expert-designed resources.">
+<meta name="description" content=": Prepare for the IELTS exam with Cambridge IELTS practice test. Get authentic, and expert-designed resources.">
 <!-- Favicon -->
 <link href="{{ asset('frontend/logo/fv.png')}}" rel="icon">
 
