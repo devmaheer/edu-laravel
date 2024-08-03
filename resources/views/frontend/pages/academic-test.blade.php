@@ -8,10 +8,12 @@
 
             <div class="container p-5">
                 <div class="row">
-                    <h1 class="mb-4">IELTS Academic Reading Pratice Test</h1>
-                    <p class="mb-4">The IELTS Academic Reading test assesses your ability to understand and interpret academic content. 
-                        It is divided into three portions with different types of questions, such as multiple-choice, matching, and true/false/not given. 
-                        Effective time management and skimming abilities are essential for selecting vital information and answering questions correctly. </p>
+                    <h1 class="mb-4">IELTS Academic Practice Test</h1>
+                    <p class="mb-4">The IELTS Academic test assesses English language proficiency 
+                        for higher education and professional purposes. 
+                        It evaluates reading, writing, listening, and speaking skills. 
+                        The test is recognized globally and used by universities and employers 
+                        to determine a candidate's ability to use English in an academic environment. </p>
                     
                         @foreach ($tests as $test)
                         <div class="col-lg-3 col-md-3 mb-4">

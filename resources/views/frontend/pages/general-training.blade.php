@@ -9,9 +9,10 @@
             <div class="container p-5">
                 <div class="row">
                     <h1 class="mb-4">IELTS General Training Practice Test</h1>
-                    <p class="mb-4">The IELTS General Training reading test assesses your reading abilities using everyday items. 
-                        It is divided into three sections, each featuring content from a book, magazine, advertisement, and workplace document. Questions assess your ability to comprehend primary ideas, details, and suggested meaning. 
-                        Effective skimming and scanning strategies are necessary for success. </p>                    
+                    <p class="mb-4">The IELTS General Training test measures English language proficiency for practical, 
+                        everyday contexts. It assesses reading, writing, listening, and speaking skills. 
+                        The test is often required for immigration, work, or secondary education purposes. 
+                        It focuses on basic survival skills in broad social and workplace settings. </p>                    
                         
                         @foreach ($tests as $test)
                         <div class="col-lg-3 col-md-3 mb-4">
